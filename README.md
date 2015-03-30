@@ -1,2 +1,2 @@
 # corso
-Proyecto para El Corso de Honduras
+Proyecto para llevar el control documentario de encomiendas en la empresa El Corso de Honduras.

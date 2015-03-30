@@ -22,11 +22,11 @@
         "Illuminate\\Translation\\TranslationServiceProvider",
         "Illuminate\\Validation\\ValidationServiceProvider",
         "Illuminate\\View\\ViewServiceProvider",
-        "App\\Providers\\AppServiceProvider",
-        "App\\Providers\\BusServiceProvider",
-        "App\\Providers\\ConfigServiceProvider",
-        "App\\Providers\\EventServiceProvider",
-        "App\\Providers\\RouteServiceProvider"
+        "Corso\\Providers\\AppServiceProvider",
+        "Corso\\Providers\\BusServiceProvider",
+        "Corso\\Providers\\ConfigServiceProvider",
+        "Corso\\Providers\\EventServiceProvider",
+        "Corso\\Providers\\RouteServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -40,11 +40,11 @@
         "Illuminate\\Session\\SessionServiceProvider",
         "Illuminate\\Validation\\ValidationServiceProvider",
         "Illuminate\\View\\ViewServiceProvider",
-        "App\\Providers\\AppServiceProvider",
-        "App\\Providers\\BusServiceProvider",
-        "App\\Providers\\ConfigServiceProvider",
-        "App\\Providers\\EventServiceProvider",
-        "App\\Providers\\RouteServiceProvider"
+        "Corso\\Providers\\AppServiceProvider",
+        "Corso\\Providers\\BusServiceProvider",
+        "Corso\\Providers\\ConfigServiceProvider",
+        "Corso\\Providers\\EventServiceProvider",
+        "Corso\\Providers\\RouteServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

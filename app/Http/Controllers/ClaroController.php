@@ -5,7 +5,7 @@ use Corso\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller {
+class ClaroController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -14,7 +14,7 @@ class UserController extends Controller {
 	 */
 	public function index()
 	{
-		//
+            return View::make('claro.index');
 	}
 
 	/**

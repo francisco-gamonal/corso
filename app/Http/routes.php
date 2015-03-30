@@ -26,3 +26,23 @@ Route::get('login', 'AuthController@showLogin');
 // Validamos los datos de inicio de sesiÃ³n.
 Route::post('login', 'AuthController@postLogin');
 Route::get('empleados','EmpleadoController@index');
+
+/**
+ * Usuarios
+ */
+
+
+/**
+ * Empleados
+ */
+
+
+/**
+ * Empresas-Controller
+ */
+
+
+/**
+ * Claro
+ */
+Route::get('claro',['as'=>'claro','ClaroController@index']);

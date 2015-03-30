@@ -12,7 +12,7 @@
             </p>
         </div>
         <div class="row">
-            <div class="col-md-4 col-md-offset-4">
+            <div class="col-md-6 col-md-offset-3">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Registrarse</h3>
@@ -29,6 +29,16 @@
                                 <label class="control-label">{{ Session::get('mensaje_logout') }}</label>
                             </div>
                         @endif
+                        @if (count($errors) > 0)
+							<div class="alert alert-danger">
+								<strong>Whoops!</strong> There were some problems with your input.<br><br>
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
+							</div>
+						@endif
                        	<form role="form" method="POST" action="{{ url('/auth/login') }}">
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <fieldset>

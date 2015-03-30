@@ -6,17 +6,18 @@
         <meta name="description" content="Pagina inicio">
         <meta name="author" content="Sistemas Amigables S. de R.L. de C.V.">
         <title>El Corso</title>
-        {{ HTML::style('node_modules/bootstrap/dist/css/bootstrap.min.css') }}
-        {{ HTML::style('css/main.css') }}
+        <link rel="stylesheet" type="text/css" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css')}} ">
+        @yield('styles')
+        <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css')}} ">
     </head>
-    <body style="background: url('img/back.png');">
+    <body style="background: url('../img/back.png');">
         <main class="row">
             @yield('content')
         </main>
         @include('template.partials.footer')
-        {{ HTML::script('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') }}
-        {{ HTML::script('node_modules/bootstrap/dist/js/bootstrap.min.js') }}
+        <script type="text/javascript" src="{{ asset('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') }}"></script>
+        <script type="text/javascript" src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
         @yield('scripts')
-        {{ HTML::script('js/main.js') }}
+        <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     </body>
 </html>

@@ -76,6 +76,28 @@ class RecordsController extends Controller {
     public function destroy($id) {
         //
     }
+    
+    public static function recordSeparator($id){
+        
+        $Record = Record::find($id);
+       $Record = explode(' ', strtolower($Record->products->name));
+              switch (count($Record)):
+                  case 1:
+                      $Record = $Record[0];
+                      break;
+                  case 2:
+                      $Record = $Record[0].'-'.$Record[1];
+                      break;
+                  case 3:
+                      $Record =  $Record[0].'-'.$Record[1].'-'.$Record[2];
+                      break;
+                  case 4:
+                      $Record = $Record[0].'-'.$Record[1].'-'.$Record[2].'-'.$Record[3];
+                      break;
+              endswitch;
+        
+        return $Record;
+    }
 
     /**
      * @author Anwar Sarmiento

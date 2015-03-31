@@ -40,7 +40,7 @@ $(function(){
 	        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
 	    }
 	});
-	
+
 	$("#txtDate").daterangepicker(
 		{
 			locale:
@@ -70,7 +70,7 @@ $(function(){
 		var range  = $('#txtDate').val();
 		data.range = range;
 		console.log(data, pathname);
-		ajaxForm(pathname, 'post', data)
+		ajaxForm(pathname, 'put', data)
 		.done( function (data){
 			console.log("OK");
 		});

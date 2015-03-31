@@ -27,6 +27,7 @@ Route::get('login', 'AuthController@showLogin');
 Route::post('login', 'AuthController@postLogin');
 Route::get('empleados', 'StaffController@index');
 
+
 /**
  * Usuarios
  */

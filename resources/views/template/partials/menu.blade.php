@@ -75,9 +75,9 @@
             <li class="dropdown">
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Opciones&nbsp;<span class=" glyphicon glyphicon-cog"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li>{{ Html::link('/empleados/', 'Empleados') }}</li>
+                    <li><a href='{{ Route('ver-empleados') }}'>Empleados</a></li>
                     <li><a href='{{ Route('lista-observacion') }}'>Observaciones </a></li>
-                    <li>{{ Html::link('/logout', 'Cerrar sesión') }}</li>
+                    <li>{!! HTML::link('/auth/logout', 'Cerrar sesión') !!}</li>
                 </ul>
             </li>
         </ul>

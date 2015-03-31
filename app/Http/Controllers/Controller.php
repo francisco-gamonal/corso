@@ -48,5 +48,13 @@ abstract class Controller extends BaseController {
         );
         return $mes;
     }
-
+    /**
+     * 
+     * @return type
+     */
+    public function convertionObjeto() {
+        $datos = Input::get('data');
+        $DatosController = json_decode($datos);
+        return $DatosController;
+    }
 }

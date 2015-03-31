@@ -8,6 +8,8 @@ use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Corso\models\Business;
 use Corso\models\Product;
+use Corso\models\DataCompanie;
+use Illuminate\Support\Facades\Redirect;
 use Input;
 class ClaroController extends Controller {
 
@@ -106,7 +108,7 @@ class ClaroController extends Controller {
      * @return type
      */
     public function ListaDatosEmpresas() {
-        $datosEmpresas = DatosEmpresa::paginate(100);
+        $datosEmpresas = DataCompanie::paginate(100);
         return View('claro.listaDatosEmpresas', compact('datosEmpresas'));
     }
     
@@ -141,10 +143,10 @@ class ClaroController extends Controller {
      */
     private function saveExcel($data, $historial) {
 
-        $datos = DatosEmpresa::where('historials_id', '=', $historial)->delete();
+        $datos = DataCompanie::where('historials_id', '=', $historial)->delete();
 
         foreach ($data AS $dataExcel):
-            $datos_empresas = new DatosEmpresa;
+            $datos_empresas = new DataCompanie;
             $datos_empresas->barra = null;
             if (empty($dataExcel['codigo'])):
                 $datos_empresas->codigo = null;
@@ -196,7 +198,7 @@ class ClaroController extends Controller {
             else:
                 $datos_empresas->comentario_ciudad = $dataExcel['comentario_ciudad'];
             endif;
-            $datos_empresas->ciudades_id = Ciudade::convertionCiudad($dataExcel['ciudad']);
+            $datos_empresas->ciudades_id = CityController::convertionCiudad($dataExcel['ciudad']);
             if (empty($dataExcel['observaciones'])):
                 $datos_empresas->observaciones_id = 16;
             else:

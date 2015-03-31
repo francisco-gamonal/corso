@@ -15,8 +15,8 @@ class ObservationsController extends Controller {
 	 */
 	public function index()
 	{
-            $observations = Observation::all();
-            return View('observations.index','observations');
+            $observations = Observation::paginate(100);
+            return View('observations.index',compact('observations'));
 	}
 
 	/**

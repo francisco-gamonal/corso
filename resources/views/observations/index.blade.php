@@ -4,13 +4,13 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-1">
             <div class="panel panel-default">
-                <div class="panel-heading">Home</div>
+                <div class="panel-heading">Observaciones</div>
 
                 <div class="panel-body">
                     
-                    <h1 class="text-lowercase"><?php echo utf8_encode('lista de Observaciones'); ?></h1>
+                    <h1 class="text-lowercase">lista de Observaciones</h1>
                   
-                    @section('content')
+         
                     <table class="table">
                         <thead>
                             <tr>
@@ -19,19 +19,19 @@
                                 <th>Estado</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody> 
                             @foreach($observations AS $datos) 
                             <tr>
                                 <td>{{$datos->id}}</td>
-                                <td>{{ $datos->name; }}</td>
-                                <td>{{ $datos->estados->name; }}</td>
+                                <td>{{ $datos->name }}</td>
+                                <td>{{ $datos->status->name }}</td>
                                 <td><a class="btn btn-warning "><span class="glyphicon glyphicon-pencil"></span></a></td>
                             </tr>
                             @endforeach
                         </tbody>
                     </table>
-                    <div class="pagination">{{ $observaciones->links() }}</div>
-                    @stop
+                    <div class="pagination"><?= $observations->render() ?></div>
+               
                 </div>
             </div>
         </div>

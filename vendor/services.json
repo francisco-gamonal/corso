@@ -27,7 +27,8 @@
         "Corso\\Providers\\BusServiceProvider",
         "Corso\\Providers\\ConfigServiceProvider",
         "Corso\\Providers\\EventServiceProvider",
-        "Corso\\Providers\\RouteServiceProvider"
+        "Corso\\Providers\\RouteServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "eager": [
         "Illuminate\\Auth\\AuthServiceProvider",
@@ -45,7 +46,8 @@
         "Corso\\Providers\\BusServiceProvider",
         "Corso\\Providers\\ConfigServiceProvider",
         "Corso\\Providers\\EventServiceProvider",
-        "Corso\\Providers\\RouteServiceProvider"
+        "Corso\\Providers\\RouteServiceProvider",
+        "Maatwebsite\\Excel\\ExcelServiceProvider"
     ],
     "deferred": {
         "command.app.name": "Illuminate\\Foundation\\Providers\\ArtisanServiceProvider",

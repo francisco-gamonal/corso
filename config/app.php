@@ -129,7 +129,8 @@ return [
         'Corso\Providers\ConfigServiceProvider',
         'Corso\Providers\EventServiceProvider',
         'Corso\Providers\RouteServiceProvider',
-        /**/
+        /*New*/
+        'Maatwebsite\Excel\ExcelServiceProvider',
     ],
     /*
       |--------------------------------------------------------------------------
@@ -176,6 +177,7 @@ return [
         'Validator' => 'Illuminate\Support\Facades\Validator',
         'View' => 'Illuminate\Support\Facades\View',
         'Html' => 'Illuminate\Html\HtmlFacade',
-        'Form' => 'Illuminate\Html\FormFacade'
+        'Form' => 'Illuminate\Html\FormFacade',
+        'Excel' => 'Maatwebsite\Excel\Facades\Excel'
     ],
 ];

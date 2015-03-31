@@ -7,6 +7,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Support\Facades\Response;
 use Input;
+
 abstract class Controller extends BaseController {
 
     use DispatchesCommands,
@@ -27,6 +28,25 @@ abstract class Controller extends BaseController {
                     'success' => FALSE,
                     'errors' => $data
         ]);
+    }
+
+    public function Mes() {
+
+        $mes = array(
+            '1' => 'Enero',
+            '2' => 'Febrero',
+            '3' => 'Marzo',
+            '4' => 'Abril',
+            '5' => 'Mayo',
+            '6' => 'Junio',
+            '7' => 'Julio',
+            '8' => 'Agosto',
+            '9' => 'Septiembre',
+            '10' => 'Octubre',
+            '11' => 'Noviembre',
+            '12' => 'Diciembre',
+        );
+        return $mes;
     }
 
 }

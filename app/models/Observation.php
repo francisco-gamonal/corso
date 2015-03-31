@@ -13,4 +13,9 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Observation extends Model{
     //put your code here
+    
+    public function status(){
+        
+        return $this->belongsTo('Corso\models\Statu','estados_id','id');
+    }
 }

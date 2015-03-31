@@ -25,7 +25,7 @@ Route::get('login', 'AuthController@showLogin');
 
 // Validamos los datos de inicio de sesiÃ³n.
 Route::post('login', 'AuthController@postLogin');
-Route::get('empleados', 'EmpleadoController@index');
+Route::get('empleados', 'StaffController@index');
 
 /**
  * Usuarios
@@ -33,17 +33,17 @@ Route::get('empleados', 'EmpleadoController@index');
 /**
  *  Routes Historial
  */
-Route::get('historial-productos/{id}', ['as' => 'historial-productos', 'uses' => 'HistorialsController@index']);
-Route::put('historial-delete/{id}', ['as' => 'historial-delete', 'uses' => 'HistorialsController@destroy']);
-Route::get('descarga-productos/{id}', ['as' => 'descarga-productos', 'uses' => 'HistorialsController@descargasProducto']);
+Route::get('historial-productos/{id}', ['as' => 'historial-productos', 'uses' => 'RecordsController@index']);
+Route::put('historial-delete/{id}', ['as' => 'historial-delete', 'uses' => 'RecordsController@destroy']);
+Route::get('descarga-productos/{id}', ['as' => 'descarga-productos', 'uses' => 'RecordsController@descargasProducto']);
 /**
  *  Routes Empleados
  */
-Route::get('empleados/registrar-empleados', ['as' => 'registrar-empleados', 'uses' => 'EmpleadosController@create']);
-Route::get('empleados', ['as' => 'ver-empleados', 'uses' => 'EmpleadosController@index']);
-Route::post('empleados/guardar-empleados', ['as' => 'guardar-empleados', 'uses' => 'EmpleadosController@store']);
-Route::get('empleados/editar-empleados/{id}', ['as' => 'editar-empleados', 'uses' => 'EmpleadosController@edit']);
-Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'uses' => 'EmpleadosController@update']);
+Route::get('empleados/registrar-empleados', ['as' => 'registrar-empleados', 'uses' => 'StaffController@create']);
+Route::get('empleados', ['as' => 'ver-empleados', 'uses' => 'StaffController@index']);
+Route::post('empleados/guardar-empleados', ['as' => 'guardar-empleados', 'uses' => 'StaffController@store']);
+Route::get('empleados/editar-empleados/{id}', ['as' => 'editar-empleados', 'uses' => 'StaffController@edit']);
+Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'uses' => 'StaffController@update']);
 /**
  * Routes Obsevaciones
  */
@@ -56,8 +56,8 @@ Route::get('claro/{name}', ['as' => 'producto_claro', 'uses' => 'ProductsControl
 Route::get('claro/{name}/{date}', ['as' => 'data_product', 'uses' => 'ClaroController@dataProduct']);
 Route::get('claro/importar-ciclo/{id}', ['as' => 'importar-ciclo', 'uses' => 'ClaroController@importarClaro']);
 Route::post('claro/importar-ciclo', ['as' => 'save-ciclo', 'uses' => 'ClaroController@importarExcelClaro']);
-Route::post('claro/scanear-ciclo', ['as' => 'scanear-ciclo', 'uses' => 'EmpresasController@scanearCiclo']);
-Route::get('claro/ciclo', 'EmpresasController@ListaDatosEmpresas');
+Route::post('claro/scanear-ciclo', ['as' => 'scanear-ciclo', 'uses' => 'BusinessController@scanearCiclo']);
+Route::get('claro/ciclo', 'BusinessController@ListaDatosEmpresas');
 /**
  * Routes usuarios
  */

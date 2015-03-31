@@ -5,7 +5,7 @@ use Corso\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-class HistorialController extends Controller {
+class BusinessController extends Controller {
 
 	/**
 	 * Display a listing of the resource.

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 use Corso\models\Empleado;
 use Illuminate\View\View;
 
-class EmpleadosController extends Controller {
+class StaffController extends Controller {
 
     /**
      * Display a listing of the resource.

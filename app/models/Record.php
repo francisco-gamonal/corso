@@ -1,5 +1,5 @@
-<?php
-namespace Corso\models;
+<?php namespace Corso\models;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -7,10 +7,11 @@ namespace Corso\models;
  */
 use Illuminate\Database\Eloquent\Model;
 /**
- * Description of Empleado
+ * Description of Record
  *
  * @author Anwar Sarmiento
  */
-class Empleado extends Model {
+class Record extends Model {
     //put your code here
+    protected $table= 'historials';
 }

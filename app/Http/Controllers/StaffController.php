@@ -5,7 +5,7 @@ namespace Corso\Http\Controllers;
 use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Corso\models\Empleado;
+use Corso\models\Staff;
 use Illuminate\View\View;
 
 class StaffController extends Controller {
@@ -16,8 +16,8 @@ class StaffController extends Controller {
      * @return Response
      */
     public function index() {
-        $empleados = Empleado::paginate(15);
-        return View('empleados.index', compact('empleados'));
+        $staff = Staff::paginate(15);
+        return View('staff.index', compact('staff'));
     }
 
     /**
@@ -27,7 +27,7 @@ class StaffController extends Controller {
      */
     public function create() {
         $ciudades = Ciudade::lists('name', 'id');
-        return View::make('empleados.create', compact('ciudades'));
+        return View::make('staff.create', compact('ciudades'));
     }
 
     /**
@@ -69,7 +69,7 @@ class StaffController extends Controller {
     public function edit($id) {
         $empleado = Empleado::find($id);
         $ciudades = Ciudade::lists('name', 'id');
-        return View::make('empleados.edit', compact('empleado', 'ciudades'));
+        return View::make('staff.edit', compact('empleado', 'ciudades'));
     }
 
     /**

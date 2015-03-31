@@ -13,7 +13,7 @@
                     <hr>
                     <div class="right">
                     
-                        {{Html::link('registrar-empleados','Agregar +',array('class'=>'btn btn-danger '))}}
+                        {!! Html::link('registrar-empleados','Agregar +',array('class'=>'btn btn-danger ')) !!}
                     </div>
 
                     <hr>
@@ -39,7 +39,7 @@
                                 </tr>
                             </thead>
                             <tbody><?php $i = 0; ?>
-                                @foreach($empleados AS $datos) 
+                                @foreach($staff AS $datos) 
                                 <tr>
                                     <td>{{$datos->id}}</td>
                                     <td>{{$datos->fname}} {{$datos->sname}} {{$datos->flast}} {{$datos->slast}}</td>
@@ -56,7 +56,7 @@
                                 @endforeach
                             </tbody>
                         </table>
-                        <div class="pagination"></div>
+                        <div class="pagination"><?php echo $staff->render(); ?></div>
                     </div>
                 </div>
             </div>

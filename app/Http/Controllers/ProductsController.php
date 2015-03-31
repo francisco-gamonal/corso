@@ -6,7 +6,7 @@ use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Corso\models\Product;
 use Illuminate\Http\Request;
-
+use Corso\models\Record;
 class ProductsController extends Controller {
 
     /**
@@ -99,8 +99,9 @@ class ProductsController extends Controller {
         endswitch;
  
         $producto = Product::where('name', '=', $nameProducto)->get();
-
-        return view('claro.product', compact('producto'));
+        $inicioRecord = Record::all()->first();
+        $finalRecord = Record::all()->last();
+        return view('claro.product', compact('producto','inicioRecord','finalRecord'));
     }
 
 }

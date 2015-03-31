@@ -11,7 +11,7 @@
   |
  */
 
-/*Route::get('/', 'WelcomeController@index');*/
+/* Route::get('/', 'WelcomeController@index'); */
 
 Route::get('/', 'HomeController@index');
 
@@ -30,8 +30,6 @@ Route::get('empleados', 'EmpleadoController@index');
 /**
  * Usuarios
  */
-
-
 /**
  *  Routes Historial
  */
@@ -53,7 +51,6 @@ Route::get('observaciones', ['as' => 'lista-observacion', 'uses' => 'Observation
 /**
  * Claro
  */
-
 Route::get('claro', ['as' => 'claro', 'uses' => 'ClaroController@index']);
 Route::get('claro/{name}', ['as' => 'producto_claro', 'uses' => 'ProductoController@getProduct']);
 Route::get('claro/{name}/{date}', ['as' => 'data_product', 'uses' => 'ClaroController@dataProduct']);
@@ -61,3 +58,14 @@ Route::get('claro/importar-ciclo/{id}', ['as' => 'importar-ciclo', 'uses' => 'Cl
 Route::post('claro/importar-ciclo', ['as' => 'save-ciclo', 'uses' => 'ClaroController@importarExcelClaro']);
 Route::post('claro/scanear-ciclo', ['as' => 'scanear-ciclo', 'uses' => 'EmpresasController@scanearCiclo']);
 Route::get('claro/ciclo', 'EmpresasController@ListaDatosEmpresas');
+/**
+ * Routes usuarios
+ */
+Route::get('usuarios', ['as' => 'lista-users', 'uses' => 'UserController@index']);
+Route::get('usuarios/registrar-usuario/{id}', ['as' => 'create-users', 'uses' => 'UserController@create']);
+Route::get('usuarios/editar-usuario/{id}', ['as' => 'edit-users', 'uses' => 'UserController@edit']);
+Route::get('usuarios/eliminar-usuario', ['as' => 'delete-users', 'uses' => 'UserController@destroy']);
+/**
+ * Test
+ */
+Route::get('test', 'TestController@index');

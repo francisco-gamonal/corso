@@ -80,18 +80,15 @@ class ProductsController extends Controller {
 	{
 		//
 	}
-        public function getProduct($name){
+
+    public function getProduct($name){
 
         $separador = explode('-', ($name));
-        
         $nameProducto = ucwords($separador[0]).' '.ucwords($separador[1]).'-'.$separador[2];
 
-       $producto = Product::where('name','=',$nameProducto)->get();
+       	$producto = Product::where('name','=',$nameProducto)->get();
 
-       if($producto->isEmpty()):
-            return "No se encontro el producto que intenta buscar";
-        endif;
-
-        return $producto;
+        return view('claro.product',compact('producto'));
     }
+
 }

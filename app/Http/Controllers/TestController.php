@@ -16,7 +16,7 @@ class TestController extends Controller {
 	 */
 	public function index()
 	{
-            set_time_limit(0);
+        set_time_limit(0);
         ini_set('memory_limit', '20240M');
 //		$test = Observation::find(1);
 //              $test = Record::find(31); 
@@ -37,10 +37,8 @@ class TestController extends Controller {
 //                      break;
 //              endswitch;
             
-            $dataClaro = DataCompanie::where('historials_id','=',29)->get();
-                 echo json_encode($dataClaro); 
-                
-          
+        $dataClaro = DataCompanie::where('historials_id','=',29)->get();
+		echo json_encode($dataClaro);die;
 	}
 
 	/**

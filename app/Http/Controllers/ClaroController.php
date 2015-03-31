@@ -17,7 +17,7 @@ class ClaroController extends Controller {
 
     public function __construct() {
         
-       set_time_limit(0);
+        set_time_limit(0);
         ini_set('memory_limit', '20240M');
     }
 
@@ -107,23 +107,24 @@ class ClaroController extends Controller {
      * @return type
      */
     public function dataProduct() {
-         
+        set_time_limit(0);
+        ini_set('memory_limit', '20240M'); 
         
         $periodIni = $this->period(0);
         $periodFin = $this->period(1);
-       
+        $id = 3;
         $record = Record::where('productos_id','=',$id)
                 ->where('mes','>=',$periodIni[0])
                 ->where('year','>=',$periodIni[1])
                 ->where('mes','<=',$periodFin[0])
                 ->where('year','<=',$periodFin[1])->get();
-       
+        
         foreach ($record AS $datos):
-      
             $dataClaro = DataCompanie::where('historials_id','=',$datos->id)->get();
+            echo json_encode($dataClaro);die;
         endforeach;
        
-       return View('claro.product', compact('dataClaro'));
+       return View('claro.dataProduct', compact('dataClaro'));
     }
 
 

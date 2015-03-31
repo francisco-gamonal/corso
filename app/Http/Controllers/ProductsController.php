@@ -91,7 +91,7 @@ class ProductsController extends Controller {
                 $nameProducto = ucwords($separador[0]) . ' ' . ucwords($separador[1]) . '-' . $separador[2];
                 break;
             case 4:
-                $nameProducto = ucwords($separador[0]) . ' ' . ucwords($separador[1]) . '-' . $separador[2] . $separador[3];
+                $nameProducto = ucwords($separador[0]) . ' ' . ucwords($separador[1]) . '-' . $separador[2] . ' '.$separador[3];
                 break;
             case ($numero >4):
                $nameProducto = '';

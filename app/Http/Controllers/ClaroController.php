@@ -10,6 +10,7 @@ use Corso\models\Business;
 use Corso\models\Product;
 use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
+use Corso\models\Record;
 use Input;
 class ClaroController extends Controller {
 
@@ -212,7 +213,8 @@ class ClaroController extends Controller {
             endif;
             $datos_empresas->save();
         endforeach;
-        return Redirect::to('claro/ciclo')->with('messege', 'se guardo con exito!!');
+        $Record = RecordsController::recordSeparator($historial);
+        return Redirect::away($Record)->with('messege', 'se guardo con exito!!');
     }
 
 }

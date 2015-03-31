@@ -33,6 +33,14 @@ var ajaxForm = function (url, type, data){
 
 $(function(){
 	var data = {};
+
+	//setup Ajax
+	$.ajaxSetup({
+	    headers: {
+	        'X-CSRF-Token': $('meta[name="csrf-token"]').attr('content')
+	    }
+	});
+	
 	$("#txtDate").daterangepicker(
 		{
 			locale:

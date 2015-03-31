@@ -52,7 +52,7 @@ Route::get('observaciones', ['as' => 'lista-observacion', 'uses' => 'Observation
  * Claro
  */
 Route::get('claro', ['as' => 'claro', 'uses' => 'ClaroController@index']);
-Route::get('claro/{name}', ['as' => 'producto_claro', 'uses' => 'ProductoController@getProduct']);
+Route::get('claro/{name}', ['as' => 'producto_claro', 'uses' => 'ProductsController@getProduct']);
 Route::get('claro/{name}/{date}', ['as' => 'data_product', 'uses' => 'ClaroController@dataProduct']);
 Route::get('claro/importar-ciclo/{id}', ['as' => 'importar-ciclo', 'uses' => 'ClaroController@importarClaro']);
 Route::post('claro/importar-ciclo', ['as' => 'save-ciclo', 'uses' => 'ClaroController@importarExcelClaro']);

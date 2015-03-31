@@ -1,4 +1,4 @@
-@extends('app')
+@extends('template.main')
 @section('content')
 <div class="container">
     <div class="row">
@@ -7,9 +7,9 @@
                 <div class="panel-heading">Home</div>
 
                 <div class="panel-body">
-                    @section('title')
+                    
                     <h1 class="text-lowercase"><?php echo utf8_encode('lista de Observaciones'); ?></h1>
-                    @stop
+                  
                     @section('content')
                     <table class="table">
                         <thead>

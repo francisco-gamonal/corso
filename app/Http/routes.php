@@ -49,7 +49,7 @@ Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'use
 /**
  * Routes Obsevaciones
  */
-Route::get('observaciones/lista-observacion', ['as' => 'lista-observacion', 'uses' => 'ObservacionController@index']);
+Route::get('observaciones', ['as' => 'lista-observacion', 'uses' => 'ObservationsController@index']);
 /**
  * Claro
  */

@@ -12,7 +12,14 @@ use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
 use Corso\models\Record;
 use Input;
+
 class ClaroController extends Controller {
+
+    public function __construct() {
+        
+       set_time_limit(0);
+        ini_set('memory_limit', '20240M');
+    }
 
     /**
      * Display a listing of the resource.
@@ -94,17 +101,54 @@ class ClaroController extends Controller {
         $mes = $this->Mes();
         return View('claro.importar', compact('claro', 'mes'));
     }
+
     /**
      * 
      * @return type
      */
     public function dataProduct() {
-
-        $empresa = Business::find(1);
-        return View('claro.importar', compact('empresa'));
+         
+        
+        $periodIni = $this->period(0);
+        $periodFin = $this->period(1);
+       
+        $record = Record::where('productos_id','=',$id)
+                ->where('mes','>=',$periodIni[0])
+                ->where('year','>=',$periodIni[1])
+                ->where('mes','<=',$periodFin[0])
+                ->where('year','<=',$periodFin[1])->get();
+       
+        foreach ($record AS $datos):
+      
+            $dataClaro = DataCompanie::where('historials_id','=',$datos->id)->get();
+        endforeach;
+       
+       return View('claro.product', compact('dataClaro'));
     }
 
+
     /**
+     * Separamos en rango de la consulta por perido
+     * @param type $range
+     * @return type
+     */
+    private function serparatorPeriodo($range) {
+      $rangeSeparator = explode('-', $range);
+        return $rangeSeparator;
+    }
+    /**
+     * 
+     * @param type $id
+     * @return type
+     */
+    private function period($id) {
+        $range = $this->convertionObjeto();
+        $period = $this->serparatorPeriodo($range->range);
+        $period = explode('/', trim($period[$id]));
+        return ($period);
+    }
+
+   /**
      * Mostramos todos los datos en la vista de la tabla Datos empresas de claro
      * @return type
      */
@@ -112,14 +156,12 @@ class ClaroController extends Controller {
         $datosEmpresas = DataCompanie::paginate(100);
         return View('claro.listaDatosEmpresas', compact('datosEmpresas'));
     }
-    
+
     /**
      * aqui ejecutamos todos los metodos para agregar un nuevo archivo o reemplazarlo
      * @return type
      */
     public function importarExcelClaro() {
-        set_time_limit(0);
-        ini_set('memory_limit', '20240M');
         /* de claramos las variables que recibimos por post */
         $mes = Input::get('mes');
         $year = Input::get('year');
@@ -136,6 +178,7 @@ class ClaroController extends Controller {
 
         return $this->saveExcel($excel, $idHistorial);
     }
+
     /**
      * 
      * @param type $data

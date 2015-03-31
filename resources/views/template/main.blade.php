@@ -6,9 +6,9 @@
         <link rel="shortcut icon" href="img/logo-claro.png" />
         <title>@yield('tittle')</title>
         @yield('head')
-        {{ Html::style('node_modules/bootstrap/dist/css/bootstrap.min.css') }}
+        {!! Html::style('node_modules/bootstrap/dist/css/bootstrap.min.css') !!}
         @yield('styles')
-        {{ Html::style('css/main.css') }}
+        {!! Html::style('css/main.css') !!}
     </head>
     <body>
         <main class="row">
@@ -19,10 +19,12 @@
                 @yield('content')
             </section>
         </main>
-        @include('template.partials.footer')
-        {{ Html::script('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') }}
-        {{ Html::script('node_modules/bootstrap/dist/js/bootstrap.min.js') }}
+        <footer>
+            @include('template.partials.footer')
+        </footer>
+        {!! Html::script('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') !!}
+        {!! Html::script('node_modules/bootstrap/dist/js/bootstrap.min.js') !!}
         @yield('scripts')
-        {{ Html::script('js/main.js') }}
+        {!! Html::script('js/main.js') !!}
     </body>
 </html>

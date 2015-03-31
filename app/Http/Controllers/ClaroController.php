@@ -126,10 +126,10 @@ class ClaroController extends Controller {
 
 
         /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
-        $idHistorial = HistorialsController::SaveHistorials($mes, $year, $producto, $url);
+        $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
 
         /* Corremos el archivo de excel y lo convertimos en un array */
-        $excel = EmpresasController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
+        $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
 
         return $this->saveExcel($excel, $idHistorial);
     }

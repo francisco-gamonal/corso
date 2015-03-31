@@ -3,10 +3,9 @@
 use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Corso\models\Observation;
-use Illuminate\View\View;
 use Illuminate\Http\Request;
 
-class ObservationsController extends Controller {
+class TestController extends Controller {
 
 	/**
 	 * Display a listing of the resource.
@@ -15,8 +14,9 @@ class ObservationsController extends Controller {
 	 */
 	public function index()
 	{
-            $observations = Observation::paginate(100);
-            return View('observations.index',compact('observations'));
+		$test = Observation::find(1);
+                
+                echo json_encode($test->status);
 	}
 
 	/**

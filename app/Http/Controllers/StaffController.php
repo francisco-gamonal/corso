@@ -16,7 +16,7 @@ class StaffController extends Controller {
      * @return Response
      */
     public function index() {
-        $staff = Staff::paginate(15);
+        $staff = Staff::paginate(100);
         return View('staff.index', compact('staff'));
     }
 

@@ -7,15 +7,11 @@
  */
 use Illuminate\Database\Eloquent\Model;
 /**
- * Description of Observacione
+ * Description of Statu
  *
  * @author Anwar Sarmiento
  */
-class Observation extends Model{
+class Statu extends Model{
     //put your code here
-    
-    public function status(){
-        
-        return $this->belongsTo('Corso\models\Statu','estados_id','id');
-    }
+    protected $table= 'estados';
 }

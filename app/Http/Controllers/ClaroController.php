@@ -6,6 +6,8 @@ use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
+use Corso\models\Business;
+use Corso\models\Product;
 use Input;
 class ClaroController extends Controller {
 
@@ -83,11 +85,11 @@ class ClaroController extends Controller {
      */
     public function importarClaro($id) {
 
-        $data = Empresa::find($id);
-        $claro = $data->Productos()->lists('name', 'id');
+        $data = Business::find($id);
+        $claro = $data->Products()->lists('name', 'id');
         array_unshift($claro, ' --- Seleccione un Prodcuto --- ');
         $mes = $this->Mes();
-        return View::make('claro.importar', compact('claro', 'mes'));
+        return View('claro.importar', compact('claro', 'mes'));
     }
     /**
      * 
@@ -95,8 +97,8 @@ class ClaroController extends Controller {
      */
     public function dataProduct() {
 
-        $empresa = Empresa::find(1);
-        return View::make('claro.productos', compact('empresa'));
+        $empresa = Business::find(1);
+        return View('claro.importar', compact('empresa'));
     }
 
     /**
@@ -105,7 +107,7 @@ class ClaroController extends Controller {
      */
     public function ListaDatosEmpresas() {
         $datosEmpresas = DatosEmpresa::paginate(100);
-        return View::make('claro.listaDatosEmpresas', compact('datosEmpresas'));
+        return View('claro.listaDatosEmpresas', compact('datosEmpresas'));
     }
     
     /**

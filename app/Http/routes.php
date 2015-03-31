@@ -41,11 +41,11 @@ Route::get('descarga-productos/{id}', ['as' => 'descarga-productos', 'uses' => '
 /**
  *  Routes Empleados
  */
-Route::get('empleados/registrar-empleados', ['as' => 'registrar-empleados', 'uses' => 'EmpleadoController@create']);
-Route::get('empleados', ['as' => 'ver-empleados', 'uses' => 'EmpleadoController@index']);
-Route::post('empleados/guardar-empleados', ['as' => 'guardar-empleados', 'uses' => 'EmpleadoController@store']);
-Route::get('empleados/editar-empleados/{id}', ['as' => 'editar-empleados', 'uses' => 'EmpleadoController@edit']);
-Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'uses' => 'EmpleadoController@update']);
+Route::get('empleados/registrar-empleados', ['as' => 'registrar-empleados', 'uses' => 'EmpleadosController@create']);
+Route::get('empleados', ['as' => 'ver-empleados', 'uses' => 'EmpleadosController@index']);
+Route::post('empleados/guardar-empleados', ['as' => 'guardar-empleados', 'uses' => 'EmpleadosController@store']);
+Route::get('empleados/editar-empleados/{id}', ['as' => 'editar-empleados', 'uses' => 'EmpleadosController@edit']);
+Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'uses' => 'EmpleadosController@update']);
 /**
  * Routes Obsevaciones
  */

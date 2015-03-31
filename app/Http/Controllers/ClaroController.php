@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Corso\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Corso\Http\Requests;
+use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use Illuminate\View\View;
+use Input;
 class ClaroController extends Controller {
 
     /**
@@ -14,7 +15,7 @@ class ClaroController extends Controller {
      * @return Response
      */
     public function index() {
-        return View::make('claro.index');
+        return View('claro.index');
     }
 
     /**

@@ -5,6 +5,8 @@ namespace Corso\Http\Controllers;
 use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Corso\models\Empleado;
+use Illuminate\View\View;
 
 class EmpleadosController extends Controller {
 
@@ -15,7 +17,7 @@ class EmpleadosController extends Controller {
      */
     public function index() {
         $empleados = Empleado::paginate(15);
-        return View::make('empleados.index', compact('empleados'));
+        return View('empleados.index', compact('empleados'));
     }
 
     /**

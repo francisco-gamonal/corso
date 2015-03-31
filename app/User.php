@@ -30,6 +30,10 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 * @var array
 	 */
 	protected $hidden = ['password', 'remember_token'];
+        /**
+         * Concatenacion de nombre completo usuario
+         * @return type
+         */
         public function nameComplete(){
             return $this->name.' '.$this->last;
         }

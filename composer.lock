@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "05680f6c5f980c44220182064ff461a6",
+    "hash": "572bfea9b7664680b8d356f5a299644f",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -224,7 +224,7 @@
         },
         {
             "name": "illuminate/html",
-            "version": "v5.0.0",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/html.git",
@@ -2866,7 +2866,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "illuminate/html": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

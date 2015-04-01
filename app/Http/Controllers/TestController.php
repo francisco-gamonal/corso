@@ -16,27 +16,27 @@ class TestController extends Controller {
 	 */
 	public function index()
 	{
+
         //set_time_limit(0);
         //ini_set('memory_limit', '20240M');
-//		$test = Observation::find(1);
-//              $test = Record::find(31); 
-//               $test =new RecordsController;
-//              $Record = explode(' ', strtolower($test->products->name));
-//              switch (count($Record)):
-//                  case 1:
-//                      $Record = $Record[0];
-//                      break;
-//                  case 2:
-//                      $Record = $Record[0].'-'.$Record[1];
-//                      break;
-//                  case 3:
-//                      $Record =  $Record[0].'-'.$Record[1].'-'.$Record[2];
-//                      break;
-//                  case 4:
-//                      $Record = $Record[0].'-'.$Record[1].'-'.$Record[2].'-'.$Record[3];
-//                      break;
-//              endswitch;
-//              
+		//		$test = Observation::find(1);
+        $test = Record::find(31); 
+		//$test =new RecordsController;
+		//$Record = explode(' ', strtolower($test->products->name));
+		//switch (count($Record)):
+		//	case 1:
+		//  	$Record = $Record[0];
+		//      break;
+		//  case 2:
+		//		$Record = $Record[0].'-'.$Record[1];
+		//      break;
+		//  case 3:
+		//      $Record =  $Record[0].'-'.$Record[1].'-'.$Record[2];
+		//      break;
+		//  case 4:
+		//      $Record = $Record[0].'-'.$Record[1].'-'.$Record[2].'-'.$Record[3];
+		//      break;
+		//  endswitch;
 		$record = Record::where('productos_id','=',3)
                 ->where('mes','>=',3)
                 ->where('year','>=',2015)

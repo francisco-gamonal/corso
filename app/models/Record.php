@@ -18,4 +18,8 @@ class Record extends Model {
     public function products(){
         return $this->belongsTo('Corso\models\Product','productos_id','id');
     }
+    
+    public function DataCompanies(){
+        return $this->hasMany('Corso\models\DataCompanie');
+    }
 }

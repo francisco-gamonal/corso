@@ -129,8 +129,6 @@ class ClaroController extends Controller {
 
         return $view;
     }
-
-
     /**
      * Separamos en rango de la consulta por perido
      * @param type $range
@@ -172,8 +170,6 @@ class ClaroController extends Controller {
         $producto = Input::get('productos_id');
         $file = Input::file('excel');
         $url = "files/claro/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
-
-
         /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
         $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
 

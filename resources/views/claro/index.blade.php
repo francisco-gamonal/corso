@@ -16,7 +16,7 @@
 	<hr>
 	@if(Auth::user()->type_users_id=="1")
 		<h3><span class="glyphicon glyphicon-list-alt"></span>Ciclos</h3>
-		<a class="btn btn-danger"href="{{route('importarCiclo',1)}}">Subir Ciclo</a>
+		<a class="btn btn-danger"href="{{route('importar-ciclo',1)}}">Subir Ciclo</a>
 		<a class="btn btn-danger"href="">Productos</a>
 		<a class="btn btn-danger"href="">Agregar Personas al Ciclo</a>
 		<a class="btn btn-danger"href="{{route('historial-productos',1)}}">Historial de Ciclo</a>

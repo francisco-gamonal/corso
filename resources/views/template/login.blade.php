@@ -6,7 +6,8 @@
         <meta name="description" content="Pagina inicio">
         <meta name="author" content="Sistemas Amigables S. de R.L. de C.V.">
         <title>El Corso</title>
-        <link rel="stylesheet" type="text/css" href="{{ asset('node_modules/bootstrap/dist/css/bootstrap.min.css')}} ">
+        {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
+        {!! Html::style('bower_components/font-awesome/css/font-awesome.min.css') !!}>
         @yield('styles')
         <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css')}} ">
     </head>
@@ -14,9 +15,11 @@
         <main class="row">
             @yield('content')
         </main>
-        @include('template.partials.footer')
-        <script type="text/javascript" src="{{ asset('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') }}"></script>
-        <script type="text/javascript" src="{{ asset('node_modules/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <footer>
+            @include('template.partials.footer')
+        </footer>
+        {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+        {!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
         @yield('scripts')
         <script type="text/javascript" src="{{ asset('js/main.js') }}"></script>
     </body>

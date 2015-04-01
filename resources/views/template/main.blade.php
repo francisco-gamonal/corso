@@ -7,7 +7,8 @@
         <link rel="shortcut icon" href="img/logo-claro.png" />
         <title>@yield('tittle')</title>
         @yield('head')
-        {!! Html::style('node_modules/bootstrap/dist/css/bootstrap.min.css') !!}
+        {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
+        {!! Html::style('bower_components/font-awesome/css/font-awesome.min.css') !!}
         @yield('styles')
         {!! Html::style('css/main.css') !!}
     </head>
@@ -23,8 +24,8 @@
         <footer>
             @include('template.partials.footer')
         </footer>
-        {!! Html::script('node_modules/datatables/node_modules/jquery/dist/jquery.min.js') !!}
-        {!! Html::script('node_modules/bootstrap/dist/js/bootstrap.min.js') !!}
+        {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+        {!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
         @yield('scripts')
         {!! Html::script('js/main.js') !!}
     </body>

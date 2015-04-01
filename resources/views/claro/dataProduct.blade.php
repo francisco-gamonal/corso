@@ -1,4 +1,4 @@
-<table class="table table-striped">
+<table id="table_dataProduct" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>#</th>
@@ -31,3 +31,6 @@
         @endforeach
     @endforeach
 <tbody>
+<script type="text/javascript">
+    $('#table_dataProduct').dataTable();
+</script>

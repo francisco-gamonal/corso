@@ -71,9 +71,9 @@ $(function(){
 		var range  = $('#txtDate').val();
 		data.range = range;
 		console.log(data, pathname);
-		ajaxForm(pathname, 'put', data)
+		ajaxForm(pathname, 'post', data)
 		.done( function (data){
-			console.log("OK");
+			$(".data_product").html(data);
 		})
 		.fail( function(data) {
 			console.log(data);

@@ -120,11 +120,14 @@ class ClaroController extends Controller {
                 ->where('year','<=',$periodFin[1])->get();
         
         foreach ($record AS $datos):
-            $dataClaro = DataCompanie::where('historials_id','=',$datos->id)->get();
-            echo json_encode($dataClaro);die;
+            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
+            $dataClaro[] = $temp;
+            $temp = null;
         endforeach;
-       
-       return View('claro.dataProduct', compact('dataClaro'));
+    
+        $view = View('claro.dataProduct', compact('dataClaro'))->render();
+
+        return $view;
     }
 
 

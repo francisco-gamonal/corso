@@ -12,16 +12,22 @@
             <th>Ciudad</th>
         </tr>
     </thead>
-<tbody>  
-    <tr>  
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-    <tr>
+<tbody>
+    <?php $i=1; ?>
+    @foreach($dataClaro as $data)
+        @foreach($data as $product)
+        <tr>  
+            <td>{{ $i }}</td>
+            <td> Codigo</td>
+            <td> Nombre</td>
+            <td> tipo_cliente</td>
+            <td> Estado</td>
+            <td> Observación</td>
+            <td> Comentario</td>
+            <td> Mensajero</td>
+            <td> Ciudad</td>
+        <tr>
+        <?php $i++; ?>
+        @endforeach
+    @endforeach
 <tbody>

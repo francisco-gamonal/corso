@@ -20,7 +20,7 @@ class TestController extends Controller {
         //set_time_limit(0);
         //ini_set('memory_limit', '20240M');
 		//		$test = Observation::find(1);
-        $test = Record::find(31); 
+       // $test = Record::find(31); 
 		//$test =new RecordsController;
 		//$Record = explode(' ', strtolower($test->products->name));
 		//switch (count($Record)):
@@ -37,20 +37,14 @@ class TestController extends Controller {
 		//      $Record = $Record[0].'-'.$Record[1].'-'.$Record[2].'-'.$Record[3];
 		//      break;
 		//  endswitch;
-		$record = Record::where('productos_id','=',3)
-                ->where('mes','>=',3)
-                ->where('year','>=',2015)
-                ->where('mes','<=',9)
-                ->where('year','<=',2015)->get();
+	
         
-        foreach ($record AS $datos):
-            $dataClaro = DataCompanie::where('historials_id','=',$datos->id)->get();
-            $test[] = $dataClaro;
-        	$dataClaro = null;
-        endforeach;             
+       
+            $dataClaro = DataCompanie::find(50772);
             
+            echo json_encode($dataClaro->staffs->fname);
         //$dataClaro = DataCompanie::where('historials_id','=',29)->get();
-		return view('claro.dataProduct',compact('test'));
+	//	return view('claro.dataProduct',compact('test'));
 	}
 
 	/**

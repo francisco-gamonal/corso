@@ -14,4 +14,19 @@ use Illuminate\Database\Eloquent\Model;
 class DataCompanie extends Model {
     //put your code here
     protected $table='datos_empresas';
+    
+     public function observations(){
+
+         	return $this->belongsTo('Corso\models\Observation','observaciones_id','id');
+         }
+
+         public function citys(){
+
+         	return $this->belongsTo('Corso\models\City','ciudades_id','id');
+         }
+
+         public function staffs(){
+
+         	return $this->belongsTo('Corso\models\Staff','empleados_id','id');
+         }
 }

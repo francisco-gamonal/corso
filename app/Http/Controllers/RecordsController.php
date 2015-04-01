@@ -6,6 +6,7 @@ use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Corso\models\Record;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 class RecordsController extends Controller {
 
@@ -15,8 +16,8 @@ class RecordsController extends Controller {
      * @return Response
      */
     public function index() {
-        $historial = Record::all();
-        return View('historial', compact('historial'));
+        $record = Record::all();
+        return View('record.index', compact('record'));
     }
 
     /**

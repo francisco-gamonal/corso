@@ -1,9 +1,4 @@
-var server = "";
-var pathname = document.location.pathname;
-var pathnameArray= pathname.split("/public/");
-
-server =  pathnameArray.length > 0 ? pathnameArray[0]+"/public/" : "";
-
+var pathname = window.location.pathname;
 //Function Ajax
 var ajaxForm = function (url, type, data){
 	var message;
@@ -42,35 +37,36 @@ $(function(){
 	    }
 	});
 
-	$("#txtDate").daterangepicker(
-		{
-			locale:
+	if($('.product').attr('data-url') == 'product'){
+		$("#txtDate").daterangepicker(
 			{
-				monthNames: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Set','Oct','Nov','Dic'],
-				applyLabel: 'Aceptar',
-				cancelLabel: 'Cancelar',
-				fromLabel: 'Desde',
-				toLabel: 'Hasta'
+				locale:{
+					monthNames: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Set','Oct','Nov','Dic'],
+					applyLabel: 'Aceptar',
+					cancelLabel: 'Cancelar',
+					fromLabel: 'Desde',
+					toLabel: 'Hasta'
+				},
+				minViewMode: 'month',
+			    format: 'MM/YYYY',
+			    startDate: $('#startDate').val(),
+			    endDate: $('#endDate').val(),
+			    minDate: $('#startDate').val(),
+			    maxDate: $('#endDate').val(),
+			    hideFormInputs: false,
+			    opens: 'right',
+			    autoApplyClickedRange : true
 			},
-			minViewMode: 'month',
-		    format: 'MM/YYYY',
-		    startDate: $('#startDate').val(),
-		    endDate: $('#endDate').val(),
-		    minDate: $('#startDate').val(),
-		    maxDate: $('#endDate').val(),
-		    hideFormInputs: false,
-		    opens: 'right',
-		    autoApplyClickedRange : true
-		},
-		function(start, end, label) {
-		 	$('#txtDate').val(start.format('MM/YYYY')+'-'+end.format('MM/YYYY'));
-		}
-	);
+			function(start, end, label) {
+			 	$('#txtDate').val(start.format('MM/YYYY')+'-'+end.format('MM/YYYY'));
+			}
+		);	
+	}
+	
 
 	$(document).on('change', '#txtDate', function(){
 		var range  = $('#txtDate').val();
 		data.range = range;
-		console.log(data, pathname);
 		ajaxForm(pathname, 'post', data)
 		.done( function (data){
 			$(".data_product").html(data);

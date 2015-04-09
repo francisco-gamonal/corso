@@ -124,7 +124,7 @@ class ClaroController extends Controller {
             $dataClaro[] = $temp;
             $temp = null;
         endforeach;
-    
+        
         $view = View('claro.dataProduct', compact('dataClaro'))->render();
 
         return $view;

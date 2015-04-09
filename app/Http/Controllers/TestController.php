@@ -16,7 +16,6 @@ class TestController extends Controller {
 	 */
 	public function index()
 	{
-
         //set_time_limit(0);
         //ini_set('memory_limit', '20240M');
 		//		$test = Observation::find(1);
@@ -38,8 +37,19 @@ class TestController extends Controller {
 		//      break;
 		//  endswitch;
 	
-        
-       
+        	$id = 3;
+	        $record = Record::where('productos_id','=',$id)
+	                ->where('mes','>=','03')
+	                ->where('year','>=','2015')
+	                ->where('mes','<=','03')
+	                ->where('year','<=','2015')->get();
+	        
+	        foreach ($record AS $datos):
+	            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
+	            $dataClaro[] = $temp;
+	            $temp = null;
+	        endforeach;
+       		echo json_encode($dataClaro);die;
             $dataClaro = DataCompanie::find(50772);
             
             echo json_encode($dataClaro->staffs->fname);

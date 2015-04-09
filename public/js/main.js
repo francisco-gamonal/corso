@@ -13,7 +13,7 @@ var ajaxForm = function (url, type, data){
 			    type: type,
 			    data: {data: JSON.stringify(data)},
 			    datatype: 'json',
-			    timeout: 100000,
+			    //timeout: 100000,
 			    beforeSend: function(){
 		    		//loadingUI(message);
 		    		console.log("antes de ir");

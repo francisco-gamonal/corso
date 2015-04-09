@@ -21,9 +21,9 @@
                 @yield('content')
             </section>
         </main>
-        <footer>
+       <!--  <footer>
             @include('template.partials.footer')
-        </footer>
+        </footer> -->
         {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
         {!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
         @yield('scripts')

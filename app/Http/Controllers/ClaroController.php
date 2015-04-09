@@ -123,14 +123,14 @@ class ClaroController extends Controller {
         
         foreach ($record AS $datos):
             $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
-            $dataClaro[] = array('codigo'=>$temp->codigo,
-                'tipo_cliente'=>$temp->tipo_cliente,
-                'name_cliente'=>$temp->name_cliente,
-                'ciudad'=>$temp->citys->name,
-                'comentario'=>$temp->comentario,
-                'observacion'=>$temp->observations->name,
-                'estado'=>$temp->observations->status->name,
-                'empleado'=>$temp->staffs->name);
+            $dataClaro[] = array('codigo'=>$temp[0]->codigo,
+                'tipo_cliente'=>$temp[0]->tipo_cliente,
+                'name_cliente'=>$temp[0]->name_cliente,
+                'ciudad'=>$temp[0]->citys->name,
+                'comentario'=>$temp[0]->comentario,
+                'observacion'=>$temp[0]->observations->name,
+                'estado'=>$temp[0]->observations->status->name,
+                'empleado'=>$temp[0]->staffs->name);
             $temp = null;
         endforeach;
     

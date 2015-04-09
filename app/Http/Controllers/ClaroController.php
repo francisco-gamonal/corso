@@ -12,6 +12,10 @@ use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
 use Corso\models\Record;
 use Input;
+use Corso\models\City;
+use Corso\models\Staff;
+use Corso\models\Observation;
+use Corso\models\Statu;
 
 class ClaroController extends Controller {
 
@@ -127,7 +131,12 @@ class ClaroController extends Controller {
             $temp = null;
         endforeach;
 
-        $view = view('claro.dataProduct', compact('dataClaro'));
+        $cities = City::all();
+        $staffs = Staff::all();
+        $observations = Observation::all();
+        $status = Statu::all();
+
+        $view = view('claro.dataProduct', compact('dataClaro', 'cities', 'staffs', 'observations', 'status'));
         
         return $view;
     }

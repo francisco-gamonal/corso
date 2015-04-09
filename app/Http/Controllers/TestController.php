@@ -6,6 +6,7 @@ use Corso\models\Observation;
 use Illuminate\Http\Request;
 use Corso\models\Record;
 use Corso\models\DataCompanie;
+use Corso\models\City;
 
 class TestController extends Controller {
 
@@ -36,7 +37,7 @@ class TestController extends Controller {
 		//      $Record = $Record[0].'-'.$Record[1].'-'.$Record[2].'-'.$Record[3];
 		//      break;
 		//  endswitch;
-	
+			//echo json_encode(City::all());die;
         	$id = 3;
 	        $record = Record::where('productos_id','=',$id)
 	                ->where('mes','>=','03')
@@ -46,13 +47,18 @@ class TestController extends Controller {
 	        
 	        foreach ($record AS $datos):
 	            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
-	            $dataClaro[] = $temp;
+	        	//echo json_encode($temp);die;
+	        	foreach ($temp as $key => $value) {
+	        		if($value->observaciones_id)
+	        			echo "$key : $value->observaciones_id /";
+	        	}
 	            $temp = null;
 	        endforeach;
-       		echo json_encode($dataClaro);die;
-            $dataClaro = DataCompanie::find(50772);
+	        die;
+       		//echo count($dataClaro[0]);die;
+            //$dataClaro = DataCompanie::find(50772);
             
-            echo json_encode($dataClaro->staffs->fname);
+            //echo json_encode($dataClaro->staffs->fname);
         //$dataClaro = DataCompanie::where('historials_id','=',29)->get();
 	//	return view('claro.dataProduct',compact('test'));
 	}

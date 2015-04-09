@@ -1,5 +1,28 @@
 var pathname = window.location.pathname;
 
+//Function Datatable
+var dataTable = function(selector, list){
+	var options = {
+		"order": [
+            [0, "asc"]
+        ],
+        "bLengthChange": true,
+        //'iDisplayLength': 7,
+        "oLanguage": {
+        	"sLengthMenu": "_MENU_ registros por página",
+        	"sInfoFiltered": " - filtrada de _MAX_ registros",
+            "sSearch": "Buscar: ",
+            "sZeroRecords": "No hay " + list,
+            "sInfoEmpty": " ",
+            "sInfo": 'Mostrando _END_ de _TOTAL_',
+            "oPaginate": {
+                "sPrevious": "Anterior",
+                "sNext": "Siguiente"
+            }
+        }
+	};
+	$(selector).DataTable(options);
+};
 //Function Overlay
 var loadingUI = function (message){
     $.blockUI({ css: {

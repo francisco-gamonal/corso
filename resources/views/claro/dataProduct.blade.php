@@ -16,18 +16,42 @@
             @foreach($dataProduct as $product)
                 <tr>
                     <td>{{$product->codigo}}</td>
-                    <td>{{$product->name_cliente}}</td>
-                    <td>{{$product->tipo_cliente}}</td>
-                    <td>Estado</td>
-                    <td>Observación</td>
+                    <td>{{mb_convert_case($product->name_cliente, MB_CASE_TITLE, 'utf-8')}}</td>
+                    <td>{{mb_convert_case($product->tipo_cliente, MB_CASE_TITLE, 'utf-8')}}</td>
+                    @if($product->observaciones_id)
+                        @foreach($observations as $observation)
+                            @if($observation->id == $product->observaciones_id)
+                                @foreach($status as $statu)
+                                    @if($statu->id == $observation->estados_id)
+                                        <td>{{mb_convert_case($statu->name, MB_CASE_TITLE, 'utf-8')}}</td>
+                                    @endif
+                                @endforeach
+                                <td>{{mb_convert_case($observation->name, MB_CASE_TITLE, 'utf-8')}}</td>
+                            @endif
+                        @endforeach
+                    @else
+                        <td></td>
+                    @endif
                     <td>{{$product->comentario}}</td>
-                    <td>Mensajero</td>
-                    <td>Ciudades</td>
+                    @if($product->empleados_id)
+                        @foreach($staffs as $employe)
+                            @if($employe->id == $product->empleados_id)
+                                <td>{{mb_convert_case($employe->fname, MB_CASE_TITLE, 'utf-8')}}</td>
+                            @endif
+                        @endforeach
+                    @else
+                        <td></td>
+                    @endif
+                    @foreach($cities as $city)
+                        @if($city->id == $product->ciudades_id)
+                            <td>{{mb_convert_case($city->name, MB_CASE_TITLE, 'utf-8')}}</td>
+                        @endif
+                    @endforeach
                 </tr>
             @endforeach
         @endforeach
     </tbody>
 </table>
 <script type="text/javascript">
-    $('#table_dataProduct').dataTable();
+    dataTable('#table_dataProduct', 'productos claro');
 </script>

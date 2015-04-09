@@ -15,14 +15,14 @@
         @foreach($dataClaro as $dataProduct)
             @foreach($dataProduct as $product)
                 <tr>
-                    <th>{{$product->codigo}}</th>
-                    <th>{{$product->name_cliente}}</th>
-                    <th>{{$product->tipo_cliente}}</th>
-                    <th>Estado</th>
-                    <th>Observación</th>
-                    <th>{{$product->comentario}}</th>
-                    <th>Mensajero</th>
-                    <th>Ciudad</th>
+                    <td>{{$product->codigo}}</td>
+                    <td>{{$product->name_cliente}}</td>
+                    <td>{{$product->tipo_cliente}}</td>
+                    <td>Estado</td>
+                    <td>Observación</td>
+                    <td>{{$product->comentario}}</td>
+                    <td>Mensajero</td>
+                    <td>Ciudades</td>
                 </tr>
             @endforeach
         @endforeach

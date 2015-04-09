@@ -1,4 +1,35 @@
 var pathname = window.location.pathname;
+
+//Function Overlay
+var loadingUI = function (message){
+    $.blockUI({ css: {
+        border: 'none',
+        padding: '15px',
+        backgroundColor: '#000',
+        '-webkit-border-radius': '10px',
+        '-moz-border-radius': '10px',
+        opacity: 0.5,
+        color: '#fff'
+    }, message: '<h2><img style="margin-right: 30px" src="../img/spiffygif.gif" >' + message + '</h2>'});
+};
+
+var responseUI = function (message,color){
+    $.unblockUI();
+    $.blockUI({ css: {
+        border: 'none',
+        padding: '15px',
+        backgroundColor: color,
+        '-webkit-border-radius': '10px',
+        '-moz-border-radius': '10px',
+        opacity: 0.5,
+        color: '#fff'
+    }, message: '<h2>' + message + '</h2>'});
+    setTimeout(function(){
+        $.unblockUI();
+    },750);
+};
+//End functions overlay
+
 //Function Ajax
 var ajaxForm = function (url, type, data){
 	var message;
@@ -15,14 +46,14 @@ var ajaxForm = function (url, type, data){
 			    datatype: 'json',
 			    //timeout: 100000,
 			    beforeSend: function(){
-		    		//loadingUI(message);
-		    		console.log("antes de ir");
+		    		loadingUI(message);
+		    		//console.log("antes de ir");
 			    },
 			    error:function(){
-			    	//$.unblockUI();
-			    	//bootbox.alert("<p class='red'>No se pueden grabar los datos.</p>")
+			    	$.unblockUI();
+			    	bootbox.alert("<p class='red'>No se pueden grabar los datos.</p>")
 			    	//responseUI('No se pueden grabar los datos.', 'red');
-			    	console.log("No se pueden grabar los datos");
+			    	//console.log("No se pueden grabar los datos");
 			    }
 			});
 };
@@ -48,7 +79,7 @@ $(function(){
 					toLabel: 'Hasta'
 				},
 				minViewMode: 'month',
-			    format: 'MM/YYYY',
+			    format: 'MM/YYYY',	
 			    startDate: $('#startDate').val(),
 			    endDate: $('#endDate').val(),
 			    minDate: $('#startDate').val(),
@@ -70,6 +101,7 @@ $(function(){
 		ajaxForm(pathname, 'post', data)
 		.done( function (data){
 			$(".data_product").html(data);
+			$.unblockUI();
 		})
 		.fail( function(data) {
 			console.log(data);

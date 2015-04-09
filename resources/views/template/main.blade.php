@@ -26,6 +26,8 @@
         </footer> -->
         {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
         {!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
+        {!! Html::script('js/lib/bootbox.min.js') !!}
+        {!! Html::script('js/lib/jquery.blockUI.min.js') !!}
         @yield('scripts')
         {!! Html::script('js/main.js') !!}
     </body>

@@ -11,22 +11,23 @@
             <th>Ciudad</th>
         </tr>
     </thead>
-<tbody>
-    @foreach($dataClaro as $data)
-        @foreach($data as $product)
-        <tr>
-            <td>{{$product->codigo}}</td>
-            <td>{{$product->name_cliente}}</td>
-            <td>{{$product->tipo_cliente}}</td>
-            <td>{{$product->observations->status->name}}</td>
-            <td>{{$product->observations->name}}</td>
-            <td>{{$product->comentario}}</td>
-            <td>{{$product->staffs->fname}} {{$product->staffs->flast}}</td>
-            <td>{{$product->citys->name}}</td>
-        <tr>
+    <tbody>
+        @foreach($dataClaro as $dataProduct)
+            @foreach($dataProduct as $product)
+                <tr>
+                    <th>{{$product->codigo}}</th>
+                    <th>{{$product->name_cliente}}</th>
+                    <th>{{$product->tipo_cliente}}</th>
+                    <th>Estado</th>
+                    <th>Observación</th>
+                    <th>{{$product->comentario}}</th>
+                    <th>Mensajero</th>
+                    <th>Ciudad</th>
+                </tr>
+            @endforeach
         @endforeach
-    @endforeach
-<tbody>
+    </tbody>
+</table>
 <script type="text/javascript">
-    //$('#table_dataProduct').dataTable();
+    $('#table_dataProduct').dataTable();
 </script>

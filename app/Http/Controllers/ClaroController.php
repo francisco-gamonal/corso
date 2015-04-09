@@ -123,20 +123,13 @@ class ClaroController extends Controller {
         
         foreach ($record AS $datos):
             $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
-            $dataClaro[] = array('codigo'=>$temp[0]->codigo,
-                'tipo_cliente'=>$temp[0]->tipo_cliente,
-                'name_cliente'=>$temp[0]->name_cliente,
-                'ciudad'=>$temp[0]->citys->name,
-                'comentario'=>$temp[0]->comentario,
-                'observacion'=>$temp[0]->observations->name,
-                'estado'=>$temp[0]->observations->status->name,
-                'empleado'=>$temp[0]->staffs->name);
+            $dataClaro[] = $temp;
             $temp = null;
         endforeach;
-    
-        return json_encode($dataClaro);
 
-         
+        $view = view('claro.dataProduct', compact('dataClaro'));
+        
+        return $view;
     }
     
      public function fileJsonUpdate($mesIni,$yearIni, $mesFin,$yearFin) {

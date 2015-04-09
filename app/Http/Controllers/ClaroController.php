@@ -131,7 +131,7 @@ class ClaroController extends Controller {
                 'observacion'=>$temp[0]->observations->name,
                 'estado'=>$temp[0]->observations->status->name,
                 'empleado'=>$temp[0]->staffs->name);
-            $temp = null;
+           
         endforeach;
     
         return json_encode($dataClaro);

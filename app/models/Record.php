@@ -15,6 +15,7 @@ class Record extends Model {
     //put your code here
     protected $table= 'historials';
     
+    
     public function products(){
         return $this->belongsTo('Corso\models\Product','productos_id','id');
     }

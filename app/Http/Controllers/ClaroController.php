@@ -27,6 +27,7 @@ class ClaroController extends Controller {
      * @return Response
      */
     public function index() {
+        
         return View('claro.index');
     }
 
@@ -113,6 +114,7 @@ class ClaroController extends Controller {
         $periodIni = $this->period(0);
         $periodFin = $this->period(1);
         $id = 3;
+       // $this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
         $record = Record::where('productos_id','=',$id)
                 ->where('mes','>=',$periodIni[0])
                 ->where('year','>=',$periodIni[1])
@@ -121,13 +123,39 @@ class ClaroController extends Controller {
         
         foreach ($record AS $datos):
             $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
-            $dataClaro[] = $temp;
+            $dataClaro[] = array('codigo'=>$temp->codigo,
+                'tipo_cliente'=>$temp->tipo_cliente,
+                'name_cliente'=>$temp->name_cliente,
+                'ciudad'=>$temp->citys->name,
+                'comentario'=>$temp->comentario,
+                'observacion'=>$temp->observations->name,
+                'estado'=>$temp->observations->status->name,
+                'empleado'=>$temp->staffs->name);
             $temp = null;
         endforeach;
     
-        $view = View('claro.dataProduct', compact('dataClaro'))->render();
+        return json_encode($dataClaro);
 
-        return $view;
+         
+    }
+    
+     public function fileJsonUpdate($mesIni,$yearIni, $mesFin,$yearFin) {
+        /* Buscamos todos los datos de school y traemos solo el id y el name */
+        $record = Record::where('productos_id','=',3)
+                ->where('mes','>=',$mesIni)
+                ->where('year','>=',$yearIni)
+                ->where('mes','<=',$mesFin)
+                ->where('year','<=',$yearFin)->get();
+        $dataJson = '';
+        foreach ($record AS $records):
+             $dataCompanie = DataCompanie::where('historials_id','=',$records->id)->get();
+            $dataJson[] = $dataCompanie;
+        endforeach;
+
+        $fh = fopen("json/dataCompanie.json", 'w')
+                or die("Error al abrir fichero de salida");
+        fwrite($fh, json_encode($dataJson, JSON_UNESCAPED_UNICODE));
+        fclose($fh);
     }
     /**
      * Separamos en rango de la consulta por perido

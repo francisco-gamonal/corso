@@ -122,9 +122,8 @@ $(function(){
 		var range  = $('#txtDate').val();
 		data.idProduct = $('#idProdcut').val();
 		data.range = range;
-		var url = pathname+'/'+data;
-		console.log(url);die;
-		ajaxForm(url, 'get', data)
+		var url = 'search';
+		ajaxForm(url, 'post', data)
 		.done( function (data){
 			$(".data_product").html(data);
 			$.unblockUI();

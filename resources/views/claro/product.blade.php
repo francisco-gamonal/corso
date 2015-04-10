@@ -14,8 +14,8 @@
 				<label class="text-center">Rango de Fechas</label>
 				<div class="form-group">
 					<div class="input-group col-sm-4 col-sm-offset-4">
-						<input id="startDate" type="hidden" value="{{ str_pad($inicioRecord->mes, 2, '0', STR_PAD_LEFT).'/'.$inicioRecord->year }}">
-						<input id="endDate" type="hidden" value="{{ str_pad($finalRecord->mes, 2, '0', STR_PAD_LEFT).'/'.$finalRecord->year }}">
+						<input id="startDate" type="hidden" value="{{ $inicioRecord }}">
+						<input id="endDate" type="hidden" value="{{ $finalRecord }}">
 						<input id="idProdcut" type="hidden" value="{{$product->id}}">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input id="txtDate" type="text" class="form-control">
 					</div>

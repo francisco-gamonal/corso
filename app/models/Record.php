@@ -21,6 +21,6 @@ class Record extends Model {
     }
     
     public function DataCompanies(){
-        return $this->hasMany('Corso\models\DataCompanie');
+        return $this->hasMany('Corso\models\DataCompanie','historials_id','id');
     }
 }

@@ -15,6 +15,7 @@ class DataCompanie extends Model {
     //put your code here
     protected $table='datos_empresas';
     
+    
      public function observations(){
 
          	return $this->belongsTo('Corso\models\Observation','observaciones_id','id');

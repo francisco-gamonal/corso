@@ -117,9 +117,10 @@ class ClaroController extends Controller {
         
         $periodIni = $this->period(0);
         $periodFin = $this->period(1);
-        $id = 3;
+        $id = $this->convertionObjeto();
+       
        // $this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
-        $record = Record::where('productos_id','=',$id)
+        $record = Record::where('productos_id','=',$id->idProduct)
                 ->where('mes','>=',$periodIni[0])
                 ->where('year','>=',$periodIni[1])
                 ->where('mes','<=',$periodFin[0])

@@ -7,9 +7,10 @@ use Corso\Http\Controllers\Controller;
 use Corso\models\Record;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-
+use Corso\models\DataCompanie;
+use Maatwebsite\Excel;
 class RecordsController extends Controller {
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -134,8 +135,8 @@ class RecordsController extends Controller {
     }
 
     public function descargasProducto($id) {
-
         $historial = Record::find($id);
+        $dataCompanie = DataCompanie::where('historials_id','=',$id)->get();
         $separar = explode('/', $historial->url);
         $quitarExtencion = explode('.', $separar[2]);
         $data = array();
@@ -148,19 +149,19 @@ class RecordsController extends Controller {
             'observaciones',
             'Comentario',
             'Fecha Entrega',
-            'fecha recibido',
+            'fecha Recibido',
             'monto',
             'direccion',
             'comentario ciudad', 'empleados');
-        foreach ($historial->datosEmpresas as $value):
-
+        foreach ($dataCompanie as $value):
+            
             $data[] = array($value->codigo,
                 $value->tipo_cliente,
                 $value->telefono,
                 $value->name_cliente,
                 $value->ciudades_id,
-                $value->observaciones->estados->name,
-                $value->observaciones->id,
+                $value->observations->status->name,
+                $value->observations->id,
                 $value->comentario,
                 $value->fecha_entregado,
                 $value->fecha_recibido,

@@ -7,6 +7,7 @@ use Corso\Http\Controllers\Controller;
 use Corso\models\Product;
 use Illuminate\Http\Request;
 use Corso\models\Record;
+use Illuminate\Support\Facades\DB;
 class ProductsController extends Controller {
 
     /**
@@ -99,8 +100,9 @@ class ProductsController extends Controller {
         endswitch;
  
         $producto = Product::where('name', '=', $nameProducto)->get();
-        $inicioRecord = Record::all()->first();
-        $finalRecord = Record::all()->last();
+        $inicioRecord = DB::table('historials')->min('mes').'/'.DB::table('historials')->min('year'); 
+        $finalRecord = DB::table('historials')->max('mes').'/'.DB::table('historials')->max('year');
+       
         return view('claro.product', compact('producto','inicioRecord','finalRecord'));
     }
 

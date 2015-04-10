@@ -16,7 +16,7 @@
 					<div class="input-group col-sm-4 col-sm-offset-4">
 						<input id="startDate" type="hidden" value="{{ $inicioRecord }}">
 						<input id="endDate" type="hidden" value="{{ $finalRecord }}">
-						<input id="idProdcut" type="hidden" value="{{$product->id}}">
+						<input id="idProdcut" type="hidden" value="{{ $product->id }}">
 						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span><input id="txtDate" type="text" class="form-control">
 					</div>
 				</div>

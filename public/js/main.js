@@ -1,7 +1,7 @@
 var pathname = window.location.pathname;
 
 //Function Datatable
-var dataTable = function(selector, list){
+var dataTable = function(selector, list, condition){
 	var options = {
 		"order": [
             [0, "asc"]
@@ -21,8 +21,14 @@ var dataTable = function(selector, list){
             }
         }
 	};
+	if(condition){
+		return $(selector).DataTable(options);	
+	}
 	$(selector).DataTable(options);
 };
+
+
+
 //Function Overlay
 var loadingUI = function (message){
     $.blockUI({ css: {
@@ -126,10 +132,14 @@ $(function(){
 		ajaxForm(url, 'post', data)
 		.done( function (data){
 			$(".data_product").html(data);
+			$(".dataTables_info").parent().removeClass('col-sm-6').addClass('col-sm-5');
+    		$(".dataTables_paginate").parent().removeClass('col-sm-6').addClass('col-sm-7');
 			$.unblockUI();
 		})
 		.fail( function(data) {
 			console.log(data);
 		});
 	});
+
+	
 });

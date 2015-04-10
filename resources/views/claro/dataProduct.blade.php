@@ -11,6 +11,18 @@
             <th>Ciudad</th>
         </tr>
     </thead>
+    <tfoot>
+        <tr>
+            <th>Código</th>
+            <th>Nombre</th>
+            <th>Tipo Cliente</th>
+            <th>Estado</th>
+            <th>Observación</th>
+            <th>Comentario</th>
+            <th>Mensajero</th>
+            <th>Ciudad</th>
+        </tr>
+    </tfoot>
     <tbody>
         @foreach($dataClaro as $dataProduct)
             @foreach($dataProduct as $product)
@@ -52,6 +64,25 @@
         @endforeach
     </tbody>
 </table>
-<script type="text/javascript">
-    dataTable('#table_dataProduct', 'productos claro');
+<script type="text/javascript" src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+<script>
+    // Setup - add a text input to each footer cell
+    $('#table_dataProduct tfoot th').each( function () {
+        var title = $('#table_dataProduct thead th').eq( $(this).index() ).text();
+        $(this).html( '<input type="text" class="form-control" placeholder="'+title+'" />' );
+    } );
+
+    // DataTable
+    var table = dataTable('#table_dataProduct', 'productos claro', 'return');
+
+    
+    // Apply the search
+    table.columns().every( function () {
+        var that = this;
+        $( 'input', this.footer() ).on( 'keyup change', function () {
+            that
+                .search( this.value )
+                .draw();
+        } );
+    } );
 </script>

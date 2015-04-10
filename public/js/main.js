@@ -120,8 +120,11 @@ $(function(){
 
 	$(document).on('change', '#txtDate', function(){
 		var range  = $('#txtDate').val();
+		data.idProduct = $('#idProdcut').val();
 		data.range = range;
-		ajaxForm(pathname, 'post', data)
+		var url = pathname+'/'+data;
+		console.log(url);die;
+		ajaxForm(url, 'get', data)
 		.done( function (data){
 			$(".data_product").html(data);
 			$.unblockUI();

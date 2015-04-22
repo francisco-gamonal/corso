@@ -2,6 +2,7 @@
     <img src="{{asset('img/logo-corso.png')}}">
 </figure>
 <div class="menu-cliente" id="">
+    @if(Auth::user()->type_users_id=="1")
     <div class="menu-tittle">| Clientes -</div>
         <ul class="nav">
             <li class="dropdown">
@@ -81,4 +82,17 @@
                 </ul>
             </li>
         </ul>
+    @endif
+	@if(Auth::user()->type_users_id=="4")
+        <div class="menu-tittle">| Cliente - Claro</div>
+        <ul class="nav">
+              <li><a href="{{ route('claro') }}">Administración</a></li>
+                    <li><a href="{{ route('producto_claro', 'ciclo-c-48') }}">Ciclo C-48</a></li>
+                    <li><a href="{{ route('producto_claro', 'ciclo-c-46-tv') }}">Ciclo C-46-TV</a></li>
+                    <li><a href="{{ route('producto_claro', 'ciclo-c-46-movil') }}">Ciclo C-46-MOVIL</a></li>
+            <li class="dropdown">
+               {!! HTML::link('/auth/logout', 'Cerrar sesión') !!}
+            </li>
+        </ul>
+         @endif
 </div><!-- /.navbar-collapse -->

@@ -8,7 +8,7 @@ use Corso\models\Record;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Corso\models\DataCompanie;
-use Maatwebsite\Excel;
+use Maatwebsite\Excel\Facades\Excel;
 class RecordsController extends Controller {
     
     /**

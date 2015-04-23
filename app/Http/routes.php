@@ -34,9 +34,10 @@ Route::get('empleados', 'StaffController@index');
 /**
  *  Routes Historial
  */
-Route::get('historial-productos/{id}', ['as' => 'historial-productos', 'uses' => 'RecordsController@index']);
+Route::get('historial-productos/{name}', ['as' => 'historial-productos', 'uses' => 'RecordsController@historialProductos']);
 Route::put('historial-delete/{id}', ['as' => 'historial-delete', 'uses' => 'RecordsController@destroy']);
 Route::get('descarga-productos/{id}', ['as' => 'descarga-productos', 'uses' => 'RecordsController@descargasProducto']);
+Route::get('descarga-clientes/{id}', ['as' => 'descarga-clientes', 'uses' => 'RecordsController@descargasProductoClientes']);
 /**
  *  Routes Empleados
  */

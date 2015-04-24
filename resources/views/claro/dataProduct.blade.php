@@ -2,6 +2,7 @@
     <thead>
         <tr>
             <th>Código</th>
+            <input id="urlExcel" type="hidden" value="{{ route('descarga-clientes', $historialId) }}">
             <th>Nombre</th>
             <th>Tipo Cliente</th>
             <th>Estado</th>

@@ -125,14 +125,12 @@ $(function(){
 
 	$(document).off('change', '#txtDate');
 	$(document).on('change', '#txtDate', function(){
-		var range  = $('#txtDate').val();
-		var idProduct = $('#idProduct').val();
-		data.idProduct = idProduct;
-		data.range = range;
-		var urlExcel = $('#urlExcel').val();
+		data.idProduct = $('#idProduct').val();
+		data.range = $('#txtDate').val();
 		var url = 'search';
 		ajaxForm(url, 'post', data)
 		.done( function (data){
+			var urlExcel = $('#urlExcel').val();
 			var btnExport = '<div class="btn-group pull-right">';
 			btnExport    += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Exportar <span class="caret"></span></button>';
 			btnExport    += '<ul class="dropdown-menu" role="menu">';

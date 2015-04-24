@@ -136,7 +136,7 @@ class ClaroController extends Controller {
         $staffs = Staff::all();
         $observations = Observation::all();
         $status = Statu::all();
-
+        
         $view = view('claro.dataProduct', compact('dataClaro', 'cities', 'staffs', 'observations', 'status'));
         
         return $view;

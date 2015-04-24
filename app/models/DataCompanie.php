@@ -30,4 +30,8 @@ class DataCompanie extends Model {
 
          	return $this->belongsTo('Corso\models\Staff','empleados_id','id');
          }
+          public function records(){
+
+         	return $this->belongsTo('Corso\models\Record','historials_id','id');
+         }
 }

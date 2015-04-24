@@ -273,7 +273,13 @@ class ClaroController extends Controller {
             else:
                 $datos_empresas->comentario_ciudad = $dataExcel['comentario_ciudad'];
             endif;
-            $datos_empresas->ciudades_id = CityController::convertionCiudad($dataExcel['ciudad']);
+           if (empty($dataExcel['ciudad'])):
+                $datos_empresas->ciudades_id = "";
+            else:
+                $datos_empresas->ciudades_id = $dataExcel['ciudad'];
+            endif;
+            
+            
             if (empty($dataExcel['observaciones'])):
                 $datos_empresas->observaciones_id = 16;
             else:

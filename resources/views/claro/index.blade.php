@@ -19,7 +19,7 @@
 		<a class="btn btn-danger"href="{{route('importar-ciclo',1)}}">Subir Ciclo</a>
 		<a class="btn btn-danger"href="">Productos</a>
 		<a class="btn btn-danger"href="">Agregar Personas al Ciclo</a>
-		<a class="btn btn-danger"href="{{route('historial-productos',1)}}">Historial de Ciclo</a>
+		<a class="btn btn-danger"href="{{route('historial-productos','claro')}}">Historial de Ciclo</a>
 		<hr>
 		<h3><span class="glyphicon glyphicon-list-alt"></span>Scanear</h3>
 		<a class="btn btn-danger"href="">Scanear Sobres <br>de Ciclo C-48</a>

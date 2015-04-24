@@ -14,4 +14,9 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model {
     //put your code here
     protected $table='productos';
+    
+    public function business(){
+
+         	return $this->belongsTo('Corso\models\Business','empresas_id','id');
+         }
 }

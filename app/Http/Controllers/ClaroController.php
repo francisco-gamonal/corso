@@ -125,7 +125,8 @@ class ClaroController extends Controller {
                 ->where('year','>=',$periodIni[1])
                 ->where('mes','<=',$periodFin[0])
                 ->where('year','<=',$periodFin[1])->get();
-
+        $historialId=$record[0]->id;
+        
         foreach ($record AS $datos):
             $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
             $dataClaro[] = $temp;
@@ -136,8 +137,8 @@ class ClaroController extends Controller {
         $staffs = Staff::all();
         $observations = Observation::all();
         $status = Statu::all();
-        
-        $view = view('claro.dataProduct', compact('dataClaro', 'cities', 'staffs', 'observations', 'status'));
+
+        $view = view('claro.dataProduct', compact('dataClaro','historialId', 'cities', 'staffs', 'observations', 'status'));
         
         return $view;
     }

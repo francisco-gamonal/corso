@@ -210,6 +210,7 @@ class RecordsController extends Controller {
  */
     public function pdfClientes($id) {
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
+        dd($dataCompanies);
         return view('claro.reportPdf', compact('dataCompanies'));
     }
 

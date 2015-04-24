@@ -130,7 +130,7 @@ $(function(){
 		var url = 'search';
 		ajaxForm(url, 'post', data)
 		.done( function (data){
-			var urlExcel = $('#urlExcel').val();
+			var urlExcel = $("#urlExcel").val();
 			var btnExport = '<div class="btn-group pull-right">';
 			btnExport    += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Exportar <span class="caret"></span></button>';
 			btnExport    += '<ul class="dropdown-menu" role="menu">';

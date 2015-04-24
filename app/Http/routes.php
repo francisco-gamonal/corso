@@ -31,6 +31,7 @@ Route::get('empleados', 'StaffController@index');
 /**
  * Usuarios
  */
+
 /**
  *  Routes Historial
  */

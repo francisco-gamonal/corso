@@ -1,8 +1,8 @@
+<input id="urlExcel" type="hidden" value="{{ route('descarga-clientes', $historialId) }}">
 <table id="table_dataProduct" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
     <thead>
         <tr>
             <th>Código</th>
-            <input id="urlExcel" type="hidden" value="{{ route('descarga-clientes', $historialId) }}">
             <th>Nombre</th>
             <th>Tipo Cliente</th>
             <th>Estado</th>

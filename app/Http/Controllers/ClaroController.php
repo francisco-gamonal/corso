@@ -125,7 +125,7 @@ class ClaroController extends Controller {
                 ->where('year','>=',$periodIni[1])
                 ->where('mes','<=',$periodFin[0])
                 ->where('year','<=',$periodFin[1])->get();
-        
+
         foreach ($record AS $datos):
             $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
             $dataClaro[] = $temp;

@@ -11,7 +11,7 @@ var dataTable = function(selector, list, condition){
         "oLanguage": {
         	"sLengthMenu": "_MENU_ registros por página",
         	"sInfoFiltered": " - filtrada de _MAX_ registros",
-            "sSearch": "Buscar: ",
+            "sSearch": "Buscar todos los campos: ",
             "sZeroRecords": "No hay " + list,
             "sInfoEmpty": " ",
             "sInfo": 'Mostrando _END_ de _TOTAL_',
@@ -126,14 +126,26 @@ $(function(){
 	$(document).off('change', '#txtDate');
 	$(document).on('change', '#txtDate', function(){
 		var range  = $('#txtDate').val();
-		data.idProduct = $('#idProdcut').val();
+		var idProduct = $('#idProduct').val();
+		data.idProduct = idProduct;
 		data.range = range;
+		var urlExcel = $('#urlExcel').val();
 		var url = 'search';
 		ajaxForm(url, 'post', data)
 		.done( function (data){
+			var btnExport = '<div class="btn-group pull-right">';
+			btnExport    += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Exportar <span class="caret"></span></button>';
+			btnExport    += '<ul class="dropdown-menu" role="menu">';
+			btnExport    += 	'<li><a href="'+urlExcel+'">Excel</a></li>';
+			btnExport    += 	'<li><a href="#">PDF</a></li>';
+			btnExport    += '</ul></div>';
 			$(".data_product").html(data);
 			$(".dataTables_info").parent().removeClass('col-sm-6').addClass('col-sm-5');
     		$(".dataTables_paginate").parent().removeClass('col-sm-6').addClass('col-sm-7');
+    		$(".dataTables_length").parent().removeClass('col-sm-6').addClass('col-sm-5');
+    		$("#table_dataProduct_filter").parent().removeClass('col-sm-6').addClass('col-sm-7');
+    		$("#table_dataProduct_filter label").addClass('pull-left');
+    		$(btnExport).appendTo('#table_dataProduct_filter');
 			$.unblockUI();
 		})
 		.fail( function(data) {

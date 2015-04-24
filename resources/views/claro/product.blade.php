@@ -1,7 +1,8 @@
 @extends('template.main')
 
 @section('styles')
-	<link rel="stylesheet" type="text/css" href="{{ asset('css/lib/daterangepicker-bs3.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ asset('css/lib/daterangepicker-bs3-test.css') }}">
+	<link rel="stylesheet" href="//cdn.datatables.net/tabletools/2.2.4/css/dataTables.tableTools.min.css">
 	<link rel="stylesheet" type="text/css" href="{{ asset('bower_components/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min.css') }}">
 @endsection
 
@@ -32,8 +33,9 @@
 @endsection
 
 @section('scripts')
-	<script type="text/javascript" src="{{ asset('js/lib/moment.js') }}"></script>
-	<script type="text/javascript" src="{{ asset('js/lib/daterangepicker.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/lib/moment-test.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/lib/daterangepicker-test.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
 	<script type="text/javascript" src="{{ asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js') }}"></script>
+	<script type="text/javascript" src="{{ asset('js/lib/dataTables.tableTools.js') }}"></script>
 @endsection

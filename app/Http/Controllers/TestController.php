@@ -38,13 +38,15 @@ class TestController extends Controller {
 		//      break;
 		//  endswitch;
 			//echo json_encode(City::all());die;
+			$test = Record::select('id')->orderByRaw("Rand()")->first();
+			dd($test);
         	$id = 3;
 	        $record = Record::where('productos_id','=',$id)
 	                ->where('mes','>=','03')
 	                ->where('year','>=','2015')
 	                ->where('mes','<=','03')
 	                ->where('year','<=','2015')->get();
-	        
+
 	        foreach ($record AS $datos):
 	            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
 	        	//echo json_encode($temp);die;

@@ -65,7 +65,7 @@
     </tbody>
 </table>
 <script type="text/javascript" src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-<script>
+ <script>
     // Setup - add a text input to each footer cell
     $('#table_dataProduct tfoot th').each( function () {
         var title = $('#table_dataProduct thead th').eq( $(this).index() ).text();
@@ -75,7 +75,6 @@
     // DataTable
     var table = dataTable('#table_dataProduct', 'productos claro', 'return');
 
-    
     // Apply the search
     table.columns().every( function () {
         var that = this;

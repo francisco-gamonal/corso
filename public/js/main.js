@@ -138,7 +138,6 @@ $(function(){
 			btnExport    += 	'<li><a href="'+urlExcel+'">Excel</a></li>';
 			btnExport    += 	'<li><a href="#">PDF</a></li>';
 			btnExport    += '</ul></div>';
-			console.log(btnExport);
 			$(".dataTables_info").parent().removeClass('col-sm-6').addClass('col-sm-5');
     		$(".dataTables_paginate").parent().removeClass('col-sm-6').addClass('col-sm-7');
     		$(".dataTables_length").parent().removeClass('col-sm-6').addClass('col-sm-5');

@@ -130,6 +130,7 @@ $(function(){
 		var url = 'search';
 		ajaxForm(url, 'post', data)
 		.done( function (data){
+			$(".data_product").html(data);
 			var urlExcel = $("#urlExcel").val();
 			var btnExport = '<div class="btn-group pull-right">';
 			btnExport    += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Exportar <span class="caret"></span></button>';
@@ -137,7 +138,7 @@ $(function(){
 			btnExport    += 	'<li><a href="'+urlExcel+'">Excel</a></li>';
 			btnExport    += 	'<li><a href="#">PDF</a></li>';
 			btnExport    += '</ul></div>';
-			$(".data_product").html(data);
+			console.log(btnExport);
 			$(".dataTables_info").parent().removeClass('col-sm-6').addClass('col-sm-5');
     		$(".dataTables_paginate").parent().removeClass('col-sm-6').addClass('col-sm-7');
     		$(".dataTables_length").parent().removeClass('col-sm-6').addClass('col-sm-5');

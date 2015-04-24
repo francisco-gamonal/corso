@@ -202,45 +202,56 @@ class RecordsController extends Controller {
         })->download('xlsx');
     }
 
-    /**
-     *
-     *
-     *
-     */
+/**
+ * Con este metodo generamos un archivo de PDF
+ * para que puedan ver la información trabajada los clientes.
+ * @param type $id
+ * @return type
+ */
+    public function pdfClientes($id) {
+        $dataCompanies = DataCompanie::where('historials_id', $id)->get();
+        return view('claro.reportPdf', compact('dataCompanies'));
+    }
+
+/**
+ * Con este metodo generamos un archivo de Excel
+ * para que puedan ver la información trabajada los clientes.
+ * @param type $id
+ */
     public function descargasProductoClientes($id) {
         $historial = Record::find($id);
-        $dataCompanie = DataCompanie::where('historials_id',$id)->get();
-        $count = DataCompanie::where('historials_id',$id)->count();
+        $dataCompanie = DataCompanie::where('historials_id', $id)->get();
+        $count = DataCompanie::where('historials_id', $id)->count();
         $separar = explode('/', $historial->url);
         $quitarExtencion = explode('.', $separar[2]);
-        $data[] = array('N°','Codigo',
+        $data[] = array('N°', 'Codigo',
             'Nombre Cliente',
             'Tipo Cliente',
             'Estado',
             'Observaciones',
-            'Comentario','Ciudad', 'Empleados'
-            );
-        $i=0;
+            'Comentario', 'Ciudad', 'Empleados'
+        );
+        $i = 0;
         foreach ($dataCompanie as $value):
-           $i++;
-            $data[] = array($i,$value->codigo,
+            $i++;
+            $data[] = array($i, $value->codigo,
                 $value->tipo_cliente,
                 $value->name_cliente,
                 $value->observations->status->name,
                 $value->observations->name,
                 $value->comentario,
                 $value->citys->name,
-                $value->staffs->fname.' '.$value->staffs->flast
+                $value->staffs->fname . ' ' . $value->staffs->flast
             );
-           
-          
+
+
         endforeach;
-          $name = $value->records->products->business->name;
-            $producto = $value->records->products->name;
-            $mes = $value->records->mes;
-            $year = $value->records->year;
-$count=$count+2; 
-        Excel::create($name.' '.$mes.'-'.$year.' '.$producto, function($excel) use ($data,$count, $name, $producto, $mes, $year) {
+        $name = $value->records->products->business->name;
+        $producto = $value->records->products->name;
+        $mes = $value->records->mes;
+        $year = $value->records->year;
+        $count = $count + 2;
+        Excel::create($name . ' ' . $mes . '-' . $year . ' ' . $producto, function($excel) use ($data, $count, $name, $producto, $mes, $year) {
             // Set the title
             $excel->setTitle('Reporte de Datos consultados');
 
@@ -249,13 +260,13 @@ $count=$count+2;
                     ->setCompany('El Corso');
 
             // Call them separately
-            $excel->setDescription('La información generada es de uso exclusivo de '.$name);
+            $excel->setDescription('La información generada es de uso exclusivo de ' . $name);
 
-            $excel->sheet($mes.'-'.$year.' '.$producto, function($sheet) use ($data,$count) {
+            $excel->sheet($mes . '-' . $year . ' ' . $producto, function($sheet) use ($data, $count) {
                 $sheet->mergeCells('A1:I1');
                 $sheet->setAutoSize(true);
                 $sheet->setFontBold(true);
-                $sheet->setBorder('A1:I'.$count,'thin');
+                $sheet->setBorder('A1:I' . $count, 'thin');
                 $sheet->cells('A1:I1', function($cells) {
 
                     // Set alignment to center
@@ -282,7 +293,7 @@ $count=$count+2;
                     ));
                 });
 
-                $sheet->row(1,array('Reporte de Entregas'));
+                $sheet->row(1, array('Reporte de Entregas'));
                 $sheet->fromArray($data, null, 'A2', false, false);
                 //$sheet->row(1,$data);
             });

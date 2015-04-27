@@ -214,9 +214,9 @@ class RecordsController extends Controller {
  */
     public function pdfClientes($id) {
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-        $pdf = PDF::loadView('claro.reportPdf', $dataCompanies);
-        return $pdf->download('reportPdf.pdf');
-        //return view('claro.reportPdf', compact('dataCompanies'));
+//        $pdf = PDF::loadView('claro.reportPdf', $dataCompanies);
+//        return $pdf->download('reportPdf.pdf');
+        return view('claro.reportPdf', compact('dataCompanies'));
     }
 
 /**

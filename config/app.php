@@ -131,7 +131,7 @@ return [
         'Corso\Providers\RouteServiceProvider',
         /*New*/
         'Maatwebsite\Excel\ExcelServiceProvider',
-        'Barryvdh\DomPDF\ServiceProvider'
+        'Barryvdh\DomPDF\ServiceProvider',
     ],
     /*
       |--------------------------------------------------------------------------
@@ -180,6 +180,6 @@ return [
         'Html' => 'Illuminate\Html\HtmlFacade',
         'Form' => 'Illuminate\Html\FormFacade',
         'Excel' => 'Maatwebsite\Excel\Facades\Excel',
-        'PDF' => 'Barryvdh\DomPDF\Facade'
+        'PDF' => 'Barryvdh\DomPDF\Facade',
     ],
 ];

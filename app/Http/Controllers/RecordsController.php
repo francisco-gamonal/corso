@@ -11,7 +11,8 @@ use Corso\models\DataCompanie;
 use Maatwebsite\Excel\Facades\Excel;
 use Corso\models\Business;
 use Corso\models\Product;
-use Barryvdh\DomPDF\Facade;
+use Barryvdh\DomPDF\PDF;
+use Illuminate\Support\Facades\App;
 
 class RecordsController extends Controller {
 
@@ -156,7 +157,7 @@ class RecordsController extends Controller {
     }
 
     public function descargasProducto($id) {
-        
+
         set_time_limit(0);
         ini_set('memory_limit', '20048M');
         $historial = Record::find($id);
@@ -206,27 +207,26 @@ class RecordsController extends Controller {
         })->download('xlsx');
     }
 
-/**
- * Con este metodo generamos un archivo de PDF
- * para que puedan ver la información trabajada los clientes.
- * @param type $id
- * @return type
- */
+    /**
+     * Con este metodo generamos un archivo de PDF
+     * para que puedan ver la información trabajada los clientes.
+     * @param type $id
+     * @return type
+     */
     public function pdfClientes($id) {
-        $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-        $pdf = PDF::loadView('claro.reportPdf', $dataCompanies);
+     //   $dataCompanies = DataCompanie::where('historials_id', $id)->get();
+        $pdf = App::make('dompdf');
+        $pdf->loadView('claro.reportPdf');
         return $pdf->stream();
-        return $pdf->download('reportPdf.pdf');
-        return view('claro.reportPdf', compact('dataCompanies'));
     }
 
-/**
- * Con este metodo generamos un archivo de Excel
- * para que puedan ver la información trabajada los clientes.
- * @param type $id
- */
+    /**
+     * Con este metodo generamos un archivo de Excel
+     * para que puedan ver la información trabajada los clientes.
+     * @param type $id
+     */
     public function descargasProductoClientes($id) {
-        
+
         set_time_limit(0);
         ini_set('memory_limit', '20048M');
         $historial = Record::find($id);

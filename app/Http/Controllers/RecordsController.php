@@ -214,6 +214,8 @@ class RecordsController extends Controller {
      * @return type
      */
     public function pdfClientes($id) {
+        set_time_limit(0);
+        ini_set('memory_limit', '20048M');
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
         $pdf = \PDF::loadView('claro.reportPdf', compact('dataCompanies'));
      //   $dataCompanies = DataCompanie::where('historials_id', $id)->get();

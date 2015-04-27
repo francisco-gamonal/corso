@@ -11,6 +11,7 @@ use Corso\models\DataCompanie;
 use Maatwebsite\Excel\Facades\Excel;
 use Corso\models\Business;
 use Corso\models\Product;
+use Barryvdh\DomPDF\Facade;
 
 class RecordsController extends Controller {
 
@@ -213,7 +214,9 @@ class RecordsController extends Controller {
  */
     public function pdfClientes($id) {
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-       return view('claro.reportPdf', compact('dataCompanies'));
+        $pdf = PDF::loadView('claro.reportPdf', $dataCompanies);
+        return $pdf->download('reportPdf.pdf');
+        //return view('claro.reportPdf', compact('dataCompanies'));
     }
 
 /**

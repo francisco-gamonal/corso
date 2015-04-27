@@ -323,58 +323,10 @@ class RecordsController extends Controller {
 
      */
     public function pdfClientes($id) {
-
-      
-
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-
-        $html = "<html><body>
-        <h2 style='margin-top:-1em; text-align:center;'>Reporte de Entregas</h2>
-        <table id='table_dataProduct' class='table table-striped table-bordered table-hover' cellspacing='0' width='100%'>
-            <thead>
-               <tr style='font-size: 14px'>
-                    <th>Código</th>
-                    <th>Tipo Cliente</th>
-                    <th>Nombre Cliente</th>
-                    <th>Ciudad</th>
-                    <th>Estado</th>
-                    <th>Observación</th>
-                    <th>Comentario</th>
-                    <th>Empleados</th>
-                </tr>
-            </thead>
-            <tbody>";
-        foreach ($dataCompanies as $dataCompanie):
-            $html .="<tr>
-                    <td>$dataCompanie->codigo</td>
-                    <td>$dataCompanie->tipo_cliente</td>
-                    <td>$dataCompanie->name_cliente</td>";
-            if (empty($dataCompanie->ciudades_id)):
-                $html .="<td></td>";
-            else:
-                $html .="<td>$dataCompanie->ciudades_id</td>";
-            endif;
-            if (empty($dataCompanie->observaciones_id)):
-                $html .="<td></td>
-                    <td></td>";
-            else:
-                $html .="<td>$dataCompanie->observations->status->name</td>
-                    <td>$dataCompanie->observations->name</td>";
-            endif;
-            $html .="<td>$dataCompanie->comentario</td>";
-            if (empty($dataCompanie->empleados_id)):
-                $html .="<td></td>";
-            else:
-                $html .="<td>$dataCompanie->empleados_id</td>";
-            endif;
-            $html .="</tr>";
-        endforeach;
-        $html .="</tbody>
-        </table>
-    </body></html>";
-        $pdf = App::make('dompdf'); //Note: in 0.6.x this will be 'dompdf.wrapper'
-        $pdf->loadHTML($html);
-        return $pdf->stream();
+        $pdf = App::make('dompdf');
+        $pdf->loadView('claro.reportPdf', compact('dataCompanies'))->setPaper('letter')->setOrientation('landscape');
+        return $pdf->stream('Reporte.pdf');
     }
 
     /**

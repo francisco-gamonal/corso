@@ -155,6 +155,9 @@ class RecordsController extends Controller {
     }
 
     public function descargasProducto($id) {
+        
+        set_time_limit(0);
+        ini_set('memory_limit', '20048M');
         $historial = Record::find($id);
         $dataCompanie = DataCompanie::where('historials_id', '=', $id)->get();
         $separar = explode('/', $historial->url);
@@ -210,8 +213,7 @@ class RecordsController extends Controller {
  */
     public function pdfClientes($id) {
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-        dd($dataCompanies);
-        return view('claro.reportPdf', compact('dataCompanies'));
+       return view('claro.reportPdf', compact('dataCompanies'));
     }
 
 /**
@@ -220,6 +222,9 @@ class RecordsController extends Controller {
  * @param type $id
  */
     public function descargasProductoClientes($id) {
+        
+        set_time_limit(0);
+        ini_set('memory_limit', '20048M');
         $historial = Record::find($id);
         $dataCompanie = DataCompanie::where('historials_id', $id)->get();
         $count = DataCompanie::where('historials_id', $id)->count();

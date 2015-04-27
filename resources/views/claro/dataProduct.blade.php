@@ -1,4 +1,5 @@
 <input id="urlExcel" type="hidden" value="{{ route('descarga-clientes', $historialId) }}">
+<input id="urlPdf" type="hidden" value="{{ route('pdf-clientes', $historialId) }}">
 <table id="table_dataProduct" class="table table-striped table-bordered table-hover" cellspacing="0" width="100%">
     <thead>
         <tr>

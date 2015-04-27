@@ -132,11 +132,12 @@ $(function(){
 		.done( function (data){
 			$(".data_product").html(data);
 			var urlExcel = $("#urlExcel").val();
+			var urlPdf = $("#urlPdf").val();
 			var btnExport = '<div class="btn-group pull-right">';
 			btnExport    += '<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Exportar <span class="caret"></span></button>';
 			btnExport    += '<ul class="dropdown-menu" role="menu">';
 			btnExport    += 	'<li><a href="'+urlExcel+'" target="_blank">Excel</a></li>';
-			btnExport    += 	'<li><a href="#">PDF</a></li>';
+			btnExport    += 	'<li><a href="'+urlPdf+'" target="_blank">PDF</a></li>';
 			btnExport    += '</ul></div>';
 			$(".dataTables_info").parent().removeClass('col-sm-6').addClass('col-sm-5');
     		$(".dataTables_paginate").parent().removeClass('col-sm-6').addClass('col-sm-7');

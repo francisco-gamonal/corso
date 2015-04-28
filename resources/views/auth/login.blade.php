@@ -1,61 +1,67 @@
-@extends('app')
+@extends('template.login')
 
 @section('content')
-<div class="container-fluid">
-	<div class="row">
-		<div class="col-md-8 col-md-offset-2">
-			<div class="panel panel-default">
-				<div class="panel-heading">Login</div>
-				<div class="panel-body">
-					@if (count($errors) > 0)
-						<div class="alert alert-danger">
-							<strong>Whoops!</strong> There were some problems with your input.<br><br>
-							<ul>
-								@foreach ($errors->all() as $error)
-									<li>{{ $error }}</li>
-								@endforeach
-							</ul>
-						</div>
-					@endif
-
-					<form class="form-horizontal" role="form" method="POST" action="{{ url('/auth/login') }}">
-						<input type="hidden" name="_token" value="{{ csrf_token() }}">
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">E-Mail Address</label>
-							<div class="col-md-6">
-								<input type="email" class="form-control" name="email" value="{{ old('email') }}">
+<div class="login">
+    <div class="container">
+        <div class="text-center">
+            <h1 class="msg-home">Bienvenid@</h1>
+            <p class="msg-login">
+                <span>Puedes iniciar sesión de una manera sencilla.</span>
+                <br>
+                <span>Llena los espacios en blanco para poder ingresar al Sistema.</span>
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Registrarse</h3>
+                    </div>
+                    <div class="panel-body">
+                        {{-- Preguntamos si hay algún mensaje de error y si hay lo mostramos  --}}
+                        @if(Session::has('mensaje_error'))
+                            <div class="form-group has-error">
+                                <label class="control-label">{{ Session::get('mensaje_error') }}</label>
+                            </div>
+                        @endif
+                        @if(Session::has('mensaje_logout'))
+                            <div class="form-group has-success">
+                                <label class="control-label">{{ Session::get('mensaje_logout') }}</label>
+                            </div>
+                        @endif
+                        @if (count($errors) > 0)
+							<div class="alert alert-danger">
+								<strong>Whoops!</strong> There were some problems with your input.<br><br>
+								<ul>
+									@foreach ($errors->all() as $error)
+										<li>{{ $error }}</li>
+									@endforeach
+								</ul>
 							</div>
-						</div>
-
-						<div class="form-group">
-							<label class="col-md-4 control-label">Password</label>
-							<div class="col-md-6">
-								<input type="password" class="form-control" name="password">
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<div class="checkbox">
-									<label>
-										<input type="checkbox" name="remember"> Remember Me
-									</label>
-								</div>
-							</div>
-						</div>
-
-						<div class="form-group">
-							<div class="col-md-6 col-md-offset-4">
-								<button type="submit" class="btn btn-primary">Login</button>
-
-								<a class="btn btn-link" href="{{ url('/password/email') }}">Forgot Your Password?</a>
-							</div>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
+						@endif
+                       	<form role="form" method="POST" action="{{ url('/auth/login') }}">
+							<input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input id="email" class="form-control" name="email" type="text" title="Email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contraseña">Contraseña</label>
+                                    <input id="contraseña" class="form-control" name="password" title="contraseña" type="password" required>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input name="rememberme" type="checkbox" value="1"> Recordar Contraseña
+                                    </label>
+                                </div>
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" value="Ingresar">
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 @endsection

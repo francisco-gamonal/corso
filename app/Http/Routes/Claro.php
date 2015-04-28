@@ -1,5 +1,8 @@
 <?php namespace app\Http\Routes;
 
+/**
+ * Claro
+ */
 Route::get('claro', ['as' => 'claro', 'uses' => 'ClaroController@index']);
 Route::get('claro/{name}', ['as' => 'producto_claro', 'uses' => 'ProductsController@getProduct']);
 Route::post('claro/search', ['as' => 'data_product', 'uses' => 'ClaroController@dataProduct']);

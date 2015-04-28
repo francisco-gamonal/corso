@@ -1,0 +1,17 @@
+{
+  "name": "corso",
+  "version": "0.0.0",
+  "homepage": "https://github.com/francisco-gamonal/corso",
+  "authors": [
+    "Francisco Gamonal <hfgamonalb@gmail.com>"
+  ],
+  "description": "Proyecto para llevar el control documentario de encomiendas, en la empresa El Corso de Honduras.",
+  "keywords": [
+    "corso",
+    "honduras"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "datatables-bootstrap3-plugin": "~0.4.0"
+  }
+}

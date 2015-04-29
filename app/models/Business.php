@@ -1,4 +1,4 @@
-<?php namespace Corso\models;
+<?php namespace App\models;
  
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,6 +16,6 @@ class Business extends Model {
     protected $table= 'empresas';
     
     public function Products(){
-         return $this->hasMany('Corso\models\Product','empresas_id','id');
+         return $this->hasMany('App\models\Product','empresas_id','id');
     }
 }

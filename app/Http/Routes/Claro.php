@@ -1,4 +1,4 @@
-<?php namespace app\Http\Routes;
+<?php 
 
 /**
  * Claro

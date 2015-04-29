@@ -1,12 +1,12 @@
 <?php
 
-namespace Corso\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
-use Corso\models\Product;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
+use App\models\Product;
 use Illuminate\Http\Request;
-use Corso\models\Record;
+use App\models\Record;
 use Illuminate\Support\Facades\DB;
 class ProductsController extends Controller {
 

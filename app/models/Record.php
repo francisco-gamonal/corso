@@ -1,4 +1,4 @@
-<?php namespace Corso\models;
+<?php namespace App\models;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,10 +17,10 @@ class Record extends Model {
     
     
     public function products(){
-        return $this->belongsTo('Corso\models\Product','productos_id','id');
+        return $this->belongsTo('App\models\Product','productos_id','id');
     }
     
     public function DataCompanies(){
-        return $this->hasMany('Corso\models\DataCompanie','historials_id','id');
+        return $this->hasMany('App\models\DataCompanie','historials_id','id');
     }
 }

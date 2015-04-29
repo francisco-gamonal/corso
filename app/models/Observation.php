@@ -1,4 +1,4 @@
-<?php namespace Corso\models;
+<?php namespace App\models;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -16,6 +16,6 @@ class Observation extends Model{
     
     public function status(){
         
-        return $this->belongsTo('Corso\models\Statu','estados_id','id');
+        return $this->belongsTo('App\models\Statu','estados_id','id');
     }
 }

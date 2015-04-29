@@ -1,11 +1,11 @@
 <?php
 
-namespace Corso\Http\Controllers;
+namespace App\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Corso\models\City;
+use App\models\City;
 class CityController extends Controller {
 
     /**

@@ -8,12 +8,9 @@
         <title><?php echo $__env->yieldContent('tittle'); ?></title>
         <?php echo $__env->yieldContent('head'); ?>
         <?php echo Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>
-
         <?php echo Html::style('bower_components/font-awesome/css/font-awesome.min.css'); ?>
-
         <?php echo $__env->yieldContent('styles'); ?>
         <?php echo Html::style('css/main.css'); ?>
-
     </head>
     <body>
         <main class="row">
@@ -28,15 +25,10 @@
             <?php echo $__env->make('template.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </footer> -->
         <?php echo Html::script('bower_components/jquery/dist/jquery.min.js'); ?>
-
         <?php echo Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>
-
         <?php echo Html::script('js/lib/bootbox.min.js'); ?>
-
         <?php echo Html::script('js/lib/jquery.blockUI.min.js'); ?>
-
         <?php echo $__env->yieldContent('scripts'); ?>
         <?php echo Html::script('js/main.js'); ?>
-
     </body>
 </html>

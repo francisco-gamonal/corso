@@ -1,21 +1,21 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace Corso\Http\Controllers;
 
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
+use Corso\Http\Requests;
+use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use App\models\Business;
-use App\models\Product;
-use App\models\DataCompanie;
+use Corso\models\Business;
+use Corso\models\Product;
+use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
-use App\models\Record;
+use Corso\models\Record;
 use Input;
-use App\models\City;
-use App\models\Staff;
-use App\models\Observation;
-use App\models\Statu;
+use Corso\models\City;
+use Corso\models\Staff;
+use Corso\models\Observation;
+use Corso\models\Statu;
 
 class ClaroController extends Controller {
 
@@ -282,7 +282,7 @@ class ClaroController extends Controller {
             
             
             if (empty($dataExcel['observaciones'])):
-                $datos_empresas->observaciones_id = 16;
+                $datos_empresas->observaciones_id = 18;
             else:
                 $datos_empresas->observaciones_id = $dataExcel['observaciones'];
             endif;

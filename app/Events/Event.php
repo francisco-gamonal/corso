@@ -1,7 +1,7 @@
-<?php namespace App\Events;
-
-abstract class Event {
-
-	//
-
-}
+<?php namespace Corso\Events;
+
+abstract class Event {
+
+	//
+
+}

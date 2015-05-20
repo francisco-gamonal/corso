@@ -34,5 +34,5 @@
 	<script type="text/javascript" src="<?php echo e(asset('js/lib/daterangepicker-test.js')); ?>"></script>
 	<script type="text/javascript" src="<?php echo e(asset('bower_components/datatables/media/js/jquery.dataTables.min.js')); ?>"></script>
 	<script type="text/javascript" src="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js')); ?>"></script>
-<?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

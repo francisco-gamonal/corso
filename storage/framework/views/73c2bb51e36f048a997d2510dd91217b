@@ -92,7 +92,6 @@
                     <li><a href="<?php echo e(route('producto_claro', 'ciclo-c-46-movil')); ?>">Ciclo C-46-MOVIL</a></li>
             <li class="dropdown">
                <?php echo HTML::link('/auth/logout', 'Cerrar sesión'); ?>
-
             </li>
         </ul>
          <?php endif; ?>

@@ -1,0 +1,69 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Home</div>
+
+                <div class="panel-body">
+
+
+                    <center><h2><span class="glyphicon glyphicon-list-alt"><br>Agregar Mensajeros</span></h2></center>
+                    <hr>
+                    <div class="right">
+                    
+                        <?php echo Html::link('registrar-empleados','Agregar +',array('class'=>'btn btn-danger ')); ?>
+
+                    </div>
+
+                    <hr>
+                    <?php if(isset($message)): ?>
+                    <div class="text text-info">
+                        <button type="button" class="close" data-dismiss="info">&times;</button>
+                        <ul>
+                            <li><span class="glyphicon glyphicon-ok"></span> <?php echo e($message); ?></li>
+                        </ul>
+                    </div>
+                    <?php endif; ?>
+                    <div >
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Nombre</th>
+                                    <th>Ciudad</th>
+                                    <th>Cedula</th>
+                                    <th>Celular</th>
+                                    <th>Estado</th>
+                                    <th>Editar</th>
+                                </tr>
+                            </thead>
+                            <tbody><?php $i = 0; ?>
+                                <?php foreach($staff AS $datos): ?> 
+                                <tr>
+                                    <td><?php echo e($datos->id); ?></td>
+                                    <td><?php echo e($datos->fname); ?> <?php echo e($datos->sname); ?> <?php echo e($datos->flast); ?> <?php echo e($datos->slast); ?></td>
+                                    <td><?php echo e($datos->ciudad); ?></td>
+                                    <td><?php echo e($datos->cedula); ?></td>
+                                    <td><?php echo e($datos->celular); ?></td>
+                                    <?php if($datos->estado==0): ?>
+                                    <td>Activo</td>
+                                    <?php elseif($datos->esatdo==1): ?>
+                                    <td>Desactivo</td>
+                                    <?php endif; ?>
+                                    <td ><a class="btn btn-primary" href="<?php echo e(route('editar-empleados', $datos->id)); ?>" >Editar</a></td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                        </table>
+                        <div class="pagination"><?php echo $staff->render(); ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

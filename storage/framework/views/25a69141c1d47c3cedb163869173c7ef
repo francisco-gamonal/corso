@@ -1,0 +1,4 @@
+<?php $__env->startSection('content'); ?>
+	<h3 class="text-center">Bienvenido <?php echo e(Auth::user()->nameComplete()); ?></h3>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

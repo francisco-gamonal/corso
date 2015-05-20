@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Pagina inicio">
+        <meta name="author" content="Sistemas Amigables S. de R.L. de C.V.">
+        <title>El Corso</title>
+        <?php echo Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>
+
+        <?php echo Html::style('bower_components/font-awesome/css/font-awesome.min.css'); ?>>
+        <?php echo $__env->yieldContent('styles'); ?>
+        <link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/main.css')); ?> ">
+    </head>
+    <body style="background: url('../img/back.png');">
+        <main class="row">
+            <?php echo $__env->yieldContent('content'); ?>
+        </main>
+        <footer>
+            <?php echo $__env->make('template.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </footer>
+        <?php echo Html::script('bower_components/jquery/dist/jquery.min.js'); ?>
+
+        <?php echo Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>
+
+        <?php echo $__env->yieldContent('scripts'); ?>
+        <script type="text/javascript" src="<?php echo e(asset('js/main.js')); ?>"></script>
+    </body>
+</html>

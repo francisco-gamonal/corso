@@ -34,13 +34,13 @@ class ColumbusController extends Controller {
      * aqui ejecutamos todos los metodos para agregar un nuevo archivo o reemplazarlo
      * @return type
      */
-    public function importarExcelClaro() {
+    public function importarExcelColumbus() {
         /* de claramos las variables que recibimos por post */
         $mes = Input::get('mes');
         $year = Input::get('year');
         $producto = Input::get('productos_id');
         $file = Input::file('excel');
-        $url = "files/claro/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
+        $url = "files/columbus/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
         /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
         $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
 

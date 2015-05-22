@@ -1,7 +1,7 @@
-<?php namespace Corso\Http\Controllers;
+<?php namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 

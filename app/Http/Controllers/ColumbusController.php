@@ -1,11 +1,11 @@
-<?php namespace Corso\Http\Controllers;
+<?php namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
-use Corso\models\Business;
+use Comer\models\Business;
 class ColumbusController extends Controller {
 
 	/**
@@ -26,10 +26,10 @@ class ColumbusController extends Controller {
     public function importarColumbus($id) {
 
         $data = Business::find($id);
-        $claro = $data->Products()->lists('name', 'id');
-        array_unshift($claro, ' --- Seleccione un Prodcuto --- ');
-        $mes = $this->Mes();
-        return View('claro.importar', compact('claro', 'mes'));
+        $columbus = $data->Products()->lists('name', 'id');
+        $periodo = $this->mes();
+       dd($periodo);
+       // return View('columbus.importar', compact('columbus', 'periodo'));
     }
 	/**
 	 * Store a newly created resource in storage.

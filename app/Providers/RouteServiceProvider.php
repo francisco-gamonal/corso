@@ -1,4 +1,4 @@
-<?php namespace Corso\Providers;
+<?php namespace Comer\Providers;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
@@ -12,7 +12,7 @@ class RouteServiceProvider extends ServiceProvider {
 	 *
 	 * @var string
 	 */
-	protected $namespace = 'Corso\Http\Controllers';
+	protected $namespace = 'Comer\Http\Controllers';
 
 	/**
 	 * Define your route model bindings, pattern filters, etc.

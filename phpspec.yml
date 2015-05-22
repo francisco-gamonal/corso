@@ -1,5 +1,5 @@
 suites:
     main:
-        namespace: Corso
-        psr4_prefix: Corso
+        namespace: Comer
+        psr4_prefix: Comer
         src_path: app

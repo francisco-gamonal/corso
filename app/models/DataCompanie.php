@@ -1,4 +1,4 @@
-<?php namespace Corso\models;
+<?php namespace Comer\models;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -18,20 +18,20 @@ class DataCompanie extends Model {
     
      public function observations(){
 
-         	return $this->belongsTo('Corso\models\Observation','observaciones_id','id');
+         	return $this->belongsTo('Comer\models\Observation','observaciones_id','id');
          }
 
          public function citys(){
 
-         	return $this->belongsTo('Corso\models\City','ciudades_id','id');
+         	return $this->belongsTo('Comer\models\City','ciudades_id','id');
          }
 
          public function staffs(){
 
-         	return $this->belongsTo('Corso\models\Staff','empleados_id','id');
+         	return $this->belongsTo('Comer\models\Staff','empleados_id','id');
          }
           public function records(){
 
-         	return $this->belongsTo('Corso\models\Record','historials_id','id');
+         	return $this->belongsTo('Comer\models\Record','historials_id','id');
          }
 }

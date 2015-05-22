@@ -1,21 +1,21 @@
 <?php
 
-namespace Corso\Http\Controllers;
+namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Corso\models\Business;
-use Corso\models\Product;
-use Corso\models\DataCompanie;
+use Comer\models\Business;
+use Comer\models\Product;
+use Comer\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
-use Corso\models\Record;
+use Comer\models\Record;
 use Input;
-use Corso\models\City;
-use Corso\models\Staff;
-use Corso\models\Observation;
-use Corso\models\Statu;
+use Comer\models\City;
+use Comer\models\Staff;
+use Comer\models\Observation;
+use Comer\models\Statu;
 
 class ClaroController extends Controller {
 

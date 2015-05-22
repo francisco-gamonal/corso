@@ -1,11 +1,11 @@
 <?php
 
-namespace Corso\Http\Controllers;
+namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Corso\models\Staff;
+use Comer\models\Staff;
 use Illuminate\View\View;
 
 class StaffController extends Controller {

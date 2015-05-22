@@ -1,4 +1,4 @@
-<?php namespace Corso\Http;
+<?php namespace Comer\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -15,7 +15,7 @@ class Kernel extends HttpKernel {
 		'Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse',
 		'Illuminate\Session\Middleware\StartSession',
 		'Illuminate\View\Middleware\ShareErrorsFromSession',
-		'Corso\Http\Middleware\VerifyCsrfToken',
+		'Comer\Http\Middleware\VerifyCsrfToken',
 	];
 
 	/**
@@ -24,9 +24,9 @@ class Kernel extends HttpKernel {
 	 * @var array
 	 */
 	protected $routeMiddleware = [
-		'auth' => 'Corso\Http\Middleware\Authenticate',
+		'auth' => 'Comer\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
-		'guest' => 'Corso\Http\Middleware\RedirectIfAuthenticated',
+		'guest' => 'Comer\Http\Middleware\RedirectIfAuthenticated',
 	];
 
 }

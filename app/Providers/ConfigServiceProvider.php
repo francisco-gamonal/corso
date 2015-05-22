@@ -1,4 +1,4 @@
-<?php namespace Corso\Providers;
+<?php namespace Comer\Providers;
 
 use Illuminate\Support\ServiceProvider;
 

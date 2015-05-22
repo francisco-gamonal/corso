@@ -1,6 +1,6 @@
-<?php namespace Corso\Services;
+<?php namespace Comer\Services;
 
-use Corso\User;
+use Comer\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 

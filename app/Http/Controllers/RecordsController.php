@@ -1,16 +1,16 @@
 <?php
 
-namespace Corso\Http\Controllers;
+namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
-use Corso\models\Record;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
+use Comer\models\Record;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Corso\models\DataCompanie;
+use Comer\models\DataCompanie;
 use Maatwebsite\Excel\Facades\Excel;
-use Corso\models\Business;
-use Corso\models\Product;
+use Comer\models\Business;
+use Comer\models\Product;
 use Barryvdh\DomPDF\PDF;
 use Illuminate\Support\Facades\App;
 

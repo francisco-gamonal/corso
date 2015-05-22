@@ -1,8 +1,8 @@
-<?php namespace Corso\Http\Controllers;
+<?php namespace Comer\Http\Controllers;
 
-use Corso\Http\Requests;
-use Corso\Http\Controllers\Controller;
-use Corso\models\Observation;
+use Comer\Http\Requests;
+use Comer\Http\Controllers\Controller;
+use Comer\models\Observation;
 use Illuminate\View\View;
 use Illuminate\Http\Request;
 

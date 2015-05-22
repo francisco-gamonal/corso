@@ -1,4 +1,4 @@
-<?php namespace Corso\Commands;
+<?php namespace Comer\Commands;
 
 abstract class Command {
 

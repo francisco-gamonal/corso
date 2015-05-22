@@ -14,7 +14,7 @@ class ColumbusController extends Controller {
 	 */
 	public function index()
 	{
-		//
+	 return View('columbus.index');
 	}
 
 	/**

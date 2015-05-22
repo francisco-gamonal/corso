@@ -28,19 +28,27 @@ class ColumbusController extends Controller {
         $data = Business::find($id);
         $columbus = $data->Products()->lists('name', 'id');
         $periodo = $this->mes();
-       dd($periodo);
-       // return View('columbus.importar', compact('columbus', 'periodo'));
+        return View('columbus.importar', compact('columbus', 'periodo'));
     }
-	/**
-	 * Store a newly created resource in storage.
-	 *
-	 * @return Response
-	 */
-	public function store()
-	{
-		//
-	}
+ /**
+     * aqui ejecutamos todos los metodos para agregar un nuevo archivo o reemplazarlo
+     * @return type
+     */
+    public function importarExcelClaro() {
+        /* de claramos las variables que recibimos por post */
+        $mes = Input::get('mes');
+        $year = Input::get('year');
+        $producto = Input::get('productos_id');
+        $file = Input::file('excel');
+        $url = "files/claro/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
+        /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
+        $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
 
+        /* Corremos el archivo de excel y lo convertimos en un array */
+        $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
+
+        return $this->saveExcel($excel, $idHistorial);
+    }
 	/**
 	 * Display the specified resource.
 	 *

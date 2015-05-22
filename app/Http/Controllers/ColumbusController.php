@@ -26,7 +26,7 @@ class ColumbusController extends Controller {
     public function importarColumbus($id) {
 
         $data = Business::find($id);
-        $columbus = $data->Products()->lists('name', 'id');
+        $columbus = $data->Products[0]->id;
         $periodo = $this->mes();
         return View('columbus.importar', compact('columbus', 'periodo'));
     }

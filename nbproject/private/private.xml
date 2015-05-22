@@ -5,6 +5,7 @@
         <group>
             <file>file:/C:/xampp/htdocs/corso/app/Http/routes.php</file>
             <file>file:/C:/xampp/htdocs/corso/.env</file>
+            <file>file:/C:/xampp/htdocs/corso/app/Http/Routes/Columbus.php</file>
             <file>file:/C:/xampp/htdocs/corso/config/app.php</file>
             <file>file:/C:/xampp/htdocs/corso/resources/views/claro/index.blade.php</file>
             <file>file:/C:/xampp/htdocs/corso/app/Http/Controllers/RecordsController.php</file>

@@ -5,6 +5,7 @@ use Corso\Http\Controllers\Controller;
 
 use Illuminate\Http\Request;
 
+use Corso\models\Business;
 class ColumbusController extends Controller {
 
 	/**
@@ -17,16 +18,19 @@ class ColumbusController extends Controller {
 	 return View('columbus.index');
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
+	    /**
+     * 
+     * @param type $id
+     * @return type
+     */
+    public function importarColumbus($id) {
 
+        $data = Business::find($id);
+        $claro = $data->Products()->lists('name', 'id');
+        array_unshift($claro, ' --- Seleccione un Prodcuto --- ');
+        $mes = $this->Mes();
+        return View('claro.importar', compact('claro', 'mes'));
+    }
 	/**
 	 * Store a newly created resource in storage.
 	 *

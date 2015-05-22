@@ -109,7 +109,7 @@
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Columbus<span class="caret"></span></a>
 
                 <ul class="dropdown-menu" role="menu">
-
+                    <li><a href="{{ route('importar-estado-de-cuenta',2) }}">Subir Estados de Cuenta</a></li>
                     <li><a href="{{ route('columbus') }}">Estados de Cuenta</a></li>
 
                 </ul>

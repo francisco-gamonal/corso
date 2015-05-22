@@ -1,0 +1,31 @@
+<?php $__env->startSection('head'); ?>
+	<meta name="description" content="Administración de Claro">
+	<meta name="author" content="Sistemas Amigables">
+	<title>Administración Claro</title>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<center><h2><span class="glyphicon glyphicon-list-alt"><br>Importar Ciclos <img src="../logosclientes/logo-claro.png"></span></h2></center>
+<hr>
+
+<center><?php echo Form::open(array(
+            'action'=>'ClaroController@importarExcelClaro',
+            'method'=>'POST',
+            'files' => true,
+            'role'=>'form',
+            'enctype'=>'multipart/form-data',
+            'class'=>'btn btn-success'
+            )); ?> 
+    <?php echo Form::file('excel'); ?></br>
+    <?php echo Form::select('productos_id',$claro); ?>
+    <?php echo Form::select('mes',$mes); ?>
+    <?php echo Form::select('year',array(date('Y')=>date('Y'))); ?>
+
+    <?php echo Form::input('submit',null,'importar',array('class'=>'btn btn-danger ')); ?>
+    <?php echo Form::close(); ?></center>
+
+<hr>
+<center><h2><span class="glyphicon glyphicon-list-alt"><br>Ejemplo</span></h2></center><br>
+<center><img src="../../public/img/Ejemplo-Claro.png"></center>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -23,7 +23,7 @@ class ColumbusController extends Controller {
         $inicioRecord = DB::table('historials')->where('productos_id', '=', $producto[0]->id)->min('mes') . '/' . DB::table('historials')->where('productos_id', '=', $producto[0]->id)->min('year');
         $finalRecord = DB::table('historials')->where('productos_id', '=', $producto[0]->id)->max('mes') . '/' . DB::table('historials')->where('productos_id', '=', $producto[0]->id)->max('year');
 
-        return View('columbus.index', compact('producto','inicioRecord','finalRecord'));
+        return View('columbus.product', compact('producto','inicioRecord','finalRecord'));
     }
 
     /**

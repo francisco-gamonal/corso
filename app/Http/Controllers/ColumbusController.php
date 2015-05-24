@@ -136,7 +136,7 @@ class ColumbusController extends Controller {
             $datos_empresas->save();
         endforeach;
         $Record = RecordsController::recordSeparator($historial);
-        return Redirect::away($Record)->with('messege', 'se guardo con exito!!');
+        return $this->exito($Record);
     }
 
 }

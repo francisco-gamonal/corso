@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Comer\models\DataCompanie;
 use Comer\models\Business;
 use Input;
-
+use Illuminate\Support\Facades\DB;
 class ColumbusController extends Controller {
 
 	/**

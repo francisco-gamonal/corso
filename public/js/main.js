@@ -153,7 +153,6 @@ $(function(){
 	}
 
 	if($('.product').attr('data-url') == 'product'){
-		
 		$("#txtDate").daterangepicker(
 			{
 				locale:{
@@ -164,7 +163,7 @@ $(function(){
 					toLabel: 'Hasta'
 				},
 				minViewMode: 'month',
-			    format: 'MM/YYYY',	
+			    format: 'MM/YYYY',
 			    startDate: $('#startDate').val(),
 			    endDate: $('#endDate').val(),
 			    minDate: $('#startDate').val(),

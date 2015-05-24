@@ -1,26 +1,31 @@
-<?php namespace Comer\Http\Controllers;
+<?php
+
+namespace Comer\Http\Controllers;
 
 use Comer\Http\Requests;
-
-
 use Illuminate\Http\Request;
 use Comer\models\DataCompanie;
 use Comer\models\Business;
 use Input;
 use Illuminate\Support\Facades\DB;
+
 class ColumbusController extends Controller {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-	 return View('columbus.index');
-	}
+    /**
+     * Display a listing of the resource.
+     *
+     * @return Response
+     */
+    public function index() {
 
-	    /**
+        $producto = Product::where('id',4)->get();
+        $inicioRecord = DB::table('historials')->where('productos_id', '=', $producto[0]->id)->min('mes') . '/' . DB::table('historials')->where('productos_id', '=', $producto[0]->id)->min('year');
+        $finalRecord = DB::table('historials')->where('productos_id', '=', $producto[0]->id)->max('mes') . '/' . DB::table('historials')->where('productos_id', '=', $producto[0]->id)->max('year');
+
+        return View('columbus.index', compact('producto','inicioRecord','finalRecord'));
+    }
+
+    /**
      * 
      * @param type $id
      * @return type
@@ -32,7 +37,8 @@ class ColumbusController extends Controller {
         $periodo = $this->mes();
         return View('columbus.importar', compact('columbus', 'periodo'));
     }
- /**
+
+    /**
      * aqui ejecutamos todos los metodos para agregar un nuevo archivo o reemplazarlo
      * @return type
      */
@@ -40,26 +46,27 @@ class ColumbusController extends Controller {
         /* de claramos las variables que recibimos por post */
         try {
             DB::beginTransaction();
-        $mes = str_split(Input::get('datePicker'),2);
-        $mes =  $mes[0];
-        $year = date('Y');
-        $producto = Input::get('productos_id');
-        $file = Input::file('excel');
-        $url = "files/columbus/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
-        /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
-        $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
+            $mes = str_split(Input::get('datePicker'), 2);
+            $mes = $mes[0];
+            $year = date('Y');
+            $producto = Input::get('productos_id');
+            $file = Input::file('excel');
+            $url = "files/columbus/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
+            /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
+            $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
 
-        /* Corremos el archivo de excel y lo convertimos en un array */
-        $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
-          DB::commit();
-        return $this->saveExcel($excel, $idHistorial);
+            /* Corremos el archivo de excel y lo convertimos en un array */
+            $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
+            DB::commit();
+            return $this->saveExcel($excel, $idHistorial);
         } catch (Exception $e) {
             Log::error($e);
             DB::rollback();
             return $this->errores(array('key' => 'Error Al subir el archivo de Excel'));
         }
     }
-/**
+
+    /**
      * 
      * @param type $data
      * @param type $historial
@@ -122,13 +129,13 @@ class ColumbusController extends Controller {
             else:
                 $datos_empresas->comentario_ciudad = $dataExcel['comentario_ciudad'];
             endif;
-           if (empty($dataExcel['ciudad'])):
+            if (empty($dataExcel['ciudad'])):
                 $datos_empresas->ciudades_id = "";
             else:
                 $datos_empresas->ciudades_id = $dataExcel['ciudad'];
             endif;
-            
-            
+
+
             if (empty($dataExcel['observaciones'])):
                 $datos_empresas->observaciones_id = 18;
             else:
@@ -143,8 +150,8 @@ class ColumbusController extends Controller {
             $datos_empresas->save();
         endforeach;
         $Record = RecordsController::recordSeparator($historial);
-        
-       
+
+
         return $this->exito('Se Subio con exito el archivo de Excel');
     }
 

@@ -1,4 +1,8 @@
-var pathname = window.location.pathname;
+var server        = "";
+var pathname      = document.location.pathname;
+var pathnameArray = pathname.split("/public/");
+
+server =  pathnameArray.length > 0 ? pathnameArray[0]+"/public/" : "";
 
 //Function Datatable
 var dataTable = function(selector, list, condition){
@@ -37,7 +41,7 @@ var loadingUI = function (message){
         '-moz-border-radius': '10px',
         opacity: 0.5,
         color: '#fff'
-    }, message: '<h2><img style="margin-right: 30px" src="../img/spiffygif.gif" >' + message + '</h2>'});
+    }, message: '<h2><img style="margin-right: 30px" src="'+ server  +'img/spiffygif.gif">' + message + '</h2>'});
 };
 
 var responseUI = function (message,color){
@@ -83,6 +87,32 @@ var ajaxForm = function (url, type, data){
 			    	//console.log("No se pueden grabar los datos");
 			    }
 			});
+};
+
+
+/**
+ * [messageAjax - Response message after request ]
+ * @param  {[json]} data [description messages error after request]
+ * @return {[alert]}     [errors in alert]
+ */
+var messageAjax = function(data) {
+	console.log(data.errors);
+	$.unblockUI();
+	if(data.success){
+		bootbox.alert('<p class="success-ajax">'+data.message+'</p>', function(){
+			location.reload();
+		});
+	}
+	else{
+		var errors = data.errors;
+		var error = "";
+		for (var element in errors){
+			if(errors.hasOwnProperty(element)){
+				error += errors[element] + '<br>';
+			}
+		}
+		bootbox.alert('<p class="error-ajax">'+error+'</p>');
+	}
 };
 
 $(function(){

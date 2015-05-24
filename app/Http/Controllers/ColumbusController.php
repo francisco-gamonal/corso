@@ -10,6 +10,11 @@ use Comer\models\Record;
 use Input;
 use Illuminate\Support\Facades\DB;
 use Comer\models\Product;
+use Comer\models\City;
+use Comer\models\Staff;
+use Comer\models\Observation;
+use Comer\models\Statu;
+
 class ColumbusController extends Controller {
 
     /**
@@ -25,7 +30,62 @@ class ColumbusController extends Controller {
 
         return View('columbus.product', compact('producto','inicioRecord','finalRecord'));
     }
+    /**
+     * 
+     * @return type
+     */
+    public function dataProduct() {
+        set_time_limit(0);
+        ini_set('memory_limit', '20240M'); 
+        
+        $periodIni = $this->period(0);
+        $periodFin = $this->period(1);
+        $id = $this->convertionObjeto();
+       
+       // $this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
+        $record = Record::where('productos_id','=',$id->idProduct)
+                ->where('mes','>=',$periodIni[0])
+                ->where('year','>=',$periodIni[1])
+                ->where('mes','<=',$periodFin[0])
+                ->where('year','<=',$periodFin[1])->get();
+        $historialId=$record[0]->id;
+        
+        foreach ($record AS $datos):
+            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
+            $dataClaro[] = $temp;
+            $temp = null;
+        endforeach;
 
+        $cities = City::all();
+        $staffs = Staff::all();
+        $observations = Observation::all();
+        $status = Statu::all();
+
+        $view = view('columbus.dataProduct', compact('dataClaro','historialId', 'cities', 'staffs', 'observations', 'status'));
+        
+        return $view;
+    }
+    
+        /**
+     * 
+     * @param type $id
+     * @return type
+     */
+    private function period($id) {
+        $range = $this->convertionObjeto();
+        $period = $this->serparatorPeriodo($range->range);
+        $period = explode('/', trim($period[$id]));
+        return ($period);
+    }
+        /**
+     * Separamos en rango de la consulta por perido
+     * @param type $range
+     * @return type
+     */
+    private function serparatorPeriodo($range) {
+      $rangeSeparator = explode('-', $range);
+        return $rangeSeparator;
+    }
     /**
      * 
      * @param type $id

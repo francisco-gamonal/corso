@@ -6,9 +6,10 @@ use Comer\Http\Requests;
 use Illuminate\Http\Request;
 use Comer\models\DataCompanie;
 use Comer\models\Business;
+use Comer\models\Record;
 use Input;
 use Illuminate\Support\Facades\DB;
-
+use Comer\models\Product;
 class ColumbusController extends Controller {
 
     /**

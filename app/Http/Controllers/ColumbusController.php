@@ -38,6 +38,8 @@ class ColumbusController extends Controller {
      */
     public function importarExcelColumbus() {
         /* de claramos las variables que recibimos por post */
+        try {
+            DB::beginTransaction();
         $mes = str_split(Input::get('datePicker'),2);
         $mes =  $mes[0];
         $year = date('Y');
@@ -49,8 +51,13 @@ class ColumbusController extends Controller {
 
         /* Corremos el archivo de excel y lo convertimos en un array */
         $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
-
+          DB::commit();
         return $this->saveExcel($excel, $idHistorial);
+        } catch (Exception $e) {
+            Log::error($e);
+            DB::rollback();
+            return $this->errores(array('key' => 'Error Al subir el archivo de Excel'));
+        }
     }
 /**
      * 
@@ -136,7 +143,9 @@ class ColumbusController extends Controller {
             $datos_empresas->save();
         endforeach;
         $Record = RecordsController::recordSeparator($historial);
-        return $this->exito($Record);
+        
+       
+        return $this->exito('Se Subio con exito el archivo de Excel');
     }
 
 }

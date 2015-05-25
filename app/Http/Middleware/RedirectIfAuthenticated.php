@@ -1,4 +1,4 @@
-<?php namespace Comer\Http\Middleware;
+<?php namespace Corso\Http\Middleware;
 
 use Closure;
 use Illuminate\Contracts\Auth\Guard;

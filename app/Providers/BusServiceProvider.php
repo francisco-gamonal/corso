@@ -1,4 +1,4 @@
-<?php namespace Comer\Providers;
+<?php namespace Corso\Providers;
 
 use Illuminate\Bus\Dispatcher;
 use Illuminate\Support\ServiceProvider;
@@ -16,7 +16,7 @@ class BusServiceProvider extends ServiceProvider {
 		$dispatcher->mapUsing(function($command)
 		{
 			return Dispatcher::simpleMapping(
-				$command, 'Comer\Commands', 'Comer\Handlers\Commands'
+				$command, 'Corso\Commands', 'Corso\Handlers\Commands'
 			);
 		});
 	}

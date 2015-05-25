@@ -1,23 +1,23 @@
 <?php
 
-namespace Comer\Http\Controllers;
+namespace Corso\Http\Controllers;
 
-use Comer\Http\Requests;
-use Comer\Http\Controllers\Controller;
+use Corso\Http\Requests;
+use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
-use Comer\models\Business;
-use Comer\models\Product;
-use Comer\models\DataCompanie;
+use Corso\models\Business;
+use Corso\models\Product;
+use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\Redirect;
-use Comer\models\Record;
+use Corso\models\Record;
 use Input;
-use Comer\models\City;
-use Comer\models\Staff;
-use Comer\models\Observation;
-use Comer\models\Statu;
+use Corso\models\City;
+use Corso\models\Staff;
+use Corso\models\Observation;
+use Corso\models\Statu;
 
-class ClaroController extends Controller {
+class ClaroController extends baseUploadController {
 
     public function __construct() {
         
@@ -45,8 +45,8 @@ class ClaroController extends Controller {
         $data = Business::find($id);
         $claro = $data->Products()->lists('name', 'id');
         array_unshift($claro, ' --- Seleccione un Prodcuto --- ');
-        $mes = $this->Mes();
-        return View('claro.importar', compact('claro', 'mes'));
+        $periodo = $this->Mes();
+        return View('claro.importar', compact('claro', 'periodo'));
     }
 
     /**
@@ -102,26 +102,6 @@ class ClaroController extends Controller {
                 or die("Error al abrir fichero de salida");
         fwrite($fh, json_encode($dataJson, JSON_UNESCAPED_UNICODE));
         fclose($fh);
-    }
-    /**
-     * Separamos en rango de la consulta por perido
-     * @param type $range
-     * @return type
-     */
-    private function serparatorPeriodo($range) {
-      $rangeSeparator = explode('-', $range);
-        return $rangeSeparator;
-    }
-    /**
-     * 
-     * @param type $id
-     * @return type
-     */
-    private function period($id) {
-        $range = $this->convertionObjeto();
-        $period = $this->serparatorPeriodo($range->range);
-        $period = explode('/', trim($period[$id]));
-        return ($period);
     }
 
    /**

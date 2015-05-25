@@ -124,11 +124,11 @@ return [
         /*
          * Application Service Providers...
          */
-        'Comer\Providers\AppServiceProvider',
-        'Comer\Providers\BusServiceProvider',
-        'Comer\Providers\ConfigServiceProvider',
-        'Comer\Providers\EventServiceProvider',
-        'Comer\Providers\RouteServiceProvider',
+        'Corso\Providers\AppServiceProvider',
+        'Corso\Providers\BusServiceProvider',
+        'Corso\Providers\ConfigServiceProvider',
+        'Corso\Providers\EventServiceProvider',
+        'Corso\Providers\RouteServiceProvider',
         /*New*/
         'Maatwebsite\Excel\ExcelServiceProvider',
         'Barryvdh\DomPDF\ServiceProvider',

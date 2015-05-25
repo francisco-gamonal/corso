@@ -1,4 +1,4 @@
-<?php namespace Comer\Events;
+<?php namespace Corso\Events;
 
 abstract class Event {
 

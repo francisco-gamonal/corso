@@ -1,4 +1,4 @@
-<?php namespace Comer;
+<?php namespace Corso;
 
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;

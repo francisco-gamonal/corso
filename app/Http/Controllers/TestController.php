@@ -1,12 +1,12 @@
-<?php namespace Comer\Http\Controllers;
+<?php namespace Corso\Http\Controllers;
 
-use Comer\Http\Requests;
-use Comer\Http\Controllers\Controller;
-use Comer\models\Observation;
+use Corso\Http\Requests;
+use Corso\Http\Controllers\Controller;
+use Corso\models\Observation;
 use Illuminate\Http\Request;
-use Comer\models\Record;
-use Comer\models\DataCompanie;
-use Comer\models\City;
+use Corso\models\Record;
+use Corso\models\DataCompanie;
+use Corso\models\City;
 
 class TestController extends Controller {
 

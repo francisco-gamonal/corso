@@ -1,12 +1,12 @@
 <?php
 
-namespace Comer\Http\Controllers;
+namespace Corso\Http\Controllers;
 
-use Comer\Http\Requests;
-use Comer\Http\Controllers\Controller;
-use Comer\models\Product;
+use Corso\Http\Requests;
+use Corso\Http\Controllers\Controller;
+use Corso\models\Product;
 use Illuminate\Http\Request;
-use Comer\models\Record;
+use Corso\models\Record;
 use Illuminate\Support\Facades\DB;
 class ProductsController extends Controller {
 

@@ -1,4 +1,4 @@
-<?php namespace Comer\models;
+<?php namespace Corso\models;
 
 /*
  * To change this license header, choose License Headers in Project Properties.

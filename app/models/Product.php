@@ -1,4 +1,4 @@
-<?php namespace Comer\models;
+<?php namespace Corso\models;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,6 +17,6 @@ class Product extends Model {
     
     public function business(){
 
-         	return $this->belongsTo('Comer\models\Business','empresas_id','id');
+         	return $this->belongsTo('Corso\models\Business','empresas_id','id');
          }
 }

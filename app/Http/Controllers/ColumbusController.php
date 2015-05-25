@@ -1,21 +1,22 @@
 <?php
 
-namespace Comer\Http\Controllers;
+namespace Corso\Http\Controllers;
 
-use Comer\Http\Requests;
+use Corso\Http\Requests;
 use Illuminate\Http\Request;
-use Comer\models\DataCompanie;
-use Comer\models\Business;
-use Comer\models\Record;
+use Corso\models\DataCompanie;
+use Corso\models\Business;
+use Corso\models\Record;
 use Input;
 use Illuminate\Support\Facades\DB;
-use Comer\models\Product;
-use Comer\models\City;
-use Comer\models\Staff;
-use Comer\models\Observation;
-use Comer\models\Statu;
+use Corso\models\Product;
+use Corso\models\City;
+use Corso\models\Staff;
+use Corso\models\Observation;
+use Corso\models\Statu;
 
-class ColumbusController extends Controller {
+
+class ColumbusController extends baseUploadController {
 
     /**
      * Display a listing of the resource.
@@ -66,26 +67,7 @@ class ColumbusController extends Controller {
         return $view;
     }
     
-        /**
-     * 
-     * @param type $id
-     * @return type
-     */
-    private function period($id) {
-        $range = $this->convertionObjeto();
-        $period = $this->serparatorPeriodo($range->range);
-        $period = explode('/', trim($period[$id]));
-        return ($period);
-    }
-        /**
-     * Separamos en rango de la consulta por perido
-     * @param type $range
-     * @return type
-     */
-    private function serparatorPeriodo($range) {
-      $rangeSeparator = explode('-', $range);
-        return $rangeSeparator;
-    }
+
     /**
      * 
      * @param type $id

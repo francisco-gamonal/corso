@@ -1,4 +1,4 @@
-<?php namespace Comer\Exceptions;
+<?php namespace Corso\Exceptions;
 
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;

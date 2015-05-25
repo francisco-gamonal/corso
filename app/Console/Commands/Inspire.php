@@ -1,4 +1,4 @@
-<?php namespace Comer\Console\Commands;
+<?php namespace Corso\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Foundation\Inspiring;

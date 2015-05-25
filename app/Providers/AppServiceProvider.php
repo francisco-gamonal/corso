@@ -1,4 +1,4 @@
-<?php namespace Comer\Providers;
+<?php namespace Corso\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind(
 			'Illuminate\Contracts\Auth\Registrar',
-			'Comer\Services\Registrar'
+			'Corso\Services\Registrar'
 		);
 	}
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace Comer\Http\Controllers\Auth;
+namespace Corso\Http\Controllers\Auth;
 
-use Comer\Http\Controllers\Controller;
+use Corso\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\Registrar;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;

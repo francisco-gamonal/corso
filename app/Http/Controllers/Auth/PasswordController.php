@@ -1,6 +1,6 @@
-<?php namespace Comer\Http\Controllers\Auth;
+<?php namespace Corso\Http\Controllers\Auth;
 
-use Comer\Http\Controllers\Controller;
+use Corso\Http\Controllers\Controller;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\PasswordBroker;
 use Illuminate\Foundation\Auth\ResetsPasswords;

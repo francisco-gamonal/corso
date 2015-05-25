@@ -5,7 +5,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-use Comer\Http\Controllers\Controller;
+use Corso\Http\Controllers\Controller;
 /**
  * Description of baseUploadFile
  *

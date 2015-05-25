@@ -118,8 +118,11 @@ class ClaroController extends baseUploadController {
      */
     public function importarExcelClaro() {
         /* de claramos las variables que recibimos por post */
-        $mes = Input::get('mes');
-        $year = Input::get('year');
+         try {
+            DB::beginTransaction();
+         $mes = str_split(Input::get('datePicker'), 2);
+            $mes = $mes[0];
+            $year = date('Y');
         $producto = Input::get('productos_id');
         $file = Input::file('excel');
         $url = "files/claro/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
@@ -129,7 +132,13 @@ class ClaroController extends baseUploadController {
         /* Corremos el archivo de excel y lo convertimos en un array */
         $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');
 
-        return $this->saveExcel($excel, $idHistorial);
+          DB::commit();
+            return $this->saveExcel($excel, $idHistorial);
+        } catch (Exception $e) {
+            Log::error($e);
+            DB::rollback();
+            return $this->errores(array('key' => 'Error Al subir el archivo de Excel'));
+        }
     }
 
     /**
@@ -216,7 +225,7 @@ class ClaroController extends baseUploadController {
             $datos_empresas->save();
         endforeach;
         $Record = RecordsController::recordSeparator($historial);
-        return Redirect::away($Record)->with('messege', 'se guardo con exito!!');
+        return $this->exito('Subio con exito el archivo de excel!!');
     }
 
 }

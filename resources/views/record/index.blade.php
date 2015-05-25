@@ -31,7 +31,7 @@
                     <td>{{$record->products->name}}</td>
                     <td>{{$record->mes}}</td>
                     <td>{{$record->year}}</td>
-                    <td></td>
+                    <td>{{$count[$record->id]}}</td>
     <!--                <td></td>
                     <td></td>
                     <td></td>-->

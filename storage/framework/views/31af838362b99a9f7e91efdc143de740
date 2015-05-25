@@ -21,7 +21,7 @@
 				</div>
 			</div>
 		</div>
-		<div class="data_product_columbus">
+		<div class="data_product">
 			
 		</div>
 		<?php endforeach; ?>

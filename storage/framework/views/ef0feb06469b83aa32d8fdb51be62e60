@@ -29,7 +29,7 @@
                     <td><?php echo e($record->products->name); ?></td>
                     <td><?php echo e($record->mes); ?></td>
                     <td><?php echo e($record->year); ?></td>
-                    <td></td>
+                    <td><?php echo e($count[$record->id]); ?></td>
     <!--                <td></td>
                     <td></td>
                     <td></td>-->

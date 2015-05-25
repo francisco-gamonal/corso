@@ -43,8 +43,7 @@ class ClaroController extends baseUploadController {
     public function importarClaro($id) {
 
         $data = Business::find($id);
-        $claro = $data->Products()->lists('name', 'id');
-        array_unshift($claro, ' --- Seleccione un Prodcuto --- ');
+        $claro = $data->Products;
         $periodo = $this->mes();
         return View('claro.importar', compact('claro', 'periodo'));
     }

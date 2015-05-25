@@ -1,49 +1,50 @@
-
-
-<?php $__env->startSection('head'); ?>
-<meta name="description" content="Administración de Claro">
-<meta name="author" content="Sistemas Amigables">
-<title>Administración Claro</title>
-<?php $__env->stopSection(); ?>
-
-<?php $__env->startSection('content'); ?>
-<div class="menu-inicio">
-    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logo-claro.png"></div>
-    <table class="table table-striped">
-        <thead>
-        <th>Nombre Producto</th>
-        <th>Mes</th>
-        <th>Year</th>
-        <th>Cantidad Filas</th>
-<!--        <th>En Ruta</th>
-        <th>Entregado</th>
-        <th>Devolucion</th>-->
-        <th>Descargar</th>
-        <th>Cliente</th>
-        <th>Eliminar</th>
-        </thead>
-        <?php for($i=0;$i < count($records);$i++): ?>
-        <?php foreach($records[$i] AS $record): ?>
-
-        <tbody>
-            <tr>
-                <td><?php echo e($record->products->name); ?></td>
-                <td><?php echo e($record->mes); ?></td>
-                <td><?php echo e($record->year); ?></td>
-                <td><?php echo e($record->DataCompanies->count()); ?></td>
-<!--                <td></td>
-                <td></td>
-                <td></td>-->
-                <td><a target="_black" class="btn btn-default" href="<?php echo e(route('descarga-productos',$record->id)); ?>"><span class="glyphicon glyphicon-cloud-download"> </span></a></td>
-                <td><a target="_black" class="btn btn-default" href="<?php echo e(route('descarga-clientes',$record->id)); ?>"><span class="glyphicon glyphicon-cloud-download"> </span></a></td>
-                <td><a class="btn btn-danger" href=""><span class="glyphicon glyphicon-remove-circle"> 
-                        </span></a>
-                </td>
-            </tr>
-        </tbody>
-        <?php endforeach; ?>
-        <?php endfor; ?>
-    </table>	
-</div>
+
+
+<?php $__env->startSection('head'); ?>
+    <meta name="description" content="Administración de Claro">
+    <meta name="author" content="Sistemas Amigables">
+    <?php $__env->startSection('tittle'); ?>
+        Administración Claro
+    <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<div class="menu-inicio">
+    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logo-claro.png"></div>
+    <table class="table table-striped">
+        <thead>
+            <th>Nombre Producto</th>
+            <th>Mes</th>
+            <th>Year</th>
+            <th>Cantidad Filas</th>
+    <!--        <th>En Ruta</th>
+            <th>Entregado</th>
+            <th>Devolucion</th>-->
+            <th>Descargar</th>
+            <th>Cliente</th>
+            <th>Eliminar</th>
+        </thead>
+        <?php for($i=0;$i < count($records);$i++): ?>
+            <?php foreach($records[$i] AS $record): ?>
+            <tbody>
+                <tr>
+                    <td><?php echo e($record->products->name); ?></td>
+                    <td><?php echo e($record->mes); ?></td>
+                    <td><?php echo e($record->year); ?></td>
+                    <td></td>
+    <!--                <td></td>
+                    <td></td>
+                    <td></td>-->
+                    <td><a target="_black" class="btn btn-default" href="<?php echo e(route('descarga-clientes',$record->id)); ?>"><span class="glyphicon glyphicon-cloud-download"> </span></a></td>
+                    <td><a target="_black" class="btn btn-default" href="<?php echo e(route('descarga-clientes',$record->id)); ?>"><span class="glyphicon glyphicon-cloud-download"> </span></a></td>
+                    <td><a class="btn btn-danger" href=""><span class="glyphicon glyphicon-remove-circle"> 
+                            </span></a>
+                    </td>
+                </tr>
+            </tbody>
+            <?php endforeach; ?>
+        <?php endfor; ?>
+    </table>	
+</div>  
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

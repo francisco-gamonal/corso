@@ -1,16 +1,16 @@
 @extends('template.main')
 
 @section('head')
-    <meta name="description" content="Administración de Claro">
+    <meta name="description" content="Administración de {{mb_convert_case($business[0]->name, MB_CASE_TITLE, 'UTF-8')}}">
     <meta name="author" content="Sistemas Amigables">
     @section('tittle')
-        Administración Claro
+        Administración {{mb_convert_case($business[0]->name, MB_CASE_TITLE, 'UTF-8')}}
     @endsection
 @endsection
 
 @section('content')
 <div class="menu-inicio">
-    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logo-claro.png"></div>
+    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logosclientes/{{$business[0]->logo}}"></div>
     <table class="table table-striped">
         <thead>
             <th>Nombre Producto</th>

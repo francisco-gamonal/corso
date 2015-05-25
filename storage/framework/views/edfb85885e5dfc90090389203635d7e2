@@ -1,16 +1,17 @@
 
 
 <?php $__env->startSection('head'); ?>
-    <meta name="description" content="Administración de Claro">
+    <meta name="description" content="Administración de <?php echo e(mb_convert_case($business[0]->name, MB_CASE_TITLE, 'UTF-8')); ?>">
     <meta name="author" content="Sistemas Amigables">
     <?php $__env->startSection('tittle'); ?>
-        Administración Claro
+        Administración <?php echo e(mb_convert_case($business[0]->name, MB_CASE_TITLE, 'UTF-8')); ?>
+
     <?php $__env->stopSection(); ?>
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
 <div class="menu-inicio">
-    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logo-claro.png"></div>
+    <div CLASS="titulo-bienvenido">Historial de Ciclos <img src="http://systema.elcorso.hn/img/logosclientes/<?php echo e($business[0]->logo); ?>"></div>
     <table class="table table-striped">
         <thead>
             <th>Nombre Producto</th>

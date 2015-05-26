@@ -25,7 +25,8 @@
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Banco Atlantida<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="{{ route('importar-estado-atlantida', 2) }}">Importar Estados de Cuenta</a></li>
-                    <li><a>{{ Html::link('#', 'Tarjetas de Credito') }}</a></li>
+                    <li><a href="{{ route('atlantida') }}">Estados de Cuenta</a></li>
+                    <li><a href="{{ route('historial-productos', 'Banco Atlantida') }}">Historial de Productos</a></li>
                 </ul>
             </li>          
             <li class="dropdown">

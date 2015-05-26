@@ -22,7 +22,7 @@ class BankAtlantidaController extends Controller {
 
         $data = Business::find($id);
         $atlantida = $data->Products;
-        $periodo = $this->mes();
+        $periodo = $this->verificacion_fecha_corta();
         return View('atlantida.importar', compact('atlantida', 'periodo'));
     }
 

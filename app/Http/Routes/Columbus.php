@@ -1,7 +1,7 @@
 <?php 
 
 /**
- * Claro
+ * Columbus
  */
 Route::get('columbus/estado-de-cuenta', ['as' => 'columbus', 'uses' => 'ColumbusController@index']);
 //Route::get('columbus/{name}', ['as' => 'producto_claro', 'uses' => 'ProductsController@getProduct']);

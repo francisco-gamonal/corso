@@ -57,6 +57,7 @@
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo e(route('importar-estado-de-cuenta',2)); ?>">Subir Estados de Cuenta</a></li>
                     <li><a href="<?php echo e(route('columbus')); ?>">Estados de Cuenta</a></li>
+                    <li><a href="<?php echo e(route('historial-productos', 'columbus')); ?>">Historial de Productos</a></li>
                 </ul>
             </li>
             <li class="dropdown">

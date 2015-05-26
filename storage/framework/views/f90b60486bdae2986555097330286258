@@ -25,6 +25,7 @@
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Banco Atlantida<span class="caret"></span></a>
                 <ul class="dropdown-menu" role="menu">
                     <li><a href="<?php echo e(route('importar-estado-atlantida', 2)); ?>">Importar Estados de Cuenta</a></li>
+                    <li><a href="<?php echo e(route('atlantida')); ?>">Estados de Cuenta</a></li>
                     <li><a><?php echo e(Html::link('#', 'Tarjetas de Credito')); ?></a></li>
                 </ul>
             </li>          
@@ -79,8 +80,8 @@
             <li class="dropdown">
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Opciones&nbsp;<span class=" glyphicon glyphicon-cog"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href='<?php echo e(Route('ver-empleados')); ?>'>Empleados</a></li>
-                    <li><a href='<?php echo e(Route('lista-observacion')); ?>'>Observaciones </a></li>
+                    <li><a href="<?php echo e(route('ver-empleados')); ?> ">Empleados</a></li>
+                    <li><a href="<?php echo e(route('lista-observacion')); ?>">Observaciones </a></li>
                     <li><?php echo HTML::link('/auth/logout', 'Cerrar sesión'); ?></li>
                 </ul>
             </li>

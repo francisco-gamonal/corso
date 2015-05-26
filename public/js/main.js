@@ -132,7 +132,7 @@ $(function(){
 	        endDate: $('#endDate').val(),
 	        minViewMode: 1,
 	        language: "es",
-	        orientation: "bottom",
+	        orientation: "auto",
 	        autoclose: true
 	    });
 

@@ -25,10 +25,14 @@ class BankAtlantidaController extends Controller {
         $periodo = $this->verificacion_fecha_corta();
                 $corte = array('08','10','11','15','20','24','30');
                 for($i=0;$i<count($corte);$i++):
-                    $cortes[] = $corte[$i].'/'.date('m').'/'.date('Y');
+                    $cortesFinal[] = $corte[$i].'/'.date('m').'/'.date('Y');
                 endfor;
-              
-        return View('atlantida.importar', compact('atlantida', 'periodo','cortes'));
+                
+               for($i=0;$i<count($corte);$i++):
+                   $mes =str_pad(date('m')-1, 2, '0', STR_PAD_LEFT);
+                    $cortesInicio[] = $corte[$i].'/'.$mes.'/'.date('Y');
+                endfor;
+        return View('atlantida.importar', compact('atlantida', 'periodo','cortesInicio','cortesFinal'));
     }
 
     /**

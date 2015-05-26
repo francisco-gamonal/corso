@@ -27,14 +27,12 @@
         <form id="formState" action="<?php echo e(route('save-estado-de-cuenta')); ?>">
             <div class="col-sm-6 col-md-6">
                 <div class="form-corso">
-                    <label for="datePicker">Escoger Fecha</label>
+                    <label for="dateAtlantida">Escoger Fecha</label>
                     <div class="form-group">
                         <div class="input-group">
-                            <input id="startDate" type="hidden" value="<?php echo e($periodo[0]); ?>">
-                            <input id="endDate" type="hidden" value="<?php echo e($periodo[1]); ?>">
                             <input name="productos_id" type="hidden" value="<?php echo e($atlantida); ?>">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-                            <input id="datePicker" name="datePicker" type="text" class="form-control">
+                            <input id="dateAtlantida" name="dateAtlantida" type="text" class="form-control">
                         </div>
                     </div>
                 </div>
@@ -67,6 +65,26 @@
     <?php echo Html::script('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'); ?>
 
     <script>
+        var date_enabled = <?= json_encode($cortes); ?>;
+        $("#dateAtlantida").datepicker({
+            format: "dd/mm/yyyy",
+            startDate: "<?php echo e($periodo['inicio']); ?>",
+            endDate: "<?php echo e($periodo['final']); ?>",
+            minViewMode: 0,
+            language: "es",
+            orientation: "auto",
+            autoclose: true,
+            beforeShowDay: function(date){
+                var formattedDate = $.fn.datepicker.DPGlobal.formatDate(date, 'dd/mm/yyyy', 'es');
+                if($.inArray(formattedDate.toString(), date_enabled) == -1){
+                    return {
+                       enabled : false
+                    };
+                }
+                return;
+            }
+        });
+
         $('#formState').submit(function(e){
             e.preventDefault();
             $.ajax({

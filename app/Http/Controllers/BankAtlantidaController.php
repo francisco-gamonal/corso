@@ -10,6 +10,9 @@ use Corso\models\Product;
 use Corso\models\Record;
 use Corso\models\City;
 use Corso\models\Staff;
+use Corso\models\DataCompanie;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
 
 class BankAtlantidaController extends Controller {
 
@@ -23,17 +26,17 @@ class BankAtlantidaController extends Controller {
         $data = Business::find($id);
         $atlantida = $data->Products;
         $periodo = $this->verificacion_fecha_corta();
-                $corte = array('08','10','11','15','20','24','30');
-                for($i=0;$i<count($corte);$i++):
-                   $mes =str_pad(date('m')-1, 2, '0', STR_PAD_LEFT);
-                    $cortes[] = $corte[$i].'/'.$mes.'/'.date('Y');
-                endfor;
-                
-                for($i=0;$i<count($corte);$i++):
-                    $cortes[] = $corte[$i].'/'.date('m').'/'.date('Y');
-                endfor;
-      
-        return View('atlantida.importar', compact('atlantida', 'periodo','cortes'));
+        $corte = array('08', '10', '11', '15', '20', '24', '30');
+        for ($i = 0; $i < count($corte); $i++):
+            $mes = str_pad(date('m') - 1, 2, '0', STR_PAD_LEFT);
+            $cortes[] = $corte[$i] . '/' . $mes . '/' . date('Y');
+        endfor;
+
+        for ($i = 0; $i < count($corte); $i++):
+            $cortes[] = $corte[$i] . '/' . date('m') . '/' . date('Y');
+        endfor;
+
+        return View('atlantida.importar', compact('atlantida', 'periodo', 'cortes'));
     }
 
     /**
@@ -60,6 +63,7 @@ class BankAtlantidaController extends Controller {
 
         $periodIni = $this->period(0);
         $periodFin = $this->period(1);
+
         $id = $this->convertionObjeto();
 
         // $this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
@@ -85,22 +89,27 @@ class BankAtlantidaController extends Controller {
 
         return $view;
     }
-/**
+
+    /**
      * aqui ejecutamos todos los metodos para agregar un nuevo archivo o reemplazarlo
      * @return type
      */
     public function importarExcelColumbus() {
         /* de claramos las variables que recibimos por post */
+
         try {
             DB::beginTransaction();
-            $mes = str_split(Input::get('datePicker'), 2);
-            $mes = $mes[0];
-            $year = date('Y');
-            $producto = Input::get('productos_id');
+            $fecha = explode('/', Input::get('dateAtlantida'));
+            $dia = $fecha[0];
+            $mes = $fecha[1];
+            $year = $fecha[2];
+            $producto = $this->convertionObjetoOne('productos_id');
+            $producto = $producto[0]->id;
             $file = Input::file('excel');
+
             $url = "files/atlantida/CICLO" . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . ".xlsx";
             /* agregamos un nuevo historial y retornamos el ID o buscamos regresamos el ID */
-            $idHistorial = RecordsController::SaveHistorials($mes, $year, $producto, $url);
+            $idHistorial = RecordsController::SaveHistorials($dia, $mes, $year, $producto, $url);
 
             /* Corremos el archivo de excel y lo convertimos en un array */
             $excel = BusinessController::uploadExcel($file, 'claro', 'CICLO' . $producto . str_pad($mes, 2, '0', STR_PAD_LEFT) . $year . '.xlsx');

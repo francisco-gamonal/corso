@@ -1,22 +1,21 @@
-@extends('template.main')
-
-@section('head')
+<?php $__env->startSection('head'); ?>
 <meta name="description" content="Atlantida - Importar Estado de Cuenta" />
 <meta name="author" content="Sistemas Amigables" />
-    @section('tittle')
+    <?php $__env->startSection('tittle'); ?>
         Atlantida -  Importar Estado de Cuenta
-    @endsection
-@endsection
+    <?php $__env->stopSection(); ?>
+<?php $__env->stopSection(); ?>
 
-@section('styles')
-    {!! Html::style('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css') !!}
-@endsection
+<?php $__env->startSection('styles'); ?>
+    <?php echo Html::style('bower_components/bootstrap-datepicker/dist/css/bootstrap-datepicker3.min.css'); ?>
 
-@section('content')
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
     <section>
         <h2 class="text-center" style="margin-top:0;">
             <figure>
-                <img src="{{ asset('img/logosclientes/logo-atlantida.png') }}" alt="">
+                <img src="<?php echo e(asset('img/logosclientes/logo-atlantida.png')); ?>" alt="">
             </figure>
             <p>
                 <span class="glyphicon glyphicon-list-alt"></span> 
@@ -25,15 +24,15 @@
         </h2>
     </section>
     <section>
-        <form id="formState" action="{{route('save-estado-de-cuenta')}}">
+        <form id="formState" action="<?php echo e(route('save-estado-de-cuenta')); ?>">
             <div class="col-sm-6 col-md-6">
                 <div class="form-corso">
                     <label for="datePicker">Escoger Fecha</label>
                     <div class="form-group">
                         <div class="input-group">
-                            <input id="startDate" type="hidden" value="{{ $periodo[0] }}">
-                            <input id="endDate" type="hidden" value="{{ $periodo[1] }}">
-                            <input name="productos_id" type="hidden" value="{{ $atlantida }}">
+                            <input id="startDate" type="hidden" value="<?php echo e($periodo[0]); ?>">
+                            <input id="endDate" type="hidden" value="<?php echo e($periodo[1]); ?>">
+                            <input name="productos_id" type="hidden" value="<?php echo e($atlantida); ?>">
                             <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
                             <input id="datePicker" name="datePicker" type="text" class="form-control">
                         </div>
@@ -61,15 +60,17 @@
             </div>
         </form>
     </section>
-@endsection
-@section('scripts')
-    {!! Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}
-    {!! Html::script('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js') !!}
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('scripts'); ?>
+    <?php echo Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>
+
+    <?php echo Html::script('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'); ?>
+
     <script>
         $('#formState').submit(function(e){
             e.preventDefault();
             $.ajax({
-                url: "{{route('save-estado-de-cuenta')}}",
+                url: "<?php echo e(route('save-estado-de-cuenta')); ?>",
                 type: 'POST',
                 cache: false,
                 data: new FormData($('#formState')[0]),
@@ -87,4 +88,5 @@
             });
         });
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -5,15 +5,20 @@ namespace Corso\Http\Controllers;
 use Corso\Http\Requests;
 use Corso\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Corso\models\Business;
+use Corso\models\Product;
+use Corso\models\Record;
+use Corso\models\City;
+use Corso\models\Staff;
 
-class BanckAtlantidaController extends Controller {
+class BankAtlantidaController extends Controller {
 
     /**
      * 
      * @param type $id
      * @return type
      */
-    public function importarAtlantidad($id) {
+    public function importarAtalntida($id) {
 
         $data = Business::find($id);
         $atlantida = $data->Products;

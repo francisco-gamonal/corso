@@ -3,10 +3,10 @@
 /**
  * Claro
  */
-Route::get('atlatida/estado-de-cuenta', ['as' => 'atlatida', 'uses' => 'BankAtlantidaController@index']);
+Route::get('atlantida/estado-de-cuenta', ['as' => 'atlantida', 'uses' => 'BankAtlantidaController@index']);
 //Route::get('columbus/{name}', ['as' => 'producto_claro', 'uses' => 'ProductsController@getProduct']);
-Route::post('atlatida/search', ['as' => 'data_product', 'uses' => 'BankAtlantidaController@dataProduct']);
-Route::get('atlatida/importar-estado-de-cuenta/{id}', ['as' => 'importar-estado-de-cuenta', 'uses' => 'BankAtlantidaController@importarColumbus']);
-Route::post('atlatida/importar-estado-de-cuenta', ['as' => 'save-estado-de-cuenta', 'uses' => 'BankAtlantidaController@importarExcelColumbus']);
-Route::post('atlatida/scanear-ciclo', ['as' => 'scanear-ciclo', 'uses' => 'BusinessController@scanearCiclo']);
-Route::get('atlatida/ciclo', 'BusinessController@ListaDatosEmpresas');
+Route::post('atlantida/search', ['as' => 'data_product', 'uses' => 'BankAtlantidaController@dataProduct']);
+Route::get('atlantida/importar-estado-de-cuenta/{id}', ['as' => 'importar-estado-atlantida', 'uses' => 'BankAtlantidaController@importarColumbus']);
+Route::post('atlantida/importar-estado-de-cuenta', ['as' => 'save-estado-de-cuenta', 'uses' => 'BankAtlantidaController@importarExcelColumbus']);
+Route::post('atlantida/scanear-ciclo', ['as' => 'scanear-ciclo', 'uses' => 'BusinessController@scanearCiclo']);
+Route::get('atlantida/ciclo', 'BusinessController@ListaDatosEmpresas');

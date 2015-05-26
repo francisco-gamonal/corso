@@ -29,6 +29,7 @@ Route::get('empleados', 'StaffController@index');
 
 require (__DIR__ . '/Routes/Claro.php');
 require (__DIR__ . '/Routes/Columbus.php');
+require (__DIR__ . '/Routes/Atlantida.php');
 require (__DIR__ . '/Routes/Empleados.php');
 require (__DIR__ . '/Routes/Usuarios.php');
 require (__DIR__ . '/Routes/Historial.php');

@@ -74,7 +74,7 @@
     </section>
 @endsection
 @section('scripts')
-    {!! Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') !!}
+    {!! Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker-rc.js') !!}
     {!! Html::script('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js') !!}
     <script>
         $('#formState').submit(function(e){

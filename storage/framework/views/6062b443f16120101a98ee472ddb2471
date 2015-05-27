@@ -75,7 +75,7 @@
     </section>
 <?php $__env->stopSection(); ?>
 <?php $__env->startSection('scripts'); ?>
-    <?php echo Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'); ?>
+    <?php echo Html::script('bower_components/bootstrap-datepicker/dist/js/bootstrap-datepicker-rc.js'); ?>
 
     <?php echo Html::script('bower_components/bootstrap-datepicker/dist/locales/bootstrap-datepicker.es.min.js'); ?>
 

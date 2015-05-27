@@ -10,6 +10,7 @@
 		@foreach($producto as $product)
 		<div class="product" data-url="product">
 			<h2 class="text-center">Banco Atlantida - {{$product->name}}</h2>
+
 			<div class="text-center">
 				<label class="text-center">Rango de Fechas</label>
 				<div class="form-group">

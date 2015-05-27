@@ -27,6 +27,7 @@
                     <li><a href="{{ route('importar-estado-atlantida', 2) }}">Importar Estados de Cuenta</a></li>
                     <li><a href="{{ route('atlantida') }}">Estados de Cuenta</a></li>
                     <li><a href="{{ route('historial-productos', 'banco-atlantida') }}">Historial de Productos</a></li>
+
                 </ul>
             </li>          
             <li class="dropdown">
@@ -80,8 +81,8 @@
             <li class="dropdown">
                 <a href="#" class="boton-cliente" data-toggle="dropdown">Opciones&nbsp;<span class=" glyphicon glyphicon-cog"></span></a>
                 <ul class="dropdown-menu" role="menu">
-                    <li><a href='{{ Route('ver-empleados') }}'>Empleados</a></li>
-                    <li><a href='{{ Route('lista-observacion') }}'>Observaciones </a></li>
+                    <li><a href="{{ route('ver-empleados') }} ">Empleados</a></li>
+                    <li><a href="{{ route('lista-observacion') }}">Observaciones </a></li>
                     <li>{!! HTML::link('/auth/logout', 'Cerrar sesión') !!}</li>
                 </ul>
             </li>

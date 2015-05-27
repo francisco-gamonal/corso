@@ -13,8 +13,10 @@ use Corso\models\Staff;
 use Corso\models\DataCompanie;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Input;
+use Corso\models\Observation;
+use Corso\models\Statu;
 
-class BankAtlantidaController extends Controller {
+class BankAtlantidaController extends baseUploadController {
 
     /**
      * 

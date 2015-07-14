@@ -1,0 +1,42 @@
+
+<?php $__env->startSection('content'); ?>
+<div class="container">
+    <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+            <div class="panel panel-default">
+                <div class="panel-heading">Observaciones</div>
+
+                <div class="panel-body">
+                    
+                    <h1 class="text-lowercase">lista de Observaciones</h1>
+                  
+         
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody> 
+                            <?php foreach($observations AS $datos): ?> 
+                            <tr>
+                                <td><?php echo e($datos->id); ?></td>
+                                <td><?php echo e($datos->name); ?></td>
+                                <td><?php echo e($datos->status->name); ?></td>
+                                <td><a class="btn btn-warning "><span class="glyphicon glyphicon-pencil"></span></a></td>
+                            </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                    <div class="pagination"><?= $observations->render() ?></div>
+               
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

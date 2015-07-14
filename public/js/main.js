@@ -89,6 +89,30 @@ var ajaxForm = function (url, type, data){
 			});
 };
 
+//Function SubmitAjax
+var ajaxSubmit = function (url, type, data){
+	var message;
+	var path = url;
+	if(type == 'post'){
+		message = 'Registrando';
+	}else{
+		message = 'Actualizando';
+	}
+	return	$.ajax( {
+		      	url: path,
+		      	type: type,
+		      	//data: $('#formStaff').serialize(),
+		      	data: data,
+				beforeSend: function(){
+		    		loadingUI(message);
+			    },
+		      	error: function(jqXHR, textStatus, errorThrown){
+					console.log('ERROR: ' + textStatus);
+					$.unblockUI();
+			    	bootbox.alert("<p class='red'>No se pueden grabar los datos.</p>")
+				}
+		    });
+}
 
 /**
  * [messageAjax - Response message after request ]
@@ -99,20 +123,27 @@ var messageAjax = function(data) {
 	console.log(data.errors);
 	$.unblockUI();
 	if(data.success){
-		bootbox.alert('<p class="success-ajax">'+data.message+'</p>', function(){
-			location.reload();
-		});
+		messageSuccess(data.message);
 	}
 	else{
-		var errors = data.errors;
-		var error = "";
-		for (var element in errors){
-			if(errors.hasOwnProperty(element)){
-				error += errors[element] + '<br>';
-			}
-		}
-		bootbox.alert('<p class="error-ajax">'+error+'</p>');
+		messageError(data.errors);
 	}
+};
+
+var messageSuccess = function(message){
+	bootbox.alert('<p class="success-ajax">'+message+'</p>', function(){
+		location.reload();
+	});
+};
+
+var messageError = function(errors){
+	var error = "";
+	for (var element in errors){
+		if(errors.hasOwnProperty(element)){
+			error += errors[element] + '<br>';
+		}
+	}
+	bootbox.alert('<p class="error-ajax">'+error+'</p>');
 };
 
 $(function(){
@@ -206,4 +237,51 @@ $(function(){
 			console.log(data);
 		});
 	});
+	
+	/**
+	 * Staff
+	 */
+	
+	//Save Empleado
+	$('#formStaff').submit(function(e) {
+	    e.preventDefault();
+    	var url = $('#formStaff').attr('action');
+    	var type = $('#formStaff').attr('method');
+	    ajaxSubmit(url, type, $('#formStaff').serialize())
+	    .done(function(response){
+	    	messageAjax(response);
+	    });
+  	});
+
+	//Active Staff
+	$(document).off('click', '#activeEmpleado');
+	$(document).on('click', '#activeEmpleado', function(e){
+		e.preventDefault();
+		var url;
+		var idEmpleado  = $(this).parent().parent().find('.id_empleado').text();
+		url = $(this).data('url');
+		url = url + '/active/' + idEmpleado;
+		data.idEmpleado = idEmpleado;
+		ajaxForm(url, 'patch', data)
+		.done( function (data) {
+			messageAjax(data);
+		});
+	});
+
+	//Delete Staff
+	$(document).off('click', '#deleteEmpleado');
+	$(document).on('click', '#deleteEmpleado', function(e){
+		e.preventDefault();
+		var url;
+		var idEmpleado  = $(this).parent().parent().find('.id_empleado').text();
+		url = $(this).data('url');
+		url = url + '/delete/' + idEmpleado;
+		data.idEmpleado = idEmpleado;
+		ajaxForm(url, 'delete', data)
+		.done( function (data) {
+			messageAjax(data);
+		});
+	});
+
+  	dataTable('#table_empleado', 'empleados');
 });

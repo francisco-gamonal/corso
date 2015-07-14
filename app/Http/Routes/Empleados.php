@@ -3,8 +3,10 @@
 /**
  *  Routes Empleados
  */
-Route::get('empleados/registrar-empleados', ['as' => 'registrar-empleados', 'uses' => 'StaffController@create']);
 Route::get('empleados', ['as' => 'ver-empleados', 'uses' => 'StaffController@index']);
-Route::post('empleados/guardar-empleados', ['as' => 'guardar-empleados', 'uses' => 'StaffController@store']);
-Route::get('empleados/editar-empleados/{id}', ['as' => 'editar-empleados', 'uses' => 'StaffController@edit']);
-Route::post('empleados/update-empleados/{id}', ['as' => 'update-empleados', 'uses' => 'StaffController@update']);
+Route::get('empleados/crear', ['as' => 'crear-empleados', 'uses' => 'StaffController@create']);
+Route::post('empleados/save', 'StaffController@store');
+Route::delete('empleados/delete/{id}', ['as' => 'delete-menu', 'uses' => 'StaffController@destroy']);
+Route::patch('empleados/active/{id}', ['as' => 'active-menu', 'uses' => 'StaffController@active']);
+Route::get('empleados/editar/{id}', ['as' => 'editar-empleados', 'uses' => 'StaffController@edit']);
+Route::put('empleados/editar/{id}', 'StaffController@update');

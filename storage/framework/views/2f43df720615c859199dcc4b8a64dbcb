@@ -1,68 +1,87 @@
-
-<?php $__env->startSection('content'); ?>
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Home</div>
-
-                <div class="panel-body">
-
-
-                    <center><h2><span class="glyphicon glyphicon-list-alt"><br>Agregar Mensajeros</span></h2></center>
-                    <hr>
-                    <div class="right">
-                    
-                        <?php echo Html::link('registrar-empleados','Agregar +',array('class'=>'btn btn-danger ')); ?>
-                    </div>
-
-                    <hr>
-                    <?php if(isset($message)): ?>
-                    <div class="text text-info">
-                        <button type="button" class="close" data-dismiss="info">&times;</button>
-                        <ul>
-                            <li><span class="glyphicon glyphicon-ok"></span> <?php echo e($message); ?></li>
-                        </ul>
-                    </div>
-                    <?php endif; ?>
-                    <div >
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Nombre</th>
-                                    <th>Ciudad</th>
-                                    <th>Cedula</th>
-                                    <th>Celular</th>
-                                    <th>Estado</th>
-                                    <th>Editar</th>
-                                </tr>
-                            </thead>
-                            <tbody><?php $i = 0; ?>
-                                <?php foreach($staff AS $datos): ?> 
-                                <tr>
-                                    <td><?php echo e($datos->id); ?></td>
-                                    <td><?php echo e($datos->fname); ?> <?php echo e($datos->sname); ?> <?php echo e($datos->flast); ?> <?php echo e($datos->slast); ?></td>
-                                    <td><?php echo e($datos->ciudad); ?></td>
-                                    <td><?php echo e($datos->cedula); ?></td>
-                                    <td><?php echo e($datos->celular); ?></td>
-                                    <?php if($datos->estado==0): ?>
-                                    <td>Activo</td>
-                                    <?php elseif($datos->esatdo==1): ?>
-                                    <td>Desactivo</td>
-                                    <?php endif; ?>
-                                    <td ><a class="btn btn-primary" href="<?php echo e(route('editar-empleados', $datos->id)); ?>" >Editar</a></td>
-                                </tr>
-                                <?php endforeach; ?>
-                            </tbody>
-                        </table>
-                        <div class="pagination"><?php echo $staff->render(); ?></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php $__env->stopSection(); ?>
 
+
+<?php $__env->startSection('styles'); ?>
+    <link rel="stylesheet" type="text/css" href="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min.css')); ?>">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+<br>
+<aside class="page"> 
+    <ol class="breadcrumb">
+        <li><a class="active">Empleados</a></li>
+    </ol>
+</aside>
+
+<div class="paddingWrapper">
+    <section class="row">
+        <div class="table-data">
+            <div class="table-header">
+                <div class="row">
+                    <div class="col-sm-6">
+                        <h5><strong>Lista de Empleados</strong></h5>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="<?php echo e(route('crear-empleados')); ?>" class="btn btn-info pull-right">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            <span>Nuevo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="table-content">
+                <div class="table-responsive">
+                    <table id="table_empleado" class="table table-bordered table-hover" cellpadding="0" cellspacing="0" border="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th width="200">Nombre</th>
+                                <th>Ciudad</th>
+                                <th>Cédula</th>
+                                <th>Celular</th>
+                                <th>Estado</th>
+                                <th>Edición</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach($empleados as $empleado): ?>
+                                <tr>
+                                    <td class="text-center id_empleado"><?php echo e($empleado->id); ?></td>
+                                    <td><?php echo e(mb_convert_case($empleado->nameComplete(), MB_CASE_TITLE, 'utf-8')); ?></td>
+                                    <td class="text-center"><?php echo e(mb_convert_case($empleado->citys->name, MB_CASE_TITLE, 'utf-8')); ?></td>
+                                    <td class="text-center"><?php echo e($empleado->cedula); ?></td>
+                                    <td class="text-center"><?php echo e($empleado->celular); ?></td>
+                                    <td class="text-center">
+                                        <?php if($empleado->deleted_at): ?>
+                                            <span>Inactivo</span>
+                                        <?php else: ?>
+                                            <span>Activo</span>
+                                        <?php endif; ?>
+                                    </td>
+                                    <td class="text-center edit-row">
+                                        <?php if($empleado->deleted_at): ?>
+                                            <a id="activeEmpleado" data-url="empleados" href="#">
+                                                <i class="fa fa-check-square-o"></i>
+                                            </a>
+                                        <?php else: ?>
+                                            <a id="deleteEmpleado" data-url="empleados" href="#">
+                                                <i class="fa fa-trash-o"></i>
+                                            </a>
+                                        <?php endif; ?>
+                                        <a href="<?php echo e(route('editar-empleados', $empleado->id)); ?>"><i class="fa fa-pencil-square-o"></i></a>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+    <script type="text/javascript" src="<?php echo e(asset('bower_components/datatables/media/js/jquery.dataTables.min.js')); ?>"></script>
+    <script type="text/javascript" src="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
 <?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

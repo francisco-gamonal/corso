@@ -59,13 +59,9 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Show the form for creating a new resource.
-
      *
-
      * @return Response
-
      */
     public function create() {
 
@@ -73,13 +69,9 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Store a newly created resource in storage.
-
      *
-
      * @return Response
-
      */
     public function store() {
 
@@ -87,15 +79,10 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Display the specified resource.
-
      *
-
      * @param  int  $id
-
      * @return Response
-
      */
     public function show($id) {
 
@@ -103,15 +90,10 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Show the form for editing the specified resource.
-
      *
-
      * @param  int  $id
-
      * @return Response
-
      */
     public function edit($id) {
 
@@ -119,15 +101,10 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Update the specified resource in storage.
-
      *
-
      * @param  int  $id
-
      * @return Response
-
      */
     public function update($id) {
 
@@ -135,15 +112,10 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Remove the specified resource from storage.
-
      *
-
      * @param  int  $id
-
      * @return Response
-
      */
     public function destroy($id) {
 
@@ -192,19 +164,12 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * @author Anwar Sarmiento
-
      * @param type $mes
-
      * @param type $year
-
      * @param type $producto
-
      * @return type
-
      * @description  Guardamos el historial de los productos 
-
      */
     public static function SaveHistorials($mes, $year, $producto, $url) {
 
@@ -312,31 +277,21 @@ class RecordsController extends Controller {
     }
 
     /**
-
      * Con este metodo generamos un archivo de PDF
-
      * para que puedan ver la informaciÃ³n trabajada los clientes.
-
      * @param type $id
-
      * @return type
-
      */
     public function pdfClientes($id) {
         $dataCompanies = DataCompanie::where('historials_id', $id)->get();
-        $pdf = App::make('dompdf');
-        $pdf->loadView('claro.reportPdf', compact('dataCompanies'))->setPaper('letter')->setOrientation('landscape');
+        $pdf = \PDF::loadView('claro.reportPdf', compact('dataCompanies'))->setOrientation('landscape');
         return $pdf->stream('Reporte.pdf');
     }
 
     /**
-
      * Con este metodo generamos un archivo de Excel
-
      * para que puedan ver la informaciÃ³n trabajada los clientes.
-
      * @param type $id
-
      */
     public function descargasProductoClientes($id) {
 

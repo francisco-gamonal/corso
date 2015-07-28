@@ -1,5 +1,0 @@
-suites:
-    main:
-        namespace: Corso
-        psr4_prefix: Corso
-        src_path: app

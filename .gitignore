@@ -1,0 +1,6 @@
+/vendor
+/node_modules
+.env
+/nbproject/private
+app/Http/Controllers/TestController.php
+.phpintel

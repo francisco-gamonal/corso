@@ -1,0 +1,24 @@
+[2015-07-24 20:11:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:13:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:15:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:16:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:19:16] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:19:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:22:29] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  
+[2015-07-24 20:23:44] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\DB' not found' in /home/elcorso/public_html/test/app/Http/Controllers/ClaroController.php:122
+Stack trace:
+#0 {main}  

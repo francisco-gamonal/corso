@@ -1,0 +1,39 @@
+<?php $__env->startSection('styles'); ?>
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('css/lib/daterangepicker-bs3-test.css')); ?>">
+	<link rel="stylesheet" type="text/css" href="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/css/datatables-bootstrap3.min.css')); ?>">
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+	<?php if(!$producto->isEmpty()): ?>
+		<?php foreach($producto as $product): ?>
+		<div class="product" data-url="product">
+			<h2 class="text-center">Banco Atlantida - <?php echo e($product->name); ?></h2>
+			<div class="text-center">
+				<label class="text-center">Rango de Fechas</label>
+				<div class="form-group">
+					<div class="input-group col-sm-4 col-sm-offset-4">
+						<input id="startDate" type="hidden" value="<?php echo e($inicioRecord); ?>">
+						<input id="endDate" type="hidden" value="<?php echo e($finalRecord); ?>">
+						<input id="idProduct" type="hidden" value="<?php echo e($product->id); ?>">
+						<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+						<input id="txtDate" type="text" class="form-control">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="data_product">
+			
+		</div>
+		<?php endforeach; ?>
+	<?php else: ?>
+		No existe
+	<?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('scripts'); ?>
+	<script type="text/javascript" src="<?php echo e(asset('js/lib/moment-test.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('js/lib/daterangepicker-test.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('bower_components/datatables/media/js/jquery.dataTables.min.js')); ?>"></script>
+	<script type="text/javascript" src="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js')); ?>"></script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

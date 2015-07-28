@@ -1,0 +1,64 @@
+<style type="text/css">
+    table{
+        border:1.5px solid #000;
+    }
+    table thead tr th{
+        background-color: red;
+        border:1px solid #000;
+        color: #fff;
+        font-size: 16px;
+        font-style: bond;
+    }
+    table tbody tr td{
+        border:0.5px solid #000;
+        font-size: 14px;
+        text-align: center;
+
+    }
+</style>
+<html><body>
+        <h2 style='margin-top:-1em; text-align:center;'>Reporte de Entregas <?php echo e($dataCompanies[0]->records->products->name); ?></h2>
+        <table id='table_dataProduct' class='table table-striped table-bordered table-hover' cellspacing='0' width='100%'>
+            <thead>
+                <tr>
+                    <th>Código</th>
+                    <th>Tipo Cliente</th>
+                    <th>Nombre Cliente</th>
+                    <th>Ciudad</th>
+                    <th>Estado</th>
+                    <th>Observación</th>
+                    <th>Comentario</th>
+                    <th>Empleados</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($dataCompanies as $dataCompanie): ?>
+                    <tr>
+                        <td><?php echo e($dataCompanie->codigo); ?></td>
+                        <td><?php echo e($dataCompanie->tipo_cliente); ?></td>
+                        <td><?php echo e($dataCompanie->name_cliente); ?></td>
+                        <?php if (empty($dataCompanie->ciudades_id)): ?>
+                            <td></td>
+                        <?php else: ?>
+                            <td><?php echo e($dataCompanie->citys->name); ?></td>
+                        <?php
+                        endif;
+                        if (empty($dataCompanie->observaciones_id)):
+                            ?>
+                            <td></td>
+                            <td></td>
+    <?php else: ?>
+                            <td><?php echo e($dataCompanie->observations->status->name); ?></td>
+                            <td><?php echo e($dataCompanie->observations->name); ?></td>
+                        <?php endif; ?>
+                        <td><?php echo e($dataCompanie->comentario); ?></td>
+                        <?php if (empty($dataCompanie->empleados_id)): ?>
+                            <td></td>
+                        <?php else: ?>
+                            <td><?php echo e($dataCompanie->staffs->fname.' '.$dataCompanie->staffs->flast); ?></td>
+                    <?php endif; ?>
+                    </tr>
+<?php endforeach; ?>
+            </tbody>
+        </table>
+    </body></html>

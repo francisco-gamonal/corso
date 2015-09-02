@@ -1,28 +1,1 @@
-<?php
-
-// Composer: "fzaninotto/faker": "v1.3.0"
-
-class StatusTableSeeder extends Seeder {
-
-    public function run() {
-
-        Statu::create([
-            'id'=>1,
-            'name'=>'En Ruta'
-        ]);
-        Statu::create([
-            'id'=>2,
-            'name'=>'Entregado'
-        ]);
-        Statu::create([
-            'id'=>3,
-            'name'=>'Devolucion'
-        ]);
-        Statu::create([
-            'id'=>4,
-            'name'=>'No Entregado'
-        ]);
-        
-    }
-
-}
+<?php// Composer: "fzaninotto/faker": "v1.3.0"use Illuminate\Database\Seeder;class StatusTableSeeder extends Seeder {    public function run() {        \DB::table('status')->insert([            'id'=>1,            'name'=>'En Ruta'        ]);        \DB::table('status')->insert([            'id'=>2,            'name'=>'Entregado'        ]);        \DB::table('status')->insert([            'id'=>3,            'name'=>'Devolucion'        ]);        \DB::table('status')->insert([            'id'=>4,            'name'=>'No Entregado'        ]);            }}

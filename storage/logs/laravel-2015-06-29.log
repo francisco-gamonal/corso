@@ -1,3 +1,0 @@
-[2015-06-29 17:34:36] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class 'Corso\Http\Controllers\Empleado' not found' in /home/elcorso/public_html/test/app/Http/Controllers/StaffController.php:139
-Stack trace:
-#0 {main}  

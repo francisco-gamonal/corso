@@ -4,7 +4,9 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+
     "hash": "25664c0a960e07bc8368cf6c593d6ea4",
+
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -498,6 +500,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v5.1.13",
             "source": {
                 "type": "git",
@@ -508,6 +511,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/2226a0abfe3776c5023601e59d496784d1de21fd",
                 "reference": "2226a0abfe3776c5023601e59d496784d1de21fd",
+=======
+            "version": "v5.1.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648",
+                "reference": "2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648",
+>>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
                 "shasum": ""
             },
             "require": {
@@ -622,11 +637,19 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2015-09-02 16:18:46"
         },
         {
             "name": "laravelcollective/html",
             "version": "v5.1.5",
+=======
+            "time": "2015-08-05 12:51:18"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.1.4",
+>>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
@@ -754,6 +777,7 @@
                 "storage"
             ],
             "time": "2015-07-28 20:41:58"
+<<<<<<< HEAD
         },
         {
             "name": "league/fractal",
@@ -817,6 +841,8 @@
                 "rest"
             ],
             "time": "2015-03-19 15:16:43"
+=======
+>>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
         },
         {
             "name": "maatwebsite/excel",
@@ -2264,12 +2290,21 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
+<<<<<<< HEAD
                 "reference": "3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe"
             },
             "dist": {
                 "type": "zip",
                 "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe",
                 "reference": "3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe",
+=======
+                "reference": "a6eaa12448e040f97a416c7ff1e12ea8f3a824e3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/a6eaa12448e040f97a416c7ff1e12ea8f3a824e3",
+                "reference": "a6eaa12448e040f97a416c7ff1e12ea8f3a824e3",
+>>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
                 "shasum": ""
             },
             "require": {
@@ -2315,7 +2350,11 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
+<<<<<<< HEAD
             "time": "2015-08-16 23:11:17"
+=======
+            "time": "2015-07-31 19:26:19"
+>>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
         },
         {
             "name": "phpdocumentor/reflection-docblock",

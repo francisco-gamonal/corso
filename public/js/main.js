@@ -1,9 +1,3 @@
-var server        = "";
-var pathname      = document.location.pathname;
-var pathnameArray = pathname.split("/public/");
-
-server =  pathnameArray.length > 0 ? pathnameArray[0]+"/public/" : "";
-
 //Function Datatable
 var dataTable = function(selector, list, condition){
 	var options = {
@@ -41,7 +35,7 @@ var loadingUI = function (message){
         '-moz-border-radius': '10px',
         opacity: 0.5,
         color: '#fff'
-    }, message: '<h2><img style="margin-right: 30px" src="'+ server  +'img/spiffygif.gif">' + message + '</h2>'});
+    }, message: '<h2><img style="margin-right: 30px" src="/img/spiffygif.gif">' + message + '</h2>'});
 };
 
 var responseUI = function (message,color){

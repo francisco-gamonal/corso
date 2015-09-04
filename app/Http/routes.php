@@ -14,18 +14,23 @@
 /* Route::get('/', 'WelcomeController@index'); */
 
 Route::get('/', 'HomeController@index');
-
+/*
 Route::controllers([
     'auth' => 'Auth\AuthController',
     'password' => 'Auth\PasswordController',
+]);*/
+
+// Authentication routes.
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', ['as' => 'auth/login', 'uses' => 'Auth\AuthController@postLogin']);
+Route::get('auth/logout', ['as' => 'auth/logout', 'uses' => 'Auth\AuthController@getLogout']);
+
+
+
+Route::controller('datatables', 'DatatablesController', [
+    'anyData'  => 'datatables.data',
+    'getIndex' => 'datatables',
 ]);
-
-// Nos mostrará el formulario de login.
-Route::get('login', 'AuthController@showLogin');
-
-// Validamos los datos de inicio de sesiÃ³n.
-Route::post('login', 'AuthController@postLogin');
-Route::get('empleados', 'StaffController@index');
 
 require (__DIR__ . '/Routes/Claro.php');
 require (__DIR__ . '/Routes/Columbus.php');

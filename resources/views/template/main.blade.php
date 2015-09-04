@@ -9,6 +9,7 @@
         @yield('head')
         {!! Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css') !!}
         {!! Html::style('bower_components/font-awesome/css/font-awesome.min.css') !!}
+        {!! Html::style('//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css') !!}
         @yield('styles')
         {!! Html::style('css/main.css') !!}
     </head>
@@ -25,6 +26,7 @@
             @include('template.partials.footer')
         </footer> -->
         {!! Html::script('bower_components/jquery/dist/jquery.min.js') !!}
+        {!! Html::script('//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js') !!}
         {!! Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js') !!}
         {!! Html::script('js/lib/bootbox.min.js') !!}
         {!! Html::script('js/lib/jquery.blockUI.min.js') !!}

@@ -2,9 +2,12 @@
 
 namespace Corso\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Type extends Model
+class Type extends Entity
 {
     //
+    public function getDatos()
+    {
+        // TODO: Implement getDatos() method.
+    }
 }

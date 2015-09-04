@@ -2,9 +2,13 @@
 
 namespace Corso\Entities;
 
-use Illuminate\Database\Eloquent\Model;
 
-class Status extends Model
+
+class Status extends Entity
 {
-    //
+    //protected $table = 'status';
+    public function getDatos()
+    {
+        // TODO: Implement getDatos() method.
+    }
 }

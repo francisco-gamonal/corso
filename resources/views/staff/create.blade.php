@@ -51,7 +51,7 @@
                 <label for="charterUser">Cédula</label>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-barcode"></i></span>
-                    <input id="charterUser" name="cedula" class="form-control" type="text">
+                    <input id="charterUser" name="charter" class="form-control" type="text">
                 </div>
             </div>
         </div>
@@ -60,14 +60,14 @@
                 <label for="phoneUser">Celular</label>
                 <div class="input-group">
                     <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                    <input id="phoneUser" name="celular" class="form-control" type="text">
+                    <input id="phoneUser" name="phone" class="form-control" type="text">
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-md-6">
             <div class="form-corso">
                 <label for="cityUser">Ciudad</label>
-                <select id="cityUser" name="ciudades_id" class="form-control">
+                <select id="cityUser" name="city_id" class="form-control">
                     @foreach($citys as $city)
                         <option value="{{$city->id}}">{{ mb_convert_case($city->name, MB_CASE_TITLE, "UTF-8") }}</option>
                     @endforeach
@@ -77,7 +77,7 @@
     </section>
     <section class="row">
         <div class="col-sm-12 col-md-12 text-center">
-            <a href="{{route('ver-empleados')}}" class="btn btn-default" style="margin-top:1em;"><span class="glyphicon glyphicon-circle-arrow-left"></span>Regresar</a>
+            <a href="{{route('empleados')}}" class="btn btn-default" style="margin-top:1em;"><span class="glyphicon glyphicon-circle-arrow-left"></span>Regresar</a>
             <button type="submit" class="btn btn-success" style="margin-top:1em;" data-type="post" data-url="save">
                 <i class="fa fa-floppy-o"></i> Grabar Empleado
             </button>

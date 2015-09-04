@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - elcorso_mensajeria@localhost" uuid="a0860e86-b8dd-4686-a704-36a3a2fa5490">
+    <database-info product="MySQL" version="5.5.44-0ubuntu0.14.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <schema name="" catalog="elcorso_mensajeria"/>
+    <table name="businesses" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="logo" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="color" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="products_business_id_foreign" table="products" schema="" catalog="elcorso_mensajeria" columns="business_id"/>
+      <exported-key name="users_business_id_foreign" table="users" schema="" catalog="elcorso_mensajeria" columns="business_id"/>
+    </table>
+    <table name="cities" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="150" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="data_companies_city_id_foreign" table="data_companies" schema="" catalog="elcorso_mensajeria" columns="city_id"/>
+      <exported-key name="employees_city_id_foreign" table="employees" schema="" catalog="elcorso_mensajeria" columns="city_id"/>
+    </table>
+    <table name="data_companies" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="bar" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="code" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="customer_type" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="customer_name" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="comment" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="date_delivered" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="date_received" sqlType="DATE" precision="10" scale="0" nullable="true" jdbcType="91"/>
+      <column name="amount" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="address" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="comment_town" sqlType="VARCHAR" precision="255" scale="0" nullable="true" jdbcType="12"/>
+      <column name="city_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="observation_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="record_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="data_companies_employee_id_foreign" columns="employee_id" ref-table="employees" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="data_companies_city_id_foreign" columns="city_id" ref-table="cities" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="data_companies_observation_id_foreign" columns="observation_id" ref-table="observations" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="data_companies_record_id_foreign" columns="record_id" ref-table="records" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="0" deferrability="2"/>
+      <index name="data_companies_city_id_index" unique="false" columns="city_id"/>
+      <index name="data_companies_employee_id_index" unique="false" columns="employee_id"/>
+      <index name="data_companies_observation_id_index" unique="false" columns="observation_id"/>
+      <index name="data_companies_record_id_index" unique="false" columns="record_id"/>
+    </table>
+    <table name="employees" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="fname" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="sname" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="flast" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="slast" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="charter" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="city_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="employees_city_id_foreign" columns="city_id" ref-table="cities" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="data_companies_employee_id_foreign" table="data_companies" schema="" catalog="elcorso_mensajeria" columns="employee_id"/>
+      <exported-key name="users_employee_id_foreign" table="users" schema="" catalog="elcorso_mensajeria" columns="employee_id"/>
+      <index name="employees_city_id_index" unique="false" columns="city_id"/>
+    </table>
+    <table name="menu_task" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="menu_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="task_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="menu_task_task_id_foreign" columns="task_id" ref-table="tasks" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="menu_task_menu_id_foreign" columns="menu_id" ref-table="menus" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="menu_task_menu_id_index" unique="false" columns="menu_id"/>
+      <index name="menu_task_task_id_index" unique="false" columns="task_id"/>
+    </table>
+    <table name="menu_user" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="menu_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="task_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="menu_user_user_id_foreign" columns="user_id" ref-table="users" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="menu_user_menu_id_foreign" columns="menu_id" ref-table="menus" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="menu_user_task_id_foreign" columns="task_id" ref-table="tasks" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="menu_user_menu_id_index" unique="false" columns="menu_id"/>
+      <index name="menu_user_task_id_index" unique="false" columns="task_id"/>
+      <index name="menu_user_user_id_index" unique="false" columns="user_id"/>
+    </table>
+    <table name="menus" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="menu_task_menu_id_foreign" table="menu_task" schema="" catalog="elcorso_mensajeria" columns="menu_id"/>
+      <exported-key name="menu_user_menu_id_foreign" table="menu_user" schema="" catalog="elcorso_mensajeria" columns="menu_id"/>
+    </table>
+    <table name="migrations" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="migration" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="batch" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+    </table>
+    <table name="observation_products" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="observation_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="product_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="observation_products_product_id_foreign" columns="product_id" ref-table="products" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="observation_products_observation_id_foreign" columns="observation_id" ref-table="observations" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="observation_products_observation_id_index" unique="false" columns="observation_id"/>
+      <index name="observation_products_product_id_index" unique="false" columns="product_id"/>
+    </table>
+    <table name="observations" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="status_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="observations_status_id_foreign" columns="status_id" ref-table="statuses" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="data_companies_observation_id_foreign" table="data_companies" schema="" catalog="elcorso_mensajeria" columns="observation_id"/>
+      <exported-key name="observation_products_observation_id_foreign" table="observation_products" schema="" catalog="elcorso_mensajeria" columns="observation_id"/>
+      <index name="observations_status_id_index" unique="false" columns="status_id"/>
+    </table>
+    <table name="password_resets" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="token" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <index name="password_resets_email_index" unique="false" columns="email"/>
+      <index name="password_resets_token_index" unique="false" columns="token"/>
+    </table>
+    <table name="products" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="business_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="products_business_id_foreign" columns="business_id" ref-table="businesses" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="observation_products_product_id_foreign" table="observation_products" schema="" catalog="elcorso_mensajeria" columns="product_id"/>
+      <exported-key name="records_product_id_foreign" table="records" schema="" catalog="elcorso_mensajeria" columns="product_id"/>
+      <index name="products_business_id_index" unique="false" columns="business_id"/>
+    </table>
+    <table name="records" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="day" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="month" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="year" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="url" sqlType="TEXT" precision="65535" scale="0" nullable="false" jdbcType="-1"/>
+      <column name="product_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="records_product_id_foreign" columns="product_id" ref-table="products" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="data_companies_record_id_foreign" table="data_companies" schema="" catalog="elcorso_mensajeria" columns="record_id"/>
+      <index name="records_product_id_index" unique="false" columns="product_id"/>
+    </table>
+    <table name="statuses" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="observations_status_id_foreign" table="observations" schema="" catalog="elcorso_mensajeria" columns="status_id"/>
+    </table>
+    <table name="tasks" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="menu_task_task_id_foreign" table="menu_task" schema="" catalog="elcorso_mensajeria" columns="task_id"/>
+      <exported-key name="menu_user_task_id_foreign" table="menu_user" schema="" catalog="elcorso_mensajeria" columns="task_id"/>
+    </table>
+    <table name="type_users" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="80" scale="0" nullable="false" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <exported-key name="users_type_user_id_foreign" table="users" schema="" catalog="elcorso_mensajeria" columns="type_user_id"/>
+    </table>
+    <table name="users" schema="" catalog="elcorso_mensajeria" type="TABLE">
+      <column name="id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="last" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="255" scale="0" nullable="false" jdbcType="12"/>
+      <column name="employee_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="business_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="true" jdbcType="4"/>
+      <column name="type_user_id" sqlType="INT UNSIGNED" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <column name="remember_token" sqlType="VARCHAR" precision="100" scale="0" nullable="true" jdbcType="12"/>
+      <column name="created_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="updated_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="false" jdbcType="93" def="JzAwMDAtMDAtMDAgMDA6MDA6MDAn"/>
+      <column name="deleted_at" sqlType="TIMESTAMP" precision="19" scale="0" nullable="true" jdbcType="93"/>
+      <primary-key name="PRIMARY" columns="id"/>
+      <foreign-key name="users_type_user_id_foreign" columns="type_user_id" ref-table="type_users" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="users_business_id_foreign" columns="business_id" ref-table="businesses" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <foreign-key name="users_employee_id_foreign" columns="employee_id" ref-table="employees" ref-schema="" ref-catalog="elcorso_mensajeria" ref-columns="id" update-rule="3" delete-rule="3" deferrability="2"/>
+      <exported-key name="menu_user_user_id_foreign" table="menu_user" schema="" catalog="elcorso_mensajeria" columns="user_id"/>
+      <index name="users_email_unique" unique="true" columns="email"/>
+      <index name="users_business_id_index" unique="false" columns="business_id"/>
+      <index name="users_employee_id_index" unique="false" columns="employee_id"/>
+      <index name="users_type_user_id_index" unique="false" columns="type_user_id"/>
+    </table>
+  </data-source>
+</component>

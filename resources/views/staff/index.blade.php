@@ -21,7 +21,7 @@
                         <h5><strong>Lista de Empleados</strong></h5>
                     </div>
                     <div class="col-sm-6">
-                        <a href="{{route('crear-empleados')}}" class="btn btn-info pull-right">
+                        <a href="{!! route('crear-empleados') !!}" class="btn btn-info pull-right">
                             <span class="glyphicon glyphicon-plus"></span>
                             <span>Nuevo</span>
                         </a>
@@ -30,7 +30,7 @@
             </div>
             <div class="table-content">
                 <div class="table-responsive">
-                    <table id="table_empleado" class="table table-bordered table-hover" cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <table id="employees-table" class="table table-bordered table-hover" cellpadding="0" cellspacing="0" border="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -42,36 +42,7 @@
                                 <th>Edición</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            @foreach($empleados as $empleado)
-                                <tr>
-                                    <td class="text-center id_empleado">{{ $empleado->id }}</td>
-                                    <td>{{ mb_convert_case($empleado->nameComplete(), MB_CASE_TITLE, 'utf-8') }}</td>
-                                    <td class="text-center">{{ mb_convert_case($empleado->citys->name, MB_CASE_TITLE, 'utf-8') }}</td>
-                                    <td class="text-center">{{ $empleado->cedula }}</td>
-                                    <td class="text-center">{{ $empleado->celular }}</td>
-                                    <td class="text-center">
-                                        @if($empleado->deleted_at)
-                                            <span>Inactivo</span>
-                                        @else
-                                            <span>Activo</span>
-                                        @endif
-                                    </td>
-                                    <td class="text-center edit-row">
-                                        @if($empleado->deleted_at)
-                                            <!--a id="activeEmpleado" data-url="empleados" href="#">
-                                                <i class="fa fa-check-square-o"></i>
-                                            </a-->
-                                        @else
-                                            <!--a id="deleteEmpleado" data-url="empleados" href="#">
-                                                <i class="fa fa-trash-o"></i>
-                                            </a-->
-                                        @endif
-                                        <a href="{{route('editar-empleados', $empleado->id)}}"><i class="fa fa-pencil-square-o"></i></a>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        </tbody>
+
                     </table>
                 </div>
             </div>
@@ -80,7 +51,36 @@
 </div>
 @endsection
 
-@section('scripts')
-    <script type="text/javascript" src="{{ asset('bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
-    <script type="text/javascript" src="{{ asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js') }}"></script>
-@endsection
+@push('scripts')
+<script>
+    $(function() {
+        $('#employees-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '{!! route('empleados.list') !!}',
+                columns: [
+            {data: 'id', name: 'id'},
+            {data: 'fname', name: 'fname'},
+            {data: 'sname', name: 'sname'},
+            {data: 'flast', name: 'flast'},
+            {data: 'slast', name: 'slast'},
+            {data: 'charter', name: 'charter'},
+            {data: 'phone', name: 'phone'}
+        ],
+            initComplete: function () {
+                this.api().columns().every(function () {
+                    var column = this;
+                    var input = document.createElement('input');
+                    $(input).appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                                column.search(val ? val : '', true, false).draw();
+                            });
+                });
+            }
+        });
+    });
+    </script>
+
+@endpush

@@ -2,92 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="cb62d22f-830d-4af0-8a03-d124c7c7c193" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/database/migrations/2015_02_25_183708_create_statuses_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/BaseRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/BusinessRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/CityRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/DataCompaniesRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Entities/Employee.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/EmployeeRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/ProductRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Repositories/RecordRepository.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/anwar.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/index/employees.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/datatable/index.blade.php" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Business.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/City.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/DataCompanie.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Empleado.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Observation.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Product.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Record.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Staff.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app/models/Statu.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/database/migrations/2015_02_25_183708_create_status_table.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/public/files/claro/CICLO1012015.xlsx" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/057d67dee6013126931bbe6923625f0533f6de82" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/0c244a17ee1afad300ca00c3f5cb1f9cc2602bee" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/15d362e6b716c7c6978fed4fa4466252e04e678c" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/1989cc2ae7dab77119465b373df1373b2811caae" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/2363e79813f2e3fa30b8b673d98ceabf21f71083" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/296c37fc66a2e8a889190c63c47943a56aff44b5" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/49de1c3b87605cc286632bb1c064e68344caf3f2" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/4ca8b6402f252fc60d49799948b9ca3560b4aff0" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/5a70134bccce69b9f568cfcef61d204ae919aaa3" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/6683b3a0030635ca8302d6d29913adae8980be0d" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/69f42db3485ffd4702877b95444e937c2a9dd9e6" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/85c9d6cede635fc5f3d30d67cc1023d493f90e09" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/8622d49dc8b6bbbb88e7e3062ad6b0eda465b64b" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/8abfef74be7df706f47f29abea2603f217ffa6b8" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/903e2e2f31dd4e1ce3dcd14c86161ab347216d3f" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/framework/sessions/f0b9807b8d2dfa39b0ca06fdeeb1bf7a7e718dba" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2015-07-28.log" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/storage/logs/laravel-2015-08-06.log" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Http/Controllers/StaffController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/EmployeesController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/files/claro/CICLO3082015.xlsx" afterPath="$PROJECT_DIR$/public/files/claro/CICLO3082015.xlsx" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/084495a63db6008a6fe8cd8a1fba6def" afterPath="$PROJECT_DIR$/storage/framework/views/084495a63db6008a6fe8cd8a1fba6def" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/180f2fdd4a3050edccb89e1fe313b898" afterPath="$PROJECT_DIR$/storage/framework/views/180f2fdd4a3050edccb89e1fe313b898" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_02_25_183908_create_records_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_02_25_183908_create_records_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2015_02_25_183932_create_observations_table.php" afterPath="$PROJECT_DIR$/database/migrations/2015_02_25_183932_create_observations_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/2f43df720615c859199dcc4b8a64dbcb" afterPath="$PROJECT_DIR$/storage/framework/views/2f43df720615c859199dcc4b8a64dbcb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/AuthController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Business.php" afterPath="$PROJECT_DIR$/app/Entities/Business.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/City.php" afterPath="$PROJECT_DIR$/app/Entities/City.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Routes/Claro.php" afterPath="$PROJECT_DIR$/app/Http/Routes/Claro.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ClaroController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClaroController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Routes/Empleados.php" afterPath="$PROJECT_DIR$/app/Http/Routes/Empleados.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Entity.php" afterPath="$PROJECT_DIR$/app/Entities/Entity.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Routes/Historial.php" afterPath="$PROJECT_DIR$/app/Http/Routes/Historial.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Observation.php" afterPath="$PROJECT_DIR$/app/Entities/Observation.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/ObservationsTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/ObservationsTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Product.php" afterPath="$PROJECT_DIR$/app/Entities/Product.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Services/Registrar.php" afterPath="$PROJECT_DIR$/app/Services/Registrar.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Status.php" afterPath="$PROJECT_DIR$/app/Entities/Status.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/seeds/StatusTableSeeder.php" afterPath="$PROJECT_DIR$/database/seeds/StatusTableSeeder.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/Type.php" afterPath="$PROJECT_DIR$/app/Entities/Type.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/TypeUser.php" afterPath="$PROJECT_DIR$/app/Entities/TypeUser.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/User.php" afterPath="$PROJECT_DIR$/app/Entities/User.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/a3cb82729f7615c6338e26eb08845e10" afterPath="$PROJECT_DIR$/storage/framework/views/a3cb82729f7615c6338e26eb08845e10" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/app.php" afterPath="$PROJECT_DIR$/config/app.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/cfe967d63f9c51e2c0d7f376724f67de" afterPath="$PROJECT_DIR$/storage/framework/views/cfe967d63f9c51e2c0d7f376724f67de" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/staff/create.blade.php" afterPath="$PROJECT_DIR$/resources/views/staff/create.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/framework/views/f90b60486bdae2986555097330286258" afterPath="$PROJECT_DIR$/storage/framework/views/f90b60486bdae2986555097330286258" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/claro/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/claro/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/staff/index.blade.php" afterPath="$PROJECT_DIR$/resources/views/staff/index.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/storage/logs/laravel-2015-09-02.log" afterPath="$PROJECT_DIR$/storage/logs/laravel-2015-09-02.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/template/main.blade.php" afterPath="$PROJECT_DIR$/resources/views/template/main.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/template/partials/menu.blade.php" afterPath="$PROJECT_DIR$/resources/views/template/partials/menu.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/claro/product.blade.php" afterPath="$PROJECT_DIR$/resources/views/claro/product.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/routes.php" afterPath="$PROJECT_DIR$/app/Http/routes.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bootstrap/cache/services.json" afterPath="$PROJECT_DIR$/bootstrap/cache/services.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list default="true" id="fd35ebbf-2aea-44bc-be25-af860414d9af" name="Adaptación" comment="Hemos adaptado el sistemas a repositorio y las tablas en ingles todavia hace falta." />
+    <list default="true" id="fd35ebbf-2aea-44bc-be25-af860414d9af" name="Adaptación" comment="Hemos adaptado el sistemas a repositorio y las tablas en ingles todavia hace falta.">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Entities/DataCompanie.php" afterPath="$PROJECT_DIR$/app/Entities/DataCompanie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" />
+    </list>
     <ignored path="corso.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -131,45 +52,31 @@
       <file leaf-file-name="RecordsController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.50425893">
-              <caret line="334" column="14" selection-start-line="334" selection-start-column="14" selection-end-line="334" selection-end-column="14" />
+            <state vertical-scroll-proportion="0.55706984">
+              <caret line="258" column="30" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
               <folding>
                 <element signature="e#42#66#0#PHP" expanded="true" />
+                <element signature="e#10868#14623#0#PHP" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/a0860e86-b8dd-4686-a704-36a3a2fa5490/console.sql">
+      <file leaf-file-name="2015_02_25_184124_create_data_companies_table.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_25_184124_create_data_companies_table.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-11.111111">
+              <caret line="39" column="40" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="40" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="elcorso_mensajeria.data_companies" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/f56670cd/a0860e86-b8dd-4686-a704-36a3a2fa5490/elcorso_mensajeria..data_companies">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataCompaniesRepository.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Repositories/DataCompaniesRepository.php">
+      <file leaf-file-name="DataCompanie.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Entities/DataCompanie.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-10.666667">
-              <caret line="21" column="29" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="29" />
+            <state vertical-scroll-proportion="-6.0">
+              <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
               <folding />
             </state>
           </provider>
@@ -222,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/models/DataCompanie.php" />
         <option value="$PROJECT_DIR$/app/models/Observation.php" />
         <option value="$PROJECT_DIR$/app/Repositories/ProductRepository.php" />
         <option value="$PROJECT_DIR$/app/Repositories/BusinessRepository.php" />
@@ -259,7 +165,6 @@
         <option value="$PROJECT_DIR$/app/Repositories/RecordRepository.php" />
         <option value="$PROJECT_DIR$/app/Entities/Record.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/BusinessController.php" />
-        <option value="$PROJECT_DIR$/app/Entities/DataCompanie.php" />
         <option value="$PROJECT_DIR$/app/Repositories/CityRepository.php" />
         <option value="$PROJECT_DIR$/app/Http/Routes/Claro.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ProductsController.php" />
@@ -272,6 +177,8 @@
         <option value="$PROJECT_DIR$/database/seeds/ObservationsTableSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ClaroController.php" />
         <option value="$PROJECT_DIR$/app/Entities/Status.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/app/Entities/DataCompanie.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RecordsController.php" />
       </list>
     </option>
@@ -865,7 +772,7 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32916668" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2039801" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32946378" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -900,13 +807,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/template/main.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-18.666666">
-          <caret line="28" column="87" selection-start-line="28" selection-start-column="87" selection-end-line="28" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/datatable/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32867134">
@@ -1126,14 +1026,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Entities/DataCompanie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="11.037037">
-          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Repositories/CityRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-10.666667">
@@ -1214,14 +1106,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_25_184124_create_data_companies_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.62963">
-          <caret line="46" column="40" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -1313,12 +1197,37 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18461539">
+          <caret line="6" column="5" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2015_02_25_184124_create_data_companies_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.111111">
+          <caret line="39" column="40" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Entities/DataCompanie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.0">
+          <caret line="9" column="95" selection-start-line="9" selection-start-column="95" selection-end-line="9" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecordsController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.50425893">
-          <caret line="334" column="14" selection-start-line="334" selection-start-column="14" selection-end-line="334" selection-end-column="14" />
+        <state vertical-scroll-proportion="0.55706984">
+          <caret line="258" column="30" selection-start-line="258" selection-start-column="30" selection-end-line="258" selection-end-column="30" />
           <folding>
             <element signature="e#42#66#0#PHP" expanded="true" />
+            <element signature="e#10868#14623#0#PHP" expanded="false" />
           </folding>
         </state>
       </provider>

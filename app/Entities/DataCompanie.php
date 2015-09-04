@@ -7,7 +7,8 @@ class DataCompanie extends Entity
 {
     protected $table='data_companies';
 
-    protected $fillable=['bar','code','customer_name','address','city_id','observation_id','record_id','employee_id'];
+    protected $fillable=['bar','code','customer_type','comment','customer_name','comment_town',
+        'date_delivered','date_received','address','city_id','observation_id','record_id','employee_id'];
 
 
     public function getDatos()

@@ -80,25 +80,6 @@ return [
     'url' => 'http://localhost',
 
     /*
-<<<<<<< HEAD
-
-      |--------------------------------------------------------------------------
-
-      | Application Timezone
-
-      |--------------------------------------------------------------------------
-
-      |
-
-      | Here you may specify the default timezone for your application, which
-
-      | will be used by the PHP date and date-time functions. We have gone
-
-      | ahead and set this to a sensible default for you out of the box.
-
-      |
-
-=======
       |--------------------------------------------------------------------------
       | Application Timezone
       |--------------------------------------------------------------------------
@@ -107,31 +88,12 @@ return [
       | will be used by the PHP date and date-time functions. We have gone
       | ahead and set this to a sensible default for you out of the box.
       |
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
      */
 
     'timezone' => 'UTC',
 
     /*
-<<<<<<< HEAD
 
-      |--------------------------------------------------------------------------
-
-      | Application Locale Configuration
-
-      |--------------------------------------------------------------------------
-
-      |
-
-      | The application locale determines the default locale that will be used
-
-      | by the translation service provider. You are free to set this value
-
-      | to any of the locales which will be supported by the application.
-
-      |
-
-=======
       |--------------------------------------------------------------------------
       | Application Locale Configuration
       |--------------------------------------------------------------------------
@@ -140,7 +102,6 @@ return [
       | by the translation service provider. You are free to set this value
       | to any of the locales which will be supported by the application.
       |
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
      */
 
     'locale' => 'es',

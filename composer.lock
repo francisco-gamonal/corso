@@ -4,9 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-
-    "hash": "25664c0a960e07bc8368cf6c593d6ea4",
-
+    "hash": "8d142b38e02d350acf3effdc3e5e9cbc",
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -482,7 +480,7 @@
                     "name": "Jeremy Lindblom",
                     "email": "jeremeamia@gmail.com",
                     "homepage": "https://github.com/jeremeamia",
-                    "role": "developer"
+                    "role": "Developer"
                 }
             ],
             "description": "Serialize Closure objects, including their context and binding",
@@ -500,29 +498,16 @@
         },
         {
             "name": "laravel/framework",
-<<<<<<< HEAD
-            "version": "v5.1.13",
+            "version": "v5.1.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "2226a0abfe3776c5023601e59d496784d1de21fd"
+                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2226a0abfe3776c5023601e59d496784d1de21fd",
-                "reference": "2226a0abfe3776c5023601e59d496784d1de21fd",
-=======
-            "version": "v5.1.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/laravel/framework.git",
-                "reference": "2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648",
-                "reference": "2f1e0b8d7c24bb783d3a8d4fe4120ef82e5da648",
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
+                "url": "https://api.github.com/repos/laravel/framework/zipball/e34dcc0c57e0f560248aec5128161256ff8bf4e1",
+                "reference": "e34dcc0c57e0f560248aec5128161256ff8bf4e1",
                 "shasum": ""
             },
             "require": {
@@ -637,28 +622,20 @@
                 "framework",
                 "laravel"
             ],
-<<<<<<< HEAD
-            "time": "2015-09-02 16:18:46"
+            "time": "2015-09-04 12:46:14"
         },
         {
             "name": "laravelcollective/html",
-            "version": "v5.1.5",
-=======
-            "time": "2015-08-05 12:51:18"
-        },
-        {
-            "name": "laravelcollective/html",
-            "version": "v5.1.4",
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
+            "version": "v5.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "59f124084c9135a6a8d87323e5c5562ab823deb4"
+                "reference": "8b7c357e78b8fb6a2e48377cf2441441aac6dd1e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/59f124084c9135a6a8d87323e5c5562ab823deb4",
-                "reference": "59f124084c9135a6a8d87323e5c5562ab823deb4",
+                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/8b7c357e78b8fb6a2e48377cf2441441aac6dd1e",
+                "reference": "8b7c357e78b8fb6a2e48377cf2441441aac6dd1e",
                 "shasum": ""
             },
             "require": {
@@ -695,20 +672,20 @@
                     "email": "adam@laravelcollective.com"
                 }
             ],
-            "time": "2015-07-28 03:18:41"
+            "time": "2015-09-03 17:16:48"
         },
         {
             "name": "league/flysystem",
-            "version": "1.0.11",
+            "version": "1.0.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/thephpleague/flysystem.git",
-                "reference": "c16222fdc02467eaa12cb6d6d0e65527741f6040"
+                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/c16222fdc02467eaa12cb6d6d0e65527741f6040",
-                "reference": "c16222fdc02467eaa12cb6d6d0e65527741f6040",
+                "url": "https://api.github.com/repos/thephpleague/flysystem/zipball/7323424a9d39c24e597ed3f2144419dfbb52e086",
+                "reference": "7323424a9d39c24e597ed3f2144419dfbb52e086",
                 "shasum": ""
             },
             "require": {
@@ -776,8 +753,7 @@
                 "sftp",
                 "storage"
             ],
-            "time": "2015-07-28 20:41:58"
-<<<<<<< HEAD
+            "time": "2015-09-05 12:06:41"
         },
         {
             "name": "league/fractal",
@@ -841,8 +817,6 @@
                 "rest"
             ],
             "time": "2015-03-19 15:16:43"
-=======
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
         },
         {
             "name": "maatwebsite/excel",
@@ -2175,16 +2149,16 @@
         },
         {
             "name": "yajra/laravel-datatables-oracle",
-            "version": "v5.11.6",
+            "version": "5.11.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yajra/laravel-datatables.git",
-                "reference": "a0978969175cf84ff0abe17788d8e794e5e400e7"
+                "reference": "f6dcdd66e8d8e630f6a8ff7d0f1bddd7c0e2684e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/a0978969175cf84ff0abe17788d8e794e5e400e7",
-                "reference": "a0978969175cf84ff0abe17788d8e794e5e400e7",
+                "url": "https://api.github.com/repos/yajra/laravel-datatables/zipball/f6dcdd66e8d8e630f6a8ff7d0f1bddd7c0e2684e",
+                "reference": "f6dcdd66e8d8e630f6a8ff7d0f1bddd7c0e2684e",
                 "shasum": ""
             },
             "require": {
@@ -2226,7 +2200,7 @@
                 "laravel4",
                 "laravel5"
             ],
-            "time": "2015-09-02 01:26:51"
+            "time": "2015-09-03 01:18:55"
         }
     ],
     "packages-dev": [
@@ -2290,21 +2264,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-<<<<<<< HEAD
-                "reference": "3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe"
+                "reference": "78eb9b8acaee8ed1d3f652d3571cc921790e2be6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe",
-                "reference": "3f4cf9ccbe3cbc7bb949b088d3d6c52a1d649fbe",
-=======
-                "reference": "a6eaa12448e040f97a416c7ff1e12ea8f3a824e3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/a6eaa12448e040f97a416c7ff1e12ea8f3a824e3",
-                "reference": "a6eaa12448e040f97a416c7ff1e12ea8f3a824e3",
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/78eb9b8acaee8ed1d3f652d3571cc921790e2be6",
+                "reference": "78eb9b8acaee8ed1d3f652d3571cc921790e2be6",
                 "shasum": ""
             },
             "require": {
@@ -2350,11 +2315,7 @@
                 }
             ],
             "description": "A tool to automatically fix PHP code style",
-<<<<<<< HEAD
-            "time": "2015-08-16 23:11:17"
-=======
-            "time": "2015-07-31 19:26:19"
->>>>>>> 6974cb14911169446eba67f6a887378ea3ed0dc9
+            "time": "2015-09-05 17:35:27"
         },
         {
             "name": "phpdocumentor/reflection-docblock",

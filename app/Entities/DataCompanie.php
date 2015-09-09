@@ -70,5 +70,8 @@ class DataCompanie extends Entity
         return $this->belongsTo(Record::getClass(),'historials_id','id');
     }
 
+    public function status(){
+        return $this->belongsTo(Status::getClass(), $this->observations->status_id, 'id');
+    }
 
 }

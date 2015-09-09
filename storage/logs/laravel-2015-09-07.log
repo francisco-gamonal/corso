@@ -1,0 +1,21 @@
+[2015-09-07 04:14:24] local.ERROR: exception 'ReflectionException' with message 'Class Corso\Http\Controllers\TestController does not exist' in /home/francisco/Projects/corso/bootstrap/cache/compiled.php:1088
+Stack trace:
+#0 /home/francisco/Projects/corso/bootstrap/cache/compiled.php(1088): ReflectionClass->__construct('Corso\\Http\\Cont...')
+#1 /home/francisco/Projects/corso/bootstrap/cache/compiled.php(1039): Illuminate\Container\Container->build('Corso\\Http\\Cont...', Array)
+#2 /home/francisco/Projects/corso/bootstrap/cache/compiled.php(1577): Illuminate\Container\Container->make('Corso\\Http\\Cont...', Array)
+#3 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php(170): Illuminate\Foundation\Application->make('Corso\\Http\\Cont...')
+#4 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php(151): Illuminate\Foundation\Console\RouteListCommand->getControllerMiddleware('Corso\\Http\\Cont...')
+#5 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php(119): Illuminate\Foundation\Console\RouteListCommand->getMiddleware(Object(Illuminate\Routing\Route))
+#6 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php(89): Illuminate\Foundation\Console\RouteListCommand->getRouteInformation(Object(Illuminate\Routing\Route))
+#7 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/RouteListCommand.php(76): Illuminate\Foundation\Console\RouteListCommand->getRoutes()
+#8 [internal function]: Illuminate\Foundation\Console\RouteListCommand->fire()
+#9 /home/francisco/Projects/corso/bootstrap/cache/compiled.php(984): call_user_func_array(Array, Array)
+#10 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Console/Command.php(150): Illuminate\Container\Container->call(Array)
+#11 /home/francisco/Projects/corso/vendor/symfony/console/Command/Command.php(259): Illuminate\Console\Command->execute(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#12 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Console/Command.php(136): Symfony\Component\Console\Command\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#13 /home/francisco/Projects/corso/vendor/symfony/console/Application.php(878): Illuminate\Console\Command->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#14 /home/francisco/Projects/corso/vendor/symfony/console/Application.php(195): Symfony\Component\Console\Application->doRunCommand(Object(Illuminate\Foundation\Console\RouteListCommand), Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#15 /home/francisco/Projects/corso/vendor/symfony/console/Application.php(126): Symfony\Component\Console\Application->doRun(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#16 /home/francisco/Projects/corso/vendor/laravel/framework/src/Illuminate/Foundation/Console/Kernel.php(100): Symfony\Component\Console\Application->run(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#17 /home/francisco/Projects/corso/artisan(36): Illuminate\Foundation\Console\Kernel->handle(Object(Symfony\Component\Console\Input\ArgvInput), Object(Symfony\Component\Console\Output\ConsoleOutput))
+#18 {main}  

@@ -14,6 +14,12 @@ use Illuminate\Support\Facades\Redirect;
 
 use Input;
 use Illuminate\Support\Facades\DB;
+use Corso\Entities\Record;
+use Corso\Entities\DataCompanie;
+use Corso\Entities\City;
+use Corso\Entities\Employee;
+use Corso\Entities\Observation;
+use Corso\Entities\Status;
 
 class ClaroController extends baseUploadController {
     /**
@@ -73,6 +79,12 @@ class ClaroController extends baseUploadController {
         return View('claro.index');
     }
 
+    
+    public function anyData()
+    {
+        return Datatables::of($this->employeeRepository->anyData())->make(true);
+    }
+
     /**
      * 
      * @param type $id
@@ -97,8 +109,8 @@ class ClaroController extends baseUploadController {
         $periodIni = $this->period(0);
         $periodFin = $this->period(1);
         $id = $this->convertionObjeto();
-       
-       // $this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
+        
+        //$this->fileJsonUpdate($periodIni[0],$periodIni[1], $periodFin[0],$periodFin[1]);
         $record = Record::where('product_id','=',$id->idProduct)
                 ->where('month','>=',$periodIni[0])
                 ->where('year','>=',$periodIni[1])
@@ -107,16 +119,17 @@ class ClaroController extends baseUploadController {
         $historialId=$record[0]->id;
         
         foreach ($record AS $datos):
-            $temp = DataCompanie::where('historials_id','=',$datos->id)->get();
+            $temp = DataCompanie::where('record_id','=',$datos->id)->with('cities')->with('observations')->with('employees')->with('status')->get();
+            dd($temp[33]);
             $dataClaro[] = $temp;
             $temp = null;
         endforeach;
 
         $cities = City::all();
-        $staffs = Staff::all();
+        $staffs = Employee::all();
         $observations = Observation::all();
-        $status = Statu::all();
-
+        $status = Status::all();
+        dd($dataClaro);
         $view = view('claro.dataProduct', compact('dataClaro','historialId', 'cities', 'staffs', 'observations', 'status'));
         
         return $view;

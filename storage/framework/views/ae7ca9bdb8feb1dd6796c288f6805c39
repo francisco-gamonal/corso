@@ -21,7 +21,7 @@
                         <h5><strong>Lista de Empleados</strong></h5>
                     </div>
                     <div class="col-sm-6">
-                        <a href="<?php echo e(route('crear-empleados')); ?>" class="btn btn-info pull-right">
+                        <a href="<?php echo route('crear-empleados'); ?>" class="btn btn-info pull-right">
                             <span class="glyphicon glyphicon-plus"></span>
                             <span>Nuevo</span>
                         </a>
@@ -30,7 +30,7 @@
             </div>
             <div class="table-content">
                 <div class="table-responsive">
-                    <table id="table_empleado" class="table table-bordered table-hover" cellpadding="0" cellspacing="0" border="0" width="100%">
+                    <table id="employees-table" class="table table-bordered table-hover" cellpadding="0" cellspacing="0" border="0" width="100%">
                         <thead>
                             <tr>
                                 <th>Id</th>
@@ -42,36 +42,7 @@
                                 <th>Edición</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <?php foreach($empleados as $empleado): ?>
-                                <tr>
-                                    <td class="text-center id_empleado"><?php echo e($empleado->id); ?></td>
-                                    <td><?php echo e(mb_convert_case($empleado->nameComplete(), MB_CASE_TITLE, 'utf-8')); ?></td>
-                                    <td class="text-center"><?php echo e(mb_convert_case($empleado->citys->name, MB_CASE_TITLE, 'utf-8')); ?></td>
-                                    <td class="text-center"><?php echo e($empleado->cedula); ?></td>
-                                    <td class="text-center"><?php echo e($empleado->celular); ?></td>
-                                    <td class="text-center">
-                                        <?php if($empleado->deleted_at): ?>
-                                            <span>Inactivo</span>
-                                        <?php else: ?>
-                                            <span>Activo</span>
-                                        <?php endif; ?>
-                                    </td>
-                                    <td class="text-center edit-row">
-                                        <?php if($empleado->deleted_at): ?>
-                                            <!--a id="activeEmpleado" data-url="empleados" href="#">
-                                                <i class="fa fa-check-square-o"></i>
-                                            </a-->
-                                        <?php else: ?>
-                                            <!--a id="deleteEmpleado" data-url="empleados" href="#">
-                                                <i class="fa fa-trash-o"></i>
-                                            </a-->
-                                        <?php endif; ?>
-                                        <a href="<?php echo e(route('editar-empleados', $empleado->id)); ?>"><i class="fa fa-pencil-square-o"></i></a>
-                                    </td>
-                                </tr>
-                            <?php endforeach; ?>
-                        </tbody>
+
                     </table>
                 </div>
             </div>
@@ -81,7 +52,36 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('scripts'); ?>
-    <script type="text/javascript" src="<?php echo e(asset('bower_components/datatables/media/js/jquery.dataTables.min.js')); ?>"></script>
-    <script type="text/javascript" src="<?php echo e(asset('bower_components/datatables-bootstrap3-plugin/media/js/datatables-bootstrap3.min.js')); ?>"></script>
-<?php $__env->stopSection(); ?>
+<script>
+    $(function() {
+        $('#employees-table').DataTable({
+            processing: true,
+            serverSide: true,
+            ajax: '<?php echo route('empleados.list'); ?>',
+                columns: [
+            {data: 'id', name: 'id'},
+            {data: 'fname', name: 'fname'},
+            {data: 'sname', name: 'sname'},
+            {data: 'flast', name: 'flast'},
+            {data: 'slast', name: 'slast'},
+            {data: 'charter', name: 'charter'},
+            {data: 'phone', name: 'phone'}
+        ],
+            initComplete: function () {
+                this.api().columns().every(function () {
+                    var column = this;
+                    var input = document.createElement('input');
+                    $(input).appendTo($(column.footer()).empty())
+                            .on('change', function () {
+                                var val = $.fn.dataTable.util.escapeRegex($(this).val());
+
+                                column.search(val ? val : '', true, false).draw();
+                            });
+                });
+            }
+        });
+    });
+    </script>
+
+<?php $__env->appendSection(); ?>
 <?php echo $__env->make('template.main', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

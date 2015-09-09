@@ -11,6 +11,8 @@
 
         <?php echo Html::style('bower_components/font-awesome/css/font-awesome.min.css'); ?>
 
+        <?php echo Html::style('//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css'); ?>
+
         <?php echo $__env->yieldContent('styles'); ?>
         <?php echo Html::style('css/main.css'); ?>
 
@@ -28,6 +30,8 @@
             <?php echo $__env->make('template.partials.footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
         </footer> -->
         <?php echo Html::script('bower_components/jquery/dist/jquery.min.js'); ?>
+
+        <?php echo Html::script('//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js'); ?>
 
         <?php echo Html::script('bower_components/bootstrap/dist/js/bootstrap.min.js'); ?>
 

@@ -71,7 +71,7 @@ class DataCompanie extends Entity
     }
 
     public function status(){
-        return $this->belongsTo(Status::getClass(), $this->observations->status_id, 'id');
+        return $this->belongsTo(Status::getClass(),'status_id' , $this->observations->status_id);
     }
 
 }

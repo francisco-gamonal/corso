@@ -11,17 +11,13 @@
   |
  */
 
-/* Route::get('/', 'WelcomeController@index'); */
+Route::get('/', function () {
+    return redirect()->route('auth/login');
+});
 
-Route::get('/', 'HomeController@index');
-/*
-Route::controllers([
-    'auth' => 'Auth\AuthController',
-    'password' => 'Auth\PasswordController',
-]);*/
 
 // Authentication routes.
-Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::get('auth/login', ['as' => 'ver-login', 'uses' => 'Auth\AuthController@getLogin']);
 Route::post('auth/login', ['as' => 'auth/login', 'uses' => 'Auth\AuthController@postLogin']);
 Route::get('auth/logout', ['as' => 'auth/logout', 'uses' => 'Auth\AuthController@getLogout']);
 

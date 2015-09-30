@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
         <meta name="description" content="Pagina inicio">
-        <meta name="author" content="Sistemas Amigables S. de R.L. de C.V.">
+        <meta name="author" content="Sistemas Amigables de Costa Rica SACR S.A.">
         <title>El Corso</title>
         <?php echo Html::style('bower_components/bootstrap/dist/css/bootstrap.min.css'); ?>
 
